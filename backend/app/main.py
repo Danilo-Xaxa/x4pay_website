@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr
 from email.message import EmailMessage
 from aiosmtplib import send
-
+from typing import Optional
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -26,7 +26,8 @@ app = FastAPI()
 class ContactForm(BaseModel):
     name: str
     email: EmailStr
-    message: str
+    phone: Optional[str] = None  # Telefone opcional
+    message: Optional[str] = None  # Mensagem opcional
 
 @app.get("/")
 def read_root():
@@ -50,11 +51,14 @@ async def contact(form: ContactForm):
     msg["Subject"] = f"Contato de {form.name}"  # Assunto do e-mail
 
     # Corpo do e-mail formatado
-    msg.set_content(
+    email_content = (
         f"Nome: {form.name}\n"
-        f"E-mail: {form.email}\n\n"
-        f"Mensagem:\n{form.message}"
+        f"E-mail: {form.email}\n"
+        f"Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}\n\n"
+        f"Mensagem:\n{form.message if form.message else 'Nenhuma mensagem enviada'}"
     )
+
+    msg.set_content(email_content)
 
     try:
         # Tenta enviar o e-mail via SMTP
