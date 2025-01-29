@@ -2,10 +2,11 @@ import os
 import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, StringConstraints
 from email.message import EmailMessage
 from aiosmtplib import send
-from typing import Optional
+from typing import Optional, Annotated
+
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -37,17 +38,19 @@ logger = logging.getLogger(__name__)  # Instância do logger
 # Inicializa a aplicação FastAPI
 app = FastAPI()
 
+PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$")]
+
 # Modelo de validação do formulário de contato
 class ContactForm(BaseModel):
     name: str
     email: EmailStr
-    phone: Optional[str] = None  # Telefone opcional
+    phone: Optional[PhoneStr] = None  # Telefone opcional. Valida (XX) XXXXX-XXXX ou XX XXXX-XXXX
     message: Optional[str] = None  # Mensagem opcional
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     """Middleware para registrar logs de cada requisição recebida."""
-    logger.info(f"Recebida requisição: {request.method} {request.url}")
+    logger.info(f"📩 [{request.client.host}] {request.method} {request.url} recebida")
     response = await call_next(request)
     logger.info(f"Resposta enviada: {response.status_code}")
     return response
@@ -76,14 +79,14 @@ async def contact(form: ContactForm):
     msg["To"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Contato de {form.name}"
 
-    email_content = f"""
-    Nome: {form.name}
-    E-mail: {form.email}
-    Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}
+    email_content = f"""\
+Nome: {form.name}
+E-mail: {form.email}
+Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}
 
-    Mensagem:
-    {form.message if form.message else 'Nenhuma mensagem enviada'}
-    """
+Mensagem:
+{form.message if form.message else 'Nenhuma mensagem enviada'}
+""".strip()
     msg.set_content(email_content)
 
     try:
