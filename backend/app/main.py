@@ -1,4 +1,5 @@
 import os
+import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr
@@ -15,9 +16,15 @@ SMTP_PORT = int(os.getenv("SMTP_PORT", 587))  # Porta SMTP (587 para TLS)
 SMTP_USER = os.getenv("SMTP_USER")  # Usuário SMTP (endereço de e-mail)
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")  # Senha ou App Password do e-mail
 
-# Verifica se as credenciais foram carregadas corretamente
-if not all([SMTP_USER, SMTP_PASSWORD]):
-    raise RuntimeError("As variáveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
+# Verifica se as credenciais SMTP estão definidas corretamente
+if not SMTP_USER:
+    raise RuntimeError("A variável SMTP_USER precisa estar definida no arquivo .env")
+if not SMTP_PASSWORD:
+    raise RuntimeError("A variável SMTP_PASSWORD precisa estar definida no arquivo .env")
+
+# Configuração básica de logging para registrar erros
+logging.basicConfig(level=logging.ERROR)
+logger = logging.getLogger(__name__)
 
 # Inicializa a aplicação FastAPI
 app = FastAPI()
@@ -51,12 +58,14 @@ async def contact(form: ContactForm):
     msg["Subject"] = f"Contato de {form.name}"  # Assunto do e-mail
 
     # Corpo do e-mail formatado
-    email_content = (
-        f"Nome: {form.name}\n"
-        f"E-mail: {form.email}\n"
-        f"Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}\n\n"
-        f"Mensagem:\n{form.message if form.message else 'Nenhuma mensagem enviada'}"
-    )
+    email_content = f"""
+    Nome: {form.name}
+    E-mail: {form.email}
+    Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}
+
+    Mensagem:
+    {form.message if form.message else 'Nenhuma mensagem enviada'}
+    """
 
     msg.set_content(email_content)
 
@@ -73,7 +82,7 @@ async def contact(form: ContactForm):
         return {"detail": "Email enviado com sucesso!"}
 
     except Exception as e:
-        # Captura erros de envio e retorna um erro HTTP 500
+        logger.error(f"Erro ao enviar e-mail: {e}")  # Registra o erro no log
         raise HTTPException(
             status_code=500,
             detail=f"Erro ao enviar e-mail: {str(e)}"
