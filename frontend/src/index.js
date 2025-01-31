@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "react-modal-video/css/modal-video.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./index.scss";
-import App from "./App.jsx";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
