@@ -14,21 +14,20 @@ const HeroOne = () => {
             <div className="hero-style1">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Growth Accel erato
+                Referência em infraestrutura de pagamentos
               </span>
               <h1 className="hero-title">
-                Transform Your Business Into Profession
+                Subadquirência sem complicação 
               </h1>
               <p className="hero-text">
-                A business consultant is a professional who provides expert
-                advice and guidance to businesses on various aspects such
+                Facilitamos sua evolução no mercado de pagamentos com um processo simplificado e eficiente
               </p>
               <div className="btn-group">
                 <Link to="/about" className="global-btn">
-                  Learn More <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
+                  Saiba mais <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
                 </Link>
                 <Link to="/service" className="global-btn style-border">
-                  Our Services
+                  Nossos Serviços
                 </Link>
               </div>
             </div>
