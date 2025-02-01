@@ -46,7 +46,7 @@ const HeroThree = () => {
                 <div className="feature-wrapper">
                   <div className="feature-icon">
                     <Link to="#">
-                      <img src="assets/img/icon/call.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/call.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                   <div className="media-body">

@@ -23,7 +23,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ const PortfolioAll = () => {
                                     </h4>
                                 </div>
                                 <Link to="/project-details" className="icon-btn">
-                                    <img src="assets/img/icon/arrow-up-right.svg" alt="Bizmaster" />
+                                    <img src="assets/img/icon/arrow-up-right.svg" alt="X4Pay Assessoria" />
                                 </Link>
                             </div>
                         </div>

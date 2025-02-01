@@ -28,7 +28,7 @@ const HomeOne = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Home"} />
+      <HelmetReact title={"Início"} />
 
       {/* HeaderOne */}
       <HeaderOne />

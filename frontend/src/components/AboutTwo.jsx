@@ -11,7 +11,7 @@ const AboutTwo = () => {
             <div className="title-area mb-30">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                About Us
+                Sobre Nós
               </span>
               <h2 className="sec-title style2">
                 Maximizing Through the Strategic
@@ -42,7 +42,7 @@ const AboutTwo = () => {
             </p>
             <div className="btn-group">
               <Link to="/about" className="global-btn style2">
-                Explore More <img src="assets/img/icon/right-icon.svg" alt="Bizmaster" />
+                Explore More <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
               </Link>
             </div>
           </div>

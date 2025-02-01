@@ -220,7 +220,7 @@ const ProcessOne = () => {
                 <div className="tab-pane fade" id="nav-step1" role="tabpanel">
                   <div className="goal-list_wrapper">
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Performance Enhancement Partners
@@ -241,7 +241,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Management Mastery Consultan
@@ -262,7 +262,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Operational Excellence Solutions
@@ -283,7 +283,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">Transformational Strategy</h4>
                         <p>Efficiency Experts</p>
@@ -306,7 +306,7 @@ const ProcessOne = () => {
                 <div className="tab-pane fade" id="nav-step2" role="tabpanel">
                   <div className="goal-list_wrapper">
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Performance Enhancement Partners
@@ -327,7 +327,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Management Mastery Consultan
@@ -348,7 +348,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Operational Excellence Solutions
@@ -369,7 +369,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">Transformational Strategy</h4>
                         <p>Efficiency Experts</p>
@@ -396,7 +396,7 @@ const ProcessOne = () => {
                 >
                   <div className="goal-list_wrapper">
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Performance Enhancement Partners
@@ -417,7 +417,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Management Mastery Consultan
@@ -438,7 +438,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Operational Excellence Solutions
@@ -459,7 +459,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">Transformational Strategy</h4>
                         <p>Efficiency Experts</p>
@@ -482,7 +482,7 @@ const ProcessOne = () => {
                 <div className="tab-pane fade" id="nav-step4" role="tabpanel">
                   <div className="goal-list_wrapper">
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Performance Enhancement Partners
@@ -503,7 +503,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Management Mastery Consultan
@@ -524,7 +524,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">
                           Operational Excellence Solutions
@@ -545,7 +545,7 @@ const ProcessOne = () => {
                       </div>
                     </div>
                     <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
                       <div className="goal-content">
                         <h4 className="box-title">Transformational Strategy</h4>
                         <p>Efficiency Experts</p>

@@ -1262,7 +1262,7 @@ h1,h2,h3,h4,h5,h6 {
               data-wow-delay="0.2s"
             >
               <h5 className="subtitle">AWESOME DEMOS</h5>
-              <h2 className="title">Great Home Pages</h2>
+              <h2 className="title">Great Início Pages</h2>
             </div>
           </div>
         </div>
@@ -1277,8 +1277,8 @@ h1,h2,h3,h4,h5,h6 {
                 <span className="thumb">
                   <img src="assets/demo-img/1.png" alt="img" />
                 </span>
-                Home V.1
-                <div className="item-title">Home Business </div>
+                Início V.1
+                <div className="item-title">Início Business </div>
               </div>
               <div className="btn-group">
                 <Link className="btn btn-base" to="https://bizmaster-react.wowtheme7.com/home-1">
@@ -1300,8 +1300,8 @@ h1,h2,h3,h4,h5,h6 {
                 <span className="thumb">
                   <img src="assets/demo-img/2.png" alt="img" />
                 </span>
-                Home V.2
-                <div className="item-title">Home Consulting</div>
+                Início V.2
+                <div className="item-title">Início Consulting</div>
               </div>
               <div className="btn-group">
                 <Link className="btn btn-base" to="https://bizmaster-react.wowtheme7.com/home-2">
@@ -1323,8 +1323,8 @@ h1,h2,h3,h4,h5,h6 {
                 <span className="thumb">
                   <img src="assets/demo-img/3.png" alt="img" />
                 </span>
-                Home V.3
-                <div className="item-title">Home Corporate</div>
+                Início V.3
+                <div className="item-title">Início Corporate</div>
               </div>
               <div className="btn-group">
                 <Link className="btn btn-base" to="https://bizmaster-react.wowtheme7.com/home-3">
@@ -1346,8 +1346,8 @@ h1,h2,h3,h4,h5,h6 {
                 <span className="thumb">
                   <img src="assets/demo-img/4.png" alt="img" />
                 </span>
-                Home V.4
-                <div className="item-title">Home Startup Business </div>
+                Início V.4
+                <div className="item-title">Início Startup Business </div>
               </div>
               <div className="btn-group">
                 <Link className="btn btn-base" to="https://bizmaster-react.wowtheme7.com/home-4">
@@ -1369,8 +1369,8 @@ h1,h2,h3,h4,h5,h6 {
                 <span className="thumb">
                   <img src="assets/demo-img/5.png" alt="img" />
                 </span>
-                Home V.5
-                <div className="item-title">Home Business Agency </div>
+                Início V.5
+                <div className="item-title">Início Business Agency </div>
               </div>
               <div className="btn-group">
                 <Link className="btn btn-base" to="https://bizmaster-react.wowtheme7.com/home-5">

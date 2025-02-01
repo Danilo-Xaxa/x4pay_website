@@ -89,7 +89,7 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="Bizmaster" />
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
@@ -102,7 +102,7 @@ const TeamOne = () => {
                       <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -124,7 +124,7 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="Bizmaster" />
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
@@ -137,7 +137,7 @@ const TeamOne = () => {
                       <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="Bizmaster" />
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
@@ -172,7 +172,7 @@ const TeamOne = () => {
                       <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="Bizmaster" />
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
@@ -207,7 +207,7 @@ const TeamOne = () => {
                       <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -229,7 +229,7 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="Bizmaster" />
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
@@ -242,7 +242,7 @@ const TeamOne = () => {
                       <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>

@@ -140,7 +140,7 @@ const ContactInner = () => {
                                     <div className="col-12 form-group mb-0">
                                         <button className="global-btn w-100">
                                             Send Now
-                                            <img src="assets/img/icon/right-icon.svg" alt="Bizmaster" />
+                                            <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
                                         </button>
                                     </div>
                                 </div>

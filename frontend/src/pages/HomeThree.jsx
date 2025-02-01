@@ -23,7 +23,7 @@ const HomeThree = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Home"} />
+      <HelmetReact title={"Início"} />
 
       {/* HeaderThree */}
       <HeaderThree />

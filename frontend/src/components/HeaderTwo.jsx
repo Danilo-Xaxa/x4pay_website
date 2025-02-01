@@ -55,7 +55,7 @@ const HeaderTwo = () => {
         <div className="mobile-menu-area">
           <div className="mobile-logo">
             <Link to="/">
-              <img src="assets/img/logo.svg" alt="Bizmaster" />
+              <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
             </Link>
             <button className="menu-toggle" onClick={mobileMenu}>
               <i className="fa fa-times" />
@@ -64,22 +64,22 @@ const HeaderTwo = () => {
           <div className="mobile-menu">
             <ul id="offcanvas-navigation">
               <li className="menu-item-has-children submenu-item-has-children">
-                <Link to="#">Home</Link>
+                <Link to="#">Início</Link>
                 <ul className="sub-menu submenu-class">
                   <li>
-                    <Link to="/">Home 01</Link>
+                    <Link to="/">Início 01</Link>
                   </li>
                   <li>
-                    <Link to="/home-2">Home 02</Link>
+                    <Link to="/home-2">Início 02</Link>
                   </li>
                   <li>
-                    <Link to="/home-3">Home 03</Link>
+                    <Link to="/home-3">Início 03</Link>
                   </li>
                   <li>
-                    <Link to="/home-4">Home 04</Link>
+                    <Link to="/home-4">Início 04</Link>
                   </li>
                   <li>
-                    <Link to="/home-5">Home 05</Link>
+                    <Link to="/home-5">Início 05</Link>
                   </li>
                 </ul>
               </li>
@@ -161,28 +161,28 @@ const HeaderTwo = () => {
                   <nav className="main-menu d-none d-lg-inline-block">
                     <ul>
                       <li className="menu-item-has-children">
-                        <Link to="#">Home</Link>
+                        <Link to="#">Início</Link>
                         <ul className="sub-menu">
                           <li>
-                            <Link to="/">Home 01</Link>
+                            <Link to="/">Início 01</Link>
                           </li>
                           <li>
-                            <Link to="/home-2">Home 02</Link>
+                            <Link to="/home-2">Início 02</Link>
                           </li>
                           <li>
-                            <Link to="/home-3">Home 03</Link>
+                            <Link to="/home-3">Início 03</Link>
                           </li>
                           <li>
-                            <Link to="/home-4">Home 04</Link>
+                            <Link to="/home-4">Início 04</Link>
                           </li>
                           <li>
-                            <Link to="/home-5">Home 05</Link>
+                            <Link to="/home-5">Início 05</Link>
                           </li>
                         </ul>
                       </li>
 
                       <li>
-                        <Link to="/about">About Us</Link>
+                        <Link to="/about">Sobre Nós</Link>
                       </li>
                       <li className="menu-item-has-children">
                         <Link to="#">Services</Link>
@@ -253,7 +253,7 @@ const HeaderTwo = () => {
                   <div className="header-button">
                     <Link to="/contact" className="global-btn">
                       Get A Quote
-                      <img src="assets/img/icon/right-icon.svg" alt="Bizmaster" />
+                      <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
                     </Link>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const AboutFour = () => {
                             <div className="title-area mb-40">
                                 <span className="sub-title text-white">
                                     <img src="assets/img/icon/title_left.svg" alt="shape" />
-                                    About Us
+                                    Sobre Nós
                                 </span>
                                 <h2 className="sec-title style2 text-white">
                                     Maximizing Through the Strategic

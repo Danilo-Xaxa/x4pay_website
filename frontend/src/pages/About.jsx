@@ -31,7 +31,7 @@ const About = () => {
       <HeaderOne />
 
       {/* Breadcrumb */}
-      <Breadcrumb title="About Us" />
+      <Breadcrumb title="Sobre Nós" />
 
       {/* GoalArea */}
       <GoalArea />

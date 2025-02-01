@@ -25,7 +25,7 @@ const AboutOne = () => {
               <div className="title-area me-xl-5 mb-20">
                 <span className="sub-title">
                   <img src="assets/img/icon/title_left.svg" alt="shape" />
-                  About Us
+                  Sobre Nós
                 </span>
                 <h2 className="sec-title">Achieve Your a of Business </h2>
                 <p className="sec-text mb-35">

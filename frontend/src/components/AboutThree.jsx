@@ -80,7 +80,7 @@ const AboutThree = () => {
               <div className="title-area mb-20">
                 <span className="sub-title">
                   <img src="assets/img/icon/title_left.svg" alt="shape" />
-                  About Us
+                  Sobre Nós
                 </span>
                 <h2 className="sec-title style2">
                   Maximizing Through the Strategic

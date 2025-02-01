@@ -34,7 +34,7 @@ const AboutFive = () => {
                             <div className="title-area mb-40">
                                 <span className="sub-title style2">
                                     <img src="assets/img/icon/title_left2.svg" alt="shape" />
-                                    About Us
+                                    Sobre Nós
                                 </span>
                                 <h2 className="sec-title style2 text-white">
                                     Maximizing Through the Strategic

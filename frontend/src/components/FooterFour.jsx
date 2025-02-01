@@ -15,7 +15,7 @@ const FooterFour = () => {
                                 <div className="widget footer-widget widget-about">
                                     <div className="about-logo">
                                         <Link to="/">
-                                            <img src="assets/img/logo-white.svg" alt="Bizmaster" />
+                                            <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
                                         </Link>
                                     </div>
                                     <p className="footer-text mb-30 mt-30">
@@ -52,7 +52,7 @@ const FooterFour = () => {
                                                 <Link to="/service">Service</Link>
                                             </li>
                                             <li>
-                                                <Link to="/about">About Us</Link>
+                                                <Link to="/about">Sobre Nós</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -70,7 +70,7 @@ const FooterFour = () => {
                                                 <Link to="/service">Golden Key Properties</Link>
                                             </li>
                                             <li>
-                                                <Link to="/service">Swift Home Sales</Link>
+                                                <Link to="/service">Swift Início Sales</Link>
                                             </li>
                                             <li>
                                                 <Link to="/service">Elite Realty Services</Link>
