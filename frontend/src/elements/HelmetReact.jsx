@@ -8,7 +8,7 @@ const HelmetReact = ({ title }) => {
       </title>
       <meta
         name="description"
-        content="Bizmaster - Business Consulting React Js Template"
+        content="X4Pay Assessoria"
       />
     </Helmet>
   );

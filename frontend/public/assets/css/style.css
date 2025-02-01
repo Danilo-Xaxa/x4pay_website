@@ -77,21 +77,21 @@
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #196164;
-  --theme-color2: #C4F500;
-  --title-color: #19352D;
-  --body-color: #7A7A7A;
-  --smoke-color: #EBF3EE;
+  --theme-color: #355834;
+  --theme-color2: #F17E13;
+  --title-color: #030305;
+  --body-color: #7E8987;
+  --smoke-color: #EBF3EE; 
   --smoke-color2: #F6F6F7;
   --smoke-color3: #F5F5F6;
   --smoke-color4: #F4F4F4;
-  --smoke-color5: #F0F2F4;
+  --smoke-color5: #F0F2F4; 
   --black-color: #202420;
   --gray-color: #232323;
-  --white-color: #ffffff;
-  --light-color: #9fa2ad;
-  --yellow-color: #FFB539;
-  --success-color: #28a745;
+  --white-color: #ffffff; 
+  --light-color: #7E8987;
+  --yellow-color: #F17E13;
+  --success-color: #95C623;
   --error-color: #dc3545;
   --border-color: #E1E1E1;
   --title-font: "Inter", sans-serif;
