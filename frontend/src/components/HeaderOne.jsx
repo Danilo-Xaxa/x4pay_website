@@ -83,16 +83,7 @@ const HeaderOne = () => {
               </p>
               <div className="social-links">
                 <Link to="#">
-                  <i className="fab fa-facebook-f" />
-                </Link>
-                <Link to="#">
-                  <i className="fab fa-twitter" />
-                </Link>
-                <Link to="#">
                   <i className="fab fa-linkedin-in" />
-                </Link>
-                <Link to="#">
-                  <i className="fab fa-whatsapp" />
                 </Link>
               </div>
             </div>
@@ -284,7 +275,7 @@ const HeaderOne = () => {
                       <Link to="/about">Sobre Nós</Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#">Services</Link>
+                      <Link to="#">Serviços</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/service">Service</Link>
@@ -295,7 +286,7 @@ const HeaderOne = () => {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#">Projects</Link>
+                      <Link to="#">Clientes</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/project">Projects</Link>
@@ -305,36 +296,8 @@ const HeaderOne = () => {
                         </li>
                       </ul>
                     </li>
-                    <li className="menu-item-has-children">
-                      <Link to="#">Blog</Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link to="/blog">Blog</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-details">Blog Details</Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <Link to="#">Pages</Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link to="/pricing">Pricing Page</Link>
-                        </li>
-                        <li>
-                          <Link to="/team">Team</Link>
-                        </li>
-                        <li>
-                          <Link to="/team-details">Team Details</Link>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contact Page</Link>
-                        </li>
-                      </ul>
-                    </li>
                     <li>
-                      <Link to="/contact">Contact</Link>
+                      <Link to="/contact">Contato</Link>
                     </li>
                   </ul>
                 </nav>
@@ -352,13 +315,6 @@ const HeaderOne = () => {
                 <div className="header-wrapper">
                   <div className="header-button">
                     <button
-                      type="button"
-                      onClick={() => searchControl(true)}
-                      className="simple-icon searchBoxToggler"
-                    >
-                      <i className="fas fa-search" />
-                    </button>
-                    <button
                       onClick={() => sidebarControl(true)}
 
                       className="simple-icon sideMenuToggler d-none d-lg-block"
@@ -368,16 +324,7 @@ const HeaderOne = () => {
                   </div>
                   <div className="social-links">
                     <Link to="#">
-                      <i className="fab fa-instagram" />
-                    </Link>
-                    <Link to="#">
                       <i className="fab fa-linkedin" />
-                    </Link>
-                    <Link to="#">
-                      <i className="fab fa-twitter" />
-                    </Link>
-                    <Link to="#">
-                      <i className="fab fa-facebook-f" />
                     </Link>
                   </div>
                 </div>
