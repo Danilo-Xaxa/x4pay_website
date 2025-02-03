@@ -126,14 +126,14 @@ const FaqOne = () => {
                         {({ isVisible }) =>
                           isVisible && (
                             <span className="counter-number">
-                              <CountUp delay={0} start={0} end={200} />
-                              k+
+                              +
+                              <CountUp delay={0} start={0} end={1000000} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">Team member</p>
+                    <p className="counter-box_text">???</p>
                   </div>
                 </div>
                 <div className="counter-box">
@@ -149,14 +149,14 @@ const FaqOne = () => {
                         {({ isVisible }) =>
                           isVisible && (
                             <span className="counter-number">
-                              <CountUp delay={0} start={0} end={10} />
-                              k+
+                              +
+                              <CountUp delay={0} start={0} end={1000} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">Complete project</p>
+                    <p className="counter-box_text">???</p>
                   </div>
                 </div>
                 <div className="counter-box">
@@ -172,14 +172,14 @@ const FaqOne = () => {
                         {({ isVisible }) =>
                           isVisible && (
                             <span className="counter-number">
-                              <CountUp delay={0} start={0} end={20} />
-                              k+
+                              +
+                              <CountUp delay={0} start={0} end={20000} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">Winning award</p>
+                    <p className="counter-box_text">???</p>
                   </div>
                 </div>
                 <div className="counter-box">
@@ -195,14 +195,14 @@ const FaqOne = () => {
                         {({ isVisible }) =>
                           isVisible && (
                             <span className="counter-number">
-                              <CountUp delay={0} start={0} end={900} />
-                              k+
+                              +
+                              <CountUp delay={0} start={0} end={500} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">Client Review</p>
+                    <p className="counter-box_text">???</p>
                   </div>
                 </div>
               </div>
