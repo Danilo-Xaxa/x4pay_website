@@ -1,6 +1,6 @@
 :root {
   --theme-color         : #355834;
-  --theme-color2        : #F17E13;  
+  --theme-color2        : #EA9010;  
   --title-color         : #030305;
   --body-color          : #7E8987;
   --smoke-color         : #EBF3EE; 
@@ -12,7 +12,7 @@
   --gray-color          : #232323;
   --white-color         : #ffffff; 
   --light-color         : #7E8987;
-  --yellow-color        : #F17E13;
+  --yellow-color        : #EA9010;
   --success-color       : #95C623;
   --error-color         : #dc3545;
   --border-color        : #E1E1E1;
@@ -26,14 +26,6 @@
   --section-title-space : 70px;
   --ripple-ani-duration : 5s;
 }
-
-// CORES QUE COMBINAM COM O LARANJA E PRETO DA LOGOMARCA
-// verdes: #355834, #6E633D, #6A8E7F, #627264, #95C623, #648381, #95C623, #61988E
-// cinzas: #7E8287, #7E8987, #736F72
-// rosas: #CE4257, #F48498, #EC058E, #FF499E, #B8336A, #C490D1, 875053
-// azuis: #3F8EFC, #2667FF, #698996, #407076, #4281A4, #119DA4, #0C7489, #3777FF, #145C9E
-// marrons: #972D07, #885053
-// lilás: #735290, #777DA7
 
 // Color Variation
 $theme-color          : var(--theme-color); 

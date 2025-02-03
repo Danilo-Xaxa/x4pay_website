@@ -80,7 +80,7 @@
 /*------------------- 1.3. Variable-------------------*/
 :root {
   --theme-color: #355834;
-  --theme-color2: #F17E13;  
+  --theme-color2: #EA9010;  
   --title-color: #030305;
   --body-color: #7E8987;
   --smoke-color: #EBF3EE; 
@@ -92,7 +92,7 @@
   --gray-color: #232323;
   --white-color: #ffffff; 
   --light-color: #7E8987;
-  --yellow-color: #F17E13;
+  --yellow-color: #EA9010;
   --success-color: #95C623;
   --error-color: #dc3545;
   --border-color: #E1E1E1;
