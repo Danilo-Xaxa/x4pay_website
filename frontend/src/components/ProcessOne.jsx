@@ -13,6 +13,8 @@ const ProcessOne = () => {
           <br />
           <br />
           <br />
+          <br />
+          <br />
           <div className="row justify-content-center">
             <div className="col-lg-6">
               <div className="title-area text-center">
@@ -36,7 +38,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">01</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Technical Operation</span>
+                  <span className="process-card-text">Adiq, Cielo, GetNet, etc</span>
                   <h4 className="process-card-title"> Contratos com os adquirentes</h4>
                 </div>
               </div>
@@ -50,7 +52,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">02</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Technical Operation</span>
+                  <span className="process-card-text">Visa, Mastercard, Amex, etc</span>
                   <h4 className="process-card-title"> Contratos com as bandeiras</h4>
                 </div>
               </div>
@@ -64,8 +66,8 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">03</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Technical Operation</span>
-                  <h4 className="process-card-title"> Contrato com a registradora</h4>
+                  <span className="process-card-text">B3, CERC, CIP, etc</span>
+                  <h4 className="process-card-title"> Contratos com as registradoras</h4>
                 </div>
               </div>
             </div>
@@ -78,7 +80,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">04</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Technical Operation</span>
+                  <span className="process-card-text">Captura, liquidação, etc</span>
                   <h4 className="process-card-title"> Contratos com os softwares</h4>
                 </div>
               </div>
@@ -86,427 +88,6 @@ const ProcessOne = () => {
           </div>
         </div>
       </section>
-      <div className="goal-area space-top">
-        <div className="container">
-          <div className="row align-items-end">
-            <div className="col-lg-6">
-              <div className="title-area">
-                <span className="sub-title">
-                  <img src="assets/img/icon/title_left.svg" alt="shape" />
-                  Nosso objetivo
-                </span>
-                <h2 className="sec-title style2">
-                  Firmando parcerias sólidas
-                </h2>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="goal-title-area">
-                <p className="">
-                  There are many variati of passages of engineer's available.
-                  have suffered alteration in engineer's available
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="goal-tabs-wrapper">
-              <div
-                className="nav nav-tabs goal-tabs-tabs"
-                id="nav-tab"
-                role="tablist"
-              >
-                <button
-                  className="nav-link"
-                  id="nav-step1-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#nav-step1"
-                  type="button"
-                >
-                  Adquirentes
-                </button>
-                <button
-                  className="nav-link"
-                  id="nav-step2-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#nav-step2"
-                  type="button"
-                >
-                  Bandeiras
-                </button>
-                <button
-                  className="nav-link active"
-                  id="nav-step3-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#nav-step3"
-                  type="button"
-                >
-                  Registradora
-                </button>
-                <button
-                  className="nav-link"
-                  id="nav-step4-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#nav-step1"
-                  type="button"
-                >
-                  Softwares
-                </button>
-              </div>
-              <div className="tab-content" id="nav-tabContent">
-                <div className="tab-pane fade" id="nav-step1" role="tabpanel">
-                  <div className="goal-list_wrapper">
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Performance Enhancement Partners
-                        </h4>
-                        <p>Strategic Solutions Pro</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Management Mastery Consultan
-                        </h4>
-                        <p>Profitability Maximizers</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Operational Excellence Solutions
-                        </h4>
-                        <p>Framer Designer &amp; Developer</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">Transformational Strategy</h4>
-                        <p>Efficiency Experts</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="nav-step2" role="tabpanel">
-                  <div className="goal-list_wrapper">
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Performance Enhancement Partners
-                        </h4>
-                        <p>Strategic Solutions Pro</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Management Mastery Consultan
-                        </h4>
-                        <p>Profitability Maximizers</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Operational Excellence Solutions
-                        </h4>
-                        <p>Framer Designer &amp; Developer</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">Transformational Strategy</h4>
-                        <p>Efficiency Experts</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade active show"
-                  id="nav-step3"
-                  role="tabpanel"
-                >
-                  <div className="goal-list_wrapper">
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Performance Enhancement Partners
-                        </h4>
-                        <p>Strategic Solutions Pro</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Management Mastery Consultan
-                        </h4>
-                        <p>Profitability Maximizers</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Operational Excellence Solutions
-                        </h4>
-                        <p>Framer Designer &amp; Developer</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">Transformational Strategy</h4>
-                        <p>Efficiency Experts</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="nav-step4" role="tabpanel">
-                  <div className="goal-list_wrapper">
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Performance Enhancement Partners
-                        </h4>
-                        <p>Strategic Solutions Pro</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Management Mastery Consultan
-                        </h4>
-                        <p>Profitability Maximizers</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">
-                          Operational Excellence Solutions
-                        </h4>
-                        <p>Framer Designer &amp; Developer</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="goal-content_wrapp">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4Pay Assessoria" />
-                      <div className="goal-content">
-                        <h4 className="box-title">Transformational Strategy</h4>
-                        <p>Efficiency Experts</p>
-                        <div className="checklist">
-                          <ul>
-                            <li>
-                              <i className="fas fa-check" />
-                              Success Accelerators
-                            </li>
-                            <li>
-                              <i className="fas fa-check" />
-                              Started politician Club
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
