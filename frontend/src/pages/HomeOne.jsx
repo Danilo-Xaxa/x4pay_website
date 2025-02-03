@@ -12,7 +12,7 @@ import TestimonialOne from "../components/TestimonialOne";
 import MarqueeOne from "../components/MarqueeOne";
 import TeamOne from "../components/TeamOne";
 import FaqOne from "../components/FaqOne";
-//import BlogOne from "../components/BlogOne";
+import BlogOne from "../components/BlogOne";
 import FooterOne from "../components/FooterOne";
 
 const HomeOne = () => {
@@ -51,7 +51,6 @@ const HomeOne = () => {
       {/* TestimonialOne */}
       <div className="space-bottom"><TestimonialOne /></div>
 
-
       {/* MarqueeOne */}
       <MarqueeOne />
 
@@ -61,6 +60,11 @@ const HomeOne = () => {
       {/* FaqOne */}
       <div className="faq-area-1 bg-smoke space">
         <FaqOne />
+      </div>
+
+      {/* BlogOne */}
+      <div className="bg-smoke">
+        <BlogOne />
       </div>
 
       {/* FooterOne */}

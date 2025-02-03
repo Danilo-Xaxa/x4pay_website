@@ -10,25 +10,25 @@ const MarqueeOne = () => {
               <div className="item">
                
                   <img src="assets/img/icon/marquee-icon-1-2.svg" alt="img" />
-                  <span className="text-stroke">Breaking Barriers</span>
+                  <span className="text-stroke">Quebrando barreiras</span>
                
               </div>
               <div className="item">
                
                   <img src="assets/img/icon/marquee-icon-1-1.svg" alt="img" />
-                  <span>Constructing Excellence</span>
+                  <span>Construindo o futuro</span>
                
               </div>
               <div className="item">
                
                   <img src="assets/img/icon/marquee-icon-1-2.svg" alt="img" />
-                  <span className="text-stroke">Breaking Barriers</span>
+                  <span className="text-stroke">Quebrando barreiras</span>
                
               </div>
               <div className="item">
                
                   <img src="assets/img/icon/marquee-icon-1-1.svg" alt="img" />
-                  <span>Constructing Excellence </span>
+                  <span>Construindo o futuro </span>
                
               </div>
             </Marquee>

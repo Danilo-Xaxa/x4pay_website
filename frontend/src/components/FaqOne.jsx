@@ -11,9 +11,9 @@ const FaqOne = () => {
             <div className="title-area me-xl-5 mb-20">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Ask Question
+                Tirando suas dúvidas
               </span>
-              <h2 className="sec-title style2">Innovation Moves You Forward</h2>
+              <h2 className="sec-title style2">Perguntas Frequentes (FAQ)</h2>
             </div>
             <div className="accordion-area accordion" id="faqAccordion">
               <div className="accordion-card active">

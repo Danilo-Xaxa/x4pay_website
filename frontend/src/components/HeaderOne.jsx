@@ -78,7 +78,7 @@ const HeaderOne = () => {
               </div>
               <br />
               <p className="about-text">
-                Com a X4Pay, sua empresa tem o suporte especializado para crescer e operar com segurança no setor de pagamentos.
+                Com a X4Pay Assessoria, sua empresa tem o suporte especializado para crescer e operar com segurança no setor de pagamentos.
                 Nós oferecemos soluções completas para empresas que desejam atuar como subadquirentes.
               </p>
             </div>

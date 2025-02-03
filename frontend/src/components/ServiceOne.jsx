@@ -31,8 +31,7 @@ const ServiceOne = () => {
                   <Link to="#">Adiq</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Soluções completas para subadquirentes, oferecendo conectividade e tecnologia para pagamentos ágeis e seguros.
                 </p>
               </div>
             </div>
@@ -44,11 +43,10 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="#">Entrepay</Link>
+                  <Link to="#">EntrePay</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Plataforma inovadora para pagamentos digitais, conectando empresas a um ecossistema eficiente e de alta performance.
                 </p>
               </div>
             </div>
@@ -63,8 +61,7 @@ const ServiceOne = () => {
                   <Link to="#">GetNet</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Tecnologia robusta e confiável para transações eletrônicas, garantindo segurança e praticidade nos pagamentos.
                 </p>
               </div>
             </div>
@@ -79,8 +76,7 @@ const ServiceOne = () => {
                   <Link to="#">MercadoPago</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Ecossistema financeiro completo, oferecendo pagamentos rápidos, flexíveis e integração com diversas plataformas.
                 </p>
               </div>
             </div>
@@ -95,8 +91,22 @@ const ServiceOne = () => {
                   <Link to="#">Cielo</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Referência em meios de pagamento, conectando negócios a uma ampla rede de adquirência com tecnologia de ponta.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">SafraPay</Link>
+                </h4>
+                <p className="service-card_text">
+                  Pagamentos eficientes e taxas competitivas, combinando solidez bancária com inovação no mercado financeiro.
                 </p>
               </div>
             </div>
@@ -111,8 +121,7 @@ const ServiceOne = () => {
                   <Link to="#">Rede</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Soluções avançadas para captura e processamento de pagamentos, com alta aceitação e segurança garantida.
                 </p>
               </div>
             </div>
@@ -127,8 +136,7 @@ const ServiceOne = () => {
                   <Link to="#">PagSeguro</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Soluções completas para pagamentos físicos e digitais, permitindo vendas seguras e acessíveis para todos.
                 </p>
               </div>
             </div>
@@ -143,8 +151,7 @@ const ServiceOne = () => {
                   <Link to="#">Amex</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Líder global em pagamentos premium, oferecendo segurança, benefícios exclusivos e alta aceitação.
                 </p>
               </div>
             </div>
@@ -159,8 +166,7 @@ const ServiceOne = () => {
                   <Link to="#">Visa</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Conectando negócios ao mundo com soluções inovadoras e transações seguras em milhões de estabelecimentos.
                 </p>
               </div>
             </div>
@@ -175,8 +181,7 @@ const ServiceOne = () => {
                   <Link to="#">MasterCard</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Tecnologia confiável e ampla aceitação global, garantindo experiências de pagamento rápidas e seguras.
                 </p>
               </div>
             </div>
@@ -191,8 +196,7 @@ const ServiceOne = () => {
                   <Link to="#">Elo</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Bandeira nacional com soluções inovadoras, promovendo inclusão financeira e transações seguras no Brasil.
                 </p>
               </div>
             </div>
@@ -207,8 +211,7 @@ const ServiceOne = () => {
                   <Link to="#">HiperCard</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Ampla aceitação no Brasil, oferecendo facilidades para clientes e lojistas em diversas categorias.
                 </p>
               </div>
             </div>
@@ -223,8 +226,7 @@ const ServiceOne = () => {
                   <Link to="#">CERC</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors now use
-                  Lorem Ipsum a default model text, and a search
+                  Registradora líder no Brasil, garantindo transparência, segurança e eficiência na antecipação de recebíveis.
                 </p>
               </div>
             </div>
@@ -239,7 +241,7 @@ const ServiceOne = () => {
                   <Link to="#">B3</Link>
                 </h4>
                 <p className="service-card_text">
-                  Many desktop publishing packages web page editors
+                  Infraestrutura essencial para registro e liquidação de pagamentos, promovendo confiança e inovação no mercado financeiro.
                 </p>
               </div>
             </div>
