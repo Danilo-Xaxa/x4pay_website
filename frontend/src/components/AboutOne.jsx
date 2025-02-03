@@ -27,7 +27,7 @@ const AboutOne = () => {
                   <img src="assets/img/icon/title_left.svg" alt="shape" />
                   Sobre Nós
                 </span>
-                <h2 className="sec-title">Achieve Your a of Business </h2>
+                <h2 className="sec-title">A modernização do mercado de pagamentos</h2>
                 <p className="sec-text mb-35">
                   Use receiving aco growin number of currencies and get paid
                   like design receiving aco grow

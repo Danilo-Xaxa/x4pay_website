@@ -5,10 +5,10 @@ import HeaderOne from "../components/HeaderOne";
 import HeroOne from "../components/HeroOne";
 import ServiceOne from "../components/ServiceOne";
 //import CTAOne from "../components/CTAOne";
-import AboutOne from "../components/AboutOne";
+//import AboutOne from "../components/AboutOne";
 import ProcessOne from "../components/ProcessOne";
-import PortfolioOne from "../components/PortfolioOne";
-import TestimonialOne from "../components/TestimonialOne";
+//import PortfolioOne from "../components/PortfolioOne";
+//import TestimonialOne from "../components/TestimonialOne";
 import MarqueeOne from "../components/MarqueeOne";
 import TeamOne from "../components/TeamOne";
 import FaqOne from "../components/FaqOne";
@@ -39,17 +39,8 @@ const HomeOne = () => {
       {/* ServiceOne */}
       <ServiceOne />
 
-      {/* AboutOne */}
-      <AboutOne />
-
       {/* ProcessOne */}
       <ProcessOne />
-
-      {/* PortfolioOne */}
-      <PortfolioOne />
-
-      {/* TestimonialOne */}
-      <div className="space-bottom"><TestimonialOne /></div>
 
       {/* MarqueeOne */}
       <MarqueeOne />

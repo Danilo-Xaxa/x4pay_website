@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "react-fast-marquee";
+//import Marquee from "react-fast-marquee";
 
 const ProcessOne = () => {
   return (
@@ -8,83 +8,20 @@ const ProcessOne = () => {
         className="process-area-1 bg-smoke space-bottom"
         style={{ backgroundImage: "url(assets/img/bg/shape_1.png)" }}
       >
-
         {/* Client Area   */}
-
-        <div className="client-bg-area-2 space-bottom">
-          <div className="client-area-2">
-            <div className=" global-carousel">
-              <Marquee speed={30}>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-1.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-2.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-3.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-4.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-1.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-2.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-3.png" alt="img" />
-
-                  </div>
-                </div>
-                <div>
-                  <div className="client-logo">
-
-                    <img src="assets/img/client/1-4.png" alt="img" />
-
-                  </div>
-                </div>
-              </Marquee>
-            </div>
-          </div>
-        </div>
         <div className="container">
+          <br />
+          <br />
+          <br />
           <div className="row justify-content-center">
             <div className="col-lg-6">
               <div className="title-area text-center">
                 <span className="sub-title">
                   <img src="assets/img/icon/title_left.svg" alt="shape" />
-                  Work Process
+                  Nosso processo
                 </span>
                 <h2 className="sec-title style2">
-                  Unleash Business's Hid Potential
+                  A modernização dos meios de pagamentos 
                 </h2>
               </div>
             </div>
@@ -100,7 +37,7 @@ const ProcessOne = () => {
                 </div>
                 <div className="process-card_content">
                   <span className="process-card-text">Technical Operation</span>
-                  <h4 className="process-card-title"> Growth Acceler</h4>
+                  <h4 className="process-card-title"> Contratos com os adquirentes</h4>
                 </div>
               </div>
             </div>
@@ -114,7 +51,7 @@ const ProcessOne = () => {
                 </div>
                 <div className="process-card_content">
                   <span className="process-card-text">Technical Operation</span>
-                  <h4 className="process-card-title"> Growth Acceler</h4>
+                  <h4 className="process-card-title"> Contratos com as bandeiras</h4>
                 </div>
               </div>
             </div>
@@ -128,7 +65,7 @@ const ProcessOne = () => {
                 </div>
                 <div className="process-card_content">
                   <span className="process-card-text">Technical Operation</span>
-                  <h4 className="process-card-title"> Growth Acceler</h4>
+                  <h4 className="process-card-title"> Contrato com a registradora</h4>
                 </div>
               </div>
             </div>
@@ -142,7 +79,7 @@ const ProcessOne = () => {
                 </div>
                 <div className="process-card_content">
                   <span className="process-card-text">Technical Operation</span>
-                  <h4 className="process-card-title"> Growth Acceler</h4>
+                  <h4 className="process-card-title"> Contratos com os softwares</h4>
                 </div>
               </div>
             </div>
@@ -156,10 +93,10 @@ const ProcessOne = () => {
               <div className="title-area">
                 <span className="sub-title">
                   <img src="assets/img/icon/title_left.svg" alt="shape" />
-                  Our Goal
+                  Nosso objetivo
                 </span>
                 <h2 className="sec-title style2">
-                  Partnering Business for Success
+                  Firmando parcerias sólidas
                 </h2>
               </div>
             </div>
@@ -186,7 +123,7 @@ const ProcessOne = () => {
                   data-bs-target="#nav-step1"
                   type="button"
                 >
-                  Biography
+                  Adquirentes
                 </button>
                 <button
                   className="nav-link"
@@ -195,7 +132,7 @@ const ProcessOne = () => {
                   data-bs-target="#nav-step2"
                   type="button"
                 >
-                  Education
+                  Bandeiras
                 </button>
                 <button
                   className="nav-link active"
@@ -204,7 +141,7 @@ const ProcessOne = () => {
                   data-bs-target="#nav-step3"
                   type="button"
                 >
-                  Experience
+                  Registradora
                 </button>
                 <button
                   className="nav-link"
@@ -213,7 +150,7 @@ const ProcessOne = () => {
                   data-bs-target="#nav-step1"
                   type="button"
                 >
-                  Biography
+                  Softwares
                 </button>
               </div>
               <div className="tab-content" id="nav-tabContent">

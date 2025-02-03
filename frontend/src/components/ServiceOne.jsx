@@ -10,7 +10,7 @@ const ServiceOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Referências do mercado
+                Referências do mercado financeiro
               </span>
               <h2 className="sec-title style2">
                 Nossos parceiros

@@ -14,7 +14,7 @@ const HeroOne = () => {
             <div className="hero-style1">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Referência em infraestrutura de pagamentos
+                Simples, rápido e seguro
               </span>
               <h1 className="hero-title">
                 Subadquirência sem complicação 
