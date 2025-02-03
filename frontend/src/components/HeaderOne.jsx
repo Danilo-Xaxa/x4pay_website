@@ -155,28 +155,11 @@ const HeaderOne = () => {
           <div className="mobile-menu">
             <ul id="offcanvas-navigation">
               <li className="menu-item-has-children submenu-item-has-children">
-                <Link to="#">Início</Link>
-                <ul className="sub-menu submenu-class">
-                  <li>
-                    <Link to="/">Início 01</Link>
-                  </li>
-                  <li>
-                    <Link to="/home-2">Início 02</Link>
-                  </li>
-                  <li>
-                    <Link to="/home-3">Início 03</Link>
-                  </li>
-                  <li>
-                    <Link to="/home-4">Início 04</Link>
-                  </li>
-                  <li>
-                    <Link to="/home-5">Início 05</Link>
-                  </li>
-                </ul>
+                <Link to="/">Início</Link> 
               </li>
 
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/sobre">About</Link>
               </li>
               <li className="menu-item-has-children">
                 <Link to="#">Pages</Link>
@@ -250,54 +233,20 @@ const HeaderOne = () => {
               <div className="col-auto ms-xl-auto">
                 <nav className="main-menu d-none d-lg-inline-block">
                   <ul>
-                    <li className="menu-item-has-children">
-                      <Link to="#">Início</Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link to="/">Início 01</Link>
-                        </li>
-                        <li>
-                          <Link to="/home-2">Início 02</Link>
-                        </li>
-                        <li>
-                          <Link to="/home-3">Início 03</Link>
-                        </li>
-                        <li>
-                          <Link to="/home-4">Início 04</Link>
-                        </li>
-                        <li>
-                          <Link to="/home-5">Início 05</Link>
-                        </li>
-                      </ul>
-                    </li>
-
                     <li>
-                      <Link to="/about">Sobre Nós</Link>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <Link to="#">Serviços</Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link to="/service">Service</Link>
-                        </li>
-                        <li>
-                          <Link to="/service-details">Service Details</Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <Link to="#">Clientes</Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link to="/project">Projects</Link>
-                        </li>
-                        <li>
-                          <Link to="/project-details">Projects Details</Link>
-                        </li>
-                      </ul>
+                      <Link to="/">Início</Link>
                     </li>
                     <li>
-                      <Link to="/contact">Contato</Link>
+                      <Link to="/sobre">Sobre Nós</Link>
+                    </li>
+                    <li>
+                      <Link to="/servicos">Serviços</Link>
+                    </li>
+                    <li>
+                      <Link to="/clientes">Clientes</Link>
+                    </li>
+                    <li>
+                      <Link to="/contato">Contato</Link>
                     </li>
                   </ul>
                 </nav>

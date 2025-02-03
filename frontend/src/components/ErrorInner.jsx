@@ -20,17 +20,16 @@ const ErrorInner = () => {
                             </div>
                             <div className="text-file">
                                 <h4 >
-                                    Page not found!</h4>
+                                    Página não encontrada</h4>
                                 <p >
-                                    Sorry, we can't find that page! The page you are looking for <br />
-                                    It never existed.
+                                    Desculpe, não encontramos esta página.
                                 </p>
                             </div>
                             <div
                                 className="d-adjust"
                             >
                                 <Link className="global-btn" to="/">
-                                    Go to the home page</Link>
+                                    Voltar ao Início</Link>
 
                             </div>
                         </div>
