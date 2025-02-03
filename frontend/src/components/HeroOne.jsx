@@ -20,13 +20,13 @@ const HeroOne = () => {
                 Subadquirência sem complicação 
               </h1>
               <p className="hero-text">
-                Facilitamos sua evolução no mercado de pagamentos com um processo simplificado e eficiente
+                Facilitamos sua evolução no mercado de pagamentos com um processo eficiente e seguro
               </p>
               <div className="btn-group">
                 <Link to="/sobre" className="global-btn">
                   Entre em contato <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
                 </Link>
-                <Link to="/service" className="global-btn style-border">
+                <Link to="/servicos" className="global-btn style-border">
                   Nossos Serviços
                 </Link>
               </div>
@@ -52,8 +52,8 @@ const HeroOne = () => {
                 <img src="assets/img/icon/1.svg" alt="img" />
               </div>
               <div className="hero-card_content">
-                <h4 className="box-title">Growth Acceler</h4>
-                <p className="hero-card_text">A business consultant</p>
+                <h4 className="box-title">Subadquirência</h4>
+                <p className="hero-card_text">Com nossos especialistas</p>
               </div>
             </div>
             <div className="hero-card">
@@ -61,8 +61,8 @@ const HeroOne = () => {
                 <img src="assets/img/icon/2.svg" alt="img" />
               </div>
               <div className="hero-card_content">
-                <h4 className="box-title">Growth Acceler</h4>
-                <p className="hero-card_text">Consultan professional</p>
+                <h4 className="box-title">Compliance</h4>
+                <p className="hero-card_text">Serviços completos</p>
               </div>
             </div>
           </div>

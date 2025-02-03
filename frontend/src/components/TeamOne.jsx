@@ -70,10 +70,10 @@ const TeamOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Our Team
+                Novas subaquirentes
               </span>
               <h2 className="sec-title">
-                Your Business with the Professional{" "}
+                Nossos clientes{" "}
               </h2>
             </div>
           </div>
@@ -93,13 +93,7 @@ const TeamOne = () => {
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
-                      <i className="fab fa-facebook-f" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
-                      <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
                       <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
@@ -109,9 +103,9 @@ const TeamOne = () => {
               </div>
               <div className="team-card_content">
                 <h4 className="team-card_title">
-                  <Link to="/team-details">Darrell Steward</Link>
+                  <Link to="#">Xulis</Link>
                 </h4>
-                <span className="team-card_desig">Human Resource</span>
+                <span className="team-card_desig">Espírito Santo</span>
               </div>
             </div>
           </div>
@@ -128,13 +122,7 @@ const TeamOne = () => {
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
-                      <i className="fab fa-facebook-f" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
-                      <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
                       <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
@@ -144,9 +132,9 @@ const TeamOne = () => {
               </div>
               <div className="team-card_content">
                 <h4 className="team-card_title">
-                  <Link to="/team-details">Fahad Hossain</Link>
+                  <Link to="#">AMI</Link>
                 </h4>
-                <span className="team-card_desig">Efficiency Experts</span>
+                <span className="team-card_desig">São Paulo (SP)</span>
               </div>
             </div>
           </div>
@@ -163,13 +151,7 @@ const TeamOne = () => {
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
-                      <i className="fab fa-facebook-f" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
-                      <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
                       <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
@@ -179,9 +161,9 @@ const TeamOne = () => {
               </div>
               <div className="team-card_content">
                 <h4 className="team-card_title">
-                  <Link to="/team-details">Javed Tanvir</Link>
+                  <Link to="#">ParceleCart</Link>
                 </h4>
-                <span className="team-card_desig">Strategic Solutions Pro</span>
+                <span className="team-card_desig">São Paulo (SP)</span>
               </div>
             </div>
           </div>
@@ -198,13 +180,7 @@ const TeamOne = () => {
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
-                      <i className="fab fa-facebook-f" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
-                      <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
                       <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
@@ -214,9 +190,9 @@ const TeamOne = () => {
               </div>
               <div className="team-card_content">
                 <h4 className="team-card_title">
-                  <Link to="/team-details">Nafiz Islam</Link>
+                  <Link to="#">SuperFin</Link>
                 </h4>
-                <span className="team-card_desig">Growth Catalyst</span>
+                <span className="team-card_desig">São Paulo (SP)</span>
               </div>
             </div>
           </div>
@@ -233,13 +209,7 @@ const TeamOne = () => {
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
-                      <i className="fab fa-facebook-f" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
-                    </Link>
-                    <Link to="#" tabIndex={0}>
-                      <i className="fab fa-twitter" />
                     </Link>
                     <Link to="#">
                       <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
@@ -249,9 +219,212 @@ const TeamOne = () => {
               </div>
               <div className="team-card_content">
                 <h4 className="team-card_title">
-                  <Link to="/team-details">Darrell Steward</Link>
+                  <Link to="#">SpotPass</Link>
                 </h4>
-                <span className="team-card_desig">Human Resource</span>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">DNA Pagamentos</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">HolyCash</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">NasaBank</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">OwenPay</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">Payt</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">CashTime Pay</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="#" tabIndex={0}>
+                      <i className="fab fa-linkedin-in" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">CartWave</Link>
+                </h4>
+                <span className="team-card_desig">São Paulo (SP)</span>
               </div>
             </div>
           </div>

@@ -152,9 +152,9 @@ const BlogOne = () => {
       <div className="container">
         <div className="footer-top-1 bg-theme">
           <div className="footer-top-content">
-            <h3 className="footer-top-title text-white">Newsletter</h3>
+            <h3 className="footer-top-title text-white">Contate-nos</h3>
             <p className="footer-top-text">
-              Lorem Ipsum is simply dummy text of the printing
+              Sua empresa está apenas a um clique de distância dessa evolução 
             </p>
           </div>
           <form className="newsletter-form">
@@ -162,11 +162,11 @@ const BlogOne = () => {
               <input
                 className="form-control"
                 type="email"
-                placeholder="Email Address"
+                placeholder="Seu e-mail"
                 required=""
               />
               <button type="submit" className="global-btn">
-                Subscribe
+                Enviar
                 <span className="icon">
                   <i className="fa-sharp fas fa-paper-plane ms-2" />
                 </span>

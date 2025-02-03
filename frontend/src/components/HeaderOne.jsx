@@ -76,56 +76,25 @@ const HeaderOne = () => {
                   <img src="assets/img/logo.svg" alt="Laun" />
                 </Link>
               </div>
+              <br />
               <p className="about-text">
-                We provide specialized winterization services to safeguard your
-                pool during the off-season, and when spring arrives, we handle
-                the thorough opening process.
+                Com a X4Pay, sua empresa tem o suporte especializado para crescer e operar com segurança no setor de pagamentos.
+                Nós oferecemos soluções completas para empresas que desejam atuar como subadquirentes.
               </p>
-              <div className="social-links">
-                <Link to="#">
-                  <i className="fab fa-linkedin-in" />
-                </Link>
-              </div>
             </div>
           </div>
           <div className="side-info mb-30">
             <div className="contact-list mb-20">
-              <h4>Office Address</h4>
-              <p>1212, Lav Vegas, The Veg Street, USA</p>
+              <h4>Telefone/WhatsApp</h4>
+              <p className="mb-0">(81) 98814-3087</p>
+              <p>(81) 98733-7747</p>
             </div>
             <div className="contact-list mb-20">
-              <h4>Phone Number</h4>
-              <p className="mb-0">+880 123 45 67 89</p>
-              <p>+880 765 86 43 85</p>
-            </div>
-            <div className="contact-list mb-20">
-              <h4>Email Address</h4>
-              <p className="mb-0">yourmail@gmail.com</p>
-              <p>example.mail@hum.com</p>
+              <h4>E-mail</h4>
+              <p className="mb-0">contato@x4payassessoria.com</p>
+              <p>xaxa@x4payassessoria.com</p>
             </div>
           </div>
-          <ul className="side-instagram list-wrap">
-            <li>
-              <Link to="#">
-                <img src="assets/img/gallery/1.jpg" alt="X4Pay Assessoria" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src="assets/img/gallery/2.jpg" alt="X4Pay Assessoria" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src="assets/img/gallery/3.jpg" alt="X4Pay Assessoria" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src="assets/img/gallery/4.jpg" alt="X4Pay Assessoria" />
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
       <div className={`popup-search-box ${search === true ? "show" : ""} `}>

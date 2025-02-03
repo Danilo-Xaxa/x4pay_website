@@ -10,10 +10,10 @@ const ServiceOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Latest service
+                Referências do mercado
               </span>
               <h2 className="sec-title style2">
-                Empowering Business The Excellence
+                Nossos parceiros
               </h2>
             </div>
           </div>
@@ -28,15 +28,12 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="/service-details">Efficiency Experts</Link>
+                  <Link to="#">Adiq</Link>
                 </h4>
                 <p className="service-card_text">
                   Many desktop publishing packages web page editors now use
                   Lorem Ipsum a default model text, and a search
                 </p>
-                <Link to="/service-details" className="link-btn">
-                  Read More <i className="fas fa-arrow-right" />
-                </Link>
               </div>
             </div>
           </div>
@@ -47,15 +44,12 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="/service-details">Management Mastery</Link>
+                  <Link to="#">Entrepay</Link>
                 </h4>
                 <p className="service-card_text">
                   Many desktop publishing packages web page editors now use
                   Lorem Ipsum a default model text, and a search
                 </p>
-                <Link to="/service-details" className="link-btn">
-                  Read More <i className="fas fa-arrow-right" />
-                </Link>
               </div>
             </div>
           </div>
@@ -66,15 +60,12 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="/service-details">Success Accelerators</Link>
+                  <Link to="#">GetNet</Link>
                 </h4>
                 <p className="service-card_text">
                   Many desktop publishing packages web page editors now use
                   Lorem Ipsum a default model text, and a search
                 </p>
-                <Link to="/service-details" className="link-btn">
-                  Read More <i className="fas fa-arrow-right" />
-                </Link>
               </div>
             </div>
           </div>
@@ -85,15 +76,171 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="/service-details">Growth and Innovation</Link>
+                  <Link to="#">MercadoPago</Link>
                 </h4>
                 <p className="service-card_text">
                   Many desktop publishing packages web page editors now use
                   Lorem Ipsum a default model text, and a search
                 </p>
-                <Link to="/service-details" className="link-btn">
-                  Read More <i className="fas fa-arrow-right" />
-                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">Cielo</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">Rede</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">PagSeguro</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">Amex</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">Visa</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">MasterCard</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">Elo</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">HiperCard</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">CERC</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors now use
+                  Lorem Ipsum a default model text, and a search
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="service-card">
+              <div className="service-card_img">
+                <img src="assets/img/service/service-1-4.jpg" alt="img" />
+              </div>
+              <div className="service-card_content">
+                <h4 className="service-card_title">
+                  <Link to="#">B3</Link>
+                </h4>
+                <p className="service-card_text">
+                  Many desktop publishing packages web page editors
+                </p>
               </div>
             </div>
           </div>
