@@ -83,7 +83,7 @@ const FooterOne = () => {
           <div className="row gy-3 justify-content-lg-between justify-content-center">
             <div className="col-auto align-self-center">
               <p className="copyright-text text-center">
-                Desenvolvido por <Link to="https://www.linkedin.com/in/danilo-xaxa/" target="_blank" rel="noopener noreferrer">Danilo Xaxá </Link> | 2025
+               © 2025 X4Pay Assessoria | Desenvolvido por <Link to="https://www.linkedin.com/in/danilo-xaxa/" target="_blank" rel="noopener noreferrer">Danilo Xaxá </Link>
               </p>
             </div>
           </div>
