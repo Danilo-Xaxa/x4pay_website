@@ -22,13 +22,13 @@ const Service = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Serviços"} />
+      <HelmetReact title={"Nossos Serviços"} />
 
       {/* HeaderFive */}
       <HeaderOne />
 
       {/* Breadcrumb */}
-      <Breadcrumb title="Serviços" />
+      <Breadcrumb title="Nossos Serviços" />
 
       {/* ServiceOne */}
       <ServiceView />

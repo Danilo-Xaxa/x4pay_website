@@ -39,9 +39,6 @@ const FooterOne = () => {
                       <Link to="/servicos">Nossos Serviços</Link>
                     </li>
                     <li>
-                      <Link to="/clientes">Nossos Clientes</Link>
-                    </li>
-                    <li>
                       <Link to="/contato">Entre em contato</Link>
                     </li>
                   </ul>

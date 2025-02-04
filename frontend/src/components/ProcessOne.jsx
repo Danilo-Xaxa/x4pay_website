@@ -81,7 +81,7 @@ const ProcessOne = () => {
                 </div>
                 <div className="process-card_content">
                   <span className="process-card-text">Captura, liquidação, etc</span>
-                  <h4 className="process-card-title"> Contratos com os softwares</h4>
+                  <h4 className="process-card-title"> Contratação dos softwares</h4>
                 </div>
               </div>
             </div>

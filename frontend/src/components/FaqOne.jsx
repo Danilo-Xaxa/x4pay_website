@@ -41,7 +41,7 @@ const FaqOne = () => {
                       •	Solicitamos e conferimos toda a documentação requerida pelos adquirentes, bandeiras e registradoras; <br />
                       •	Formulamos o Forecast estimando os três primeiros anos da operação; <br />
                       •	Auxiliamos na negociação das condições comerciais que os adquirentes ofertam; <br />
-                      •	Providenciamos o Arranjo de Pagamentos com as bandeiras, Visa, MasterCard, American Express (AMEX), Elo e HiperCard; <br />
+                      •	Providenciamos o Arranjo de Pagamentos com as bandeiras Visa, MasterCard, American Express (AMEX), Elo e HiperCard; <br />
                       •	Agilizamos o contrato com as Registradoras (B3, CERC ou CIP); <br />
                       •	Auxiliamos na certificação PCI-DDS; <br />
                       •	Elaboramos todas as políticas de Compliance exigidas pelos adquirentes e bandeiras; <br />
@@ -72,7 +72,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      O tempo médio para a construção de uma subadquirente varia de 7 a 9 meses. O prazo pode variar porque também dependemos dos prazos internos dos adquirentes, bandeiras e registradoras. O que depende de nós é sempre cumprido com o máximo de agilidade e praticidade.
+                      O prazo médio para a construção de uma subadquirente varia de 7 a 9 meses. O tempo pode variar porque também dependemos dos prazos internos dos adquirentes, bandeiras e registradoras. O que depende de nós é sempre cumprido com o máximo de agilidade e praticidade.
                     </p>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      Nossas propostas são personalizadas, variando de acordo com as necessidades de cada cliente. Mas não se preocupe, nosso preço é justo e a nossa Proposta Comercial estará no seu e-mail em menos de 1 hora após o término da entrevista preliminar.
+                      Nossas propostas são personalizadas, variando de acordo com as necessidades de cada cliente. Mas não se preocupe, o nosso preço é justo e a nossa Proposta Comercial estará no seu e-mail em menos de 1 hora após o término da entrevista preliminar.
                     </p>
                   </div>
                 </div>
@@ -108,7 +108,8 @@ const FaqOne = () => {
           <div className="col-xl-6">
             <div className="ms-xl-5">
               <p className="counter-text">
-                A X4PAY é especializada na construção de ecossistema de subadquirência. Nós construímos sua subadquirente e sem te dar trabalho. Nós que fazemos tudo - desde à adequação dos CNAEs do seu CNPJ, até a entrega da operação já pronta para transacionar. Faça contato conosco e se surpreenda com a nossa metodologia!
+                A X4PAY é especializada na construção de ecossistemas de subadquirência. Nós construímos sua subadquirente sem te dar trabalho. Nós que fazemos tudo - desde a adequação dos CNAEs do seu CNPJ, até a entrega da operação pronta para transacionar. <br />
+                Faça contato conosco e se surpreenda com a nossa metodologia!
               </p>
               <div className="counter-box_wrapper">
                 <div className="counter-box">

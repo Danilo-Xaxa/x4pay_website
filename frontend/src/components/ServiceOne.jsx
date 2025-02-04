@@ -46,7 +46,7 @@ const ServiceOne = () => {
                   <Link to="#">EntrePay</Link>
                 </h4>
                 <p className="service-card_text">
-                  Plataforma inovadora para pagamentos digitais, conectando empresas a um ecossistema eficiente e de alta performance.
+                  Plataforma inovadora para pagamentos digitais, conectando empresas a um ecossistema de alta performance.
                 </p>
               </div>
             </div>
