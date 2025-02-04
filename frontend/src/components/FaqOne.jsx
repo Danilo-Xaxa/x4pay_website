@@ -37,7 +37,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      A metodologia da X4Pay...
+                      Resposta 1... (falar sobre a metodologia da X4Pay)
                     </p>
                   </div>
                 </div>
@@ -63,10 +63,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. Many desktop publis packages and web page
-                      editors now use Lorem Ipsum
+                      Resposta 2...
                     </p>
                   </div>
                 </div>
@@ -92,10 +89,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. Many desktop publis packages and web page
-                      editors now use Lorem Ipsum
+                      Resposta 3...
                     </p>
                   </div>
                 </div>
@@ -130,7 +124,7 @@ const FaqOne = () => {
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">Subadquirentes construídas por nós</p>
+                    <p className="counter-box_text">Projetos de subadquirentes construídos</p>
                   </div>
                 </div>
                 <div className="counter-box">
@@ -147,14 +141,13 @@ const FaqOne = () => {
                           isVisible && (
                             <span className="counter-number">
                               +
-                              <CountUp delay={0} start={0} end={500} />
-                              milhões
+                              <CountUp delay={0} start={0} end={500000000} formattingFn={(value) => value.toLocaleString("pt-BR")} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">De volume mensal transacionado por nossos clientes</p>
+                    <p className="counter-box_text">Volume mensal transacionado por nossos clientes</p>
                   </div>
                 </div>
               </div>
