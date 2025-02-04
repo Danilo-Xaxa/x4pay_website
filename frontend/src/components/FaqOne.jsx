@@ -26,7 +26,7 @@ const FaqOne = () => {
                     aria-expanded="true"
                     aria-controls="collapse-1"
                   >
-                    What services do you offer?
+                    Quais serviços a X4Pay oferece?
                   </button>
                 </div>
                 <div
@@ -37,10 +37,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      We offer a wide range of digital services, including
-                      website design and development, e-commerce solutions,
-                      search engine optimization, social media management,
-                      pay-per-click advertising, brand identity
+                      A metodologia da X4Pay...
                     </p>
                   </div>
                 </div>
@@ -55,7 +52,7 @@ const FaqOne = () => {
                     aria-expanded="false"
                     aria-controls="collapse-2"
                   >
-                    How long does it take for you to complete a project?
+                    Quanto tempo leva um projeto de subadquirência?
                   </button>
                 </div>
                 <div
@@ -84,7 +81,7 @@ const FaqOne = () => {
                     aria-expanded="false"
                     aria-controls="collapse-3"
                   >
-                    How much does it cost to work with your agency?
+                    Quanto custa um projeto de subadquirência?
                   </button>
                 </div>
                 <div
@@ -127,13 +124,13 @@ const FaqOne = () => {
                           isVisible && (
                             <span className="counter-number">
                               +
-                              <CountUp delay={0} start={0} end={1000000} />
+                              <CountUp delay={0} start={0} end={15} />
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">???</p>
+                    <p className="counter-box_text">Subadquirentes construídas por nós</p>
                   </div>
                 </div>
                 <div className="counter-box">
@@ -150,59 +147,14 @@ const FaqOne = () => {
                           isVisible && (
                             <span className="counter-number">
                               +
-                              <CountUp delay={0} start={0} end={1000} />
-                            </span>
-                          )
-                        }
-                      </TrackVisibility>
-                    </h2>
-                    <p className="counter-box_text">???</p>
-                  </div>
-                </div>
-                <div className="counter-box">
-                  <div className="counter-box_icon">
-                    <img
-                      src="assets/img/icon/counter-icon_1-3.svg"
-                      alt="icon"
-                    />
-                  </div>
-                  <div className="media-body">
-                    <h2 className="counter-box_number">
-                      <TrackVisibility once>
-                        {({ isVisible }) =>
-                          isVisible && (
-                            <span className="counter-number">
-                              +
-                              <CountUp delay={0} start={0} end={20000} />
-                            </span>
-                          )
-                        }
-                      </TrackVisibility>
-                    </h2>
-                    <p className="counter-box_text">???</p>
-                  </div>
-                </div>
-                <div className="counter-box">
-                  <div className="counter-box_icon">
-                    <img
-                      src="assets/img/icon/counter-icon_1-4.svg"
-                      alt="icon"
-                    />
-                  </div>
-                  <div className="media-body">
-                    <h2 className="counter-box_number">
-                      <TrackVisibility once>
-                        {({ isVisible }) =>
-                          isVisible && (
-                            <span className="counter-number">
-                              +
                               <CountUp delay={0} start={0} end={500} />
+                              milhões
                             </span>
                           )
                         }
                       </TrackVisibility>
                     </h2>
-                    <p className="counter-box_text">???</p>
+                    <p className="counter-box_text">De volume mensal transacionado por nossos clientes</p>
                   </div>
                 </div>
               </div>

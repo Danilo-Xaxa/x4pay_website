@@ -133,7 +133,7 @@ const ServiceOne = () => {
               </div>
               <div className="service-card_content">
                 <h4 className="service-card_title">
-                  <Link to="#">PagSeguro</Link>
+                  <Link to="#">PagBank (PagSeguro)</Link>
                 </h4>
                 <p className="service-card_text">
                   Soluções completas para pagamentos físicos e digitais, permitindo vendas seguras e acessíveis para todos.

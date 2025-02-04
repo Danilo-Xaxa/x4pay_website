@@ -23,7 +23,7 @@ const HeroOne = () => {
                 Facilitamos sua evolução no mercado de pagamentos com um processo eficiente e seguro
               </p>
               <div className="btn-group">
-                <Link to="/sobre" className="global-btn">
+                <Link to="/contato" className="global-btn">
                   Entre em contato <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
                 </Link>
                 <Link to="/servicos" className="global-btn style-border">
