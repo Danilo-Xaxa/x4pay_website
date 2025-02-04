@@ -72,7 +72,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      Resposta 2...
+                      O tempo médio para a construção de uma subadquirente varia de 7 a 9 meses. O prazo pode variar porque também dependemos dos prazos internos dos adquirentes, bandeiras e registradoras. O que depende de nós é sempre cumprido com o máximo de agilidade e praticidade.
                     </p>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      Resposta 3...
+                      Nossas propostas são personalizadas, variando de acordo com as necessidades de cada cliente. Mas não se preocupe, nosso preço é justo e a nossa Proposta Comercial estará no seu e-mail em menos de 1 hora após o término da entrevista preliminar.
                     </p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const FaqOne = () => {
           <div className="col-xl-6">
             <div className="ms-xl-5">
               <p className="counter-text">
-                A X4PAY é especializada na construção de ecossistema de subadquirência. Nós construímos sua subadquirente e sem te dar trabalho. Nós que fazemos tudo - desde à adequação dos CNAEs do seu CNPJ, até a entrega da operação já pronta para transacionar. Faça contato conosco e se surpreenda com nossa metodologia!
+                A X4PAY é especializada na construção de ecossistema de subadquirência. Nós construímos sua subadquirente e sem te dar trabalho. Nós que fazemos tudo - desde à adequação dos CNAEs do seu CNPJ, até a entrega da operação já pronta para transacionar. Faça contato conosco e se surpreenda com a nossa metodologia!
               </p>
               <div className="counter-box_wrapper">
                 <div className="counter-box">
