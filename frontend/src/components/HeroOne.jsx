@@ -20,7 +20,7 @@ const HeroOne = () => {
                 Subadquirência sem complicação 
               </h1>
               <p className="hero-text">
-                Facilitamos sua evolução no mercado de pagamentos com um processo eficiente e seguro
+                Facilitamos sua evolução no mercado de pagamentos com um processo eficiente e ágil
               </p>
               <div className="btn-group">
                 <Link to="/contato" className="global-btn">

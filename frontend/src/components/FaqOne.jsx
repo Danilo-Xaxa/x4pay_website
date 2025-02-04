@@ -16,14 +16,14 @@ const FaqOne = () => {
               <h2 className="sec-title style2">Perguntas Frequentes (FAQ)</h2>
             </div>
             <div className="accordion-area accordion" id="faqAccordion">
-              <div className="accordion-card active">
+              <div className="accordion-card ">
                 <div className="accordion-header" id="collapse-item-1">
                   <button
-                    className="accordion-button "
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapse-1"
-                    aria-expanded="true"
+                    aria-expanded="false"
                     aria-controls="collapse-1"
                   >
                     Quais serviços a X4PAY oferece?
@@ -31,7 +31,7 @@ const FaqOne = () => {
                 </div>
                 <div
                   id="collapse-1"
-                  className="accordion-collapse collapse show"
+                  className="accordion-collapse collapse "
                   aria-labelledby="collapse-item-1"
                   data-bs-parent="#faqAccordion"
                 >

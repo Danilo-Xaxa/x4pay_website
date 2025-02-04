@@ -18,7 +18,7 @@ const FooterOne = () => {
                   </Link>
                 </div>
                 <p className="footer-text mb-30">
-                  X4PAY Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, eficiente e seguro.
+                  X4PAY Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, rápido e seguro.
                 </p>
                 <div className="social-btn style3">
                   <Link to="#" tabIndex={-1}>
