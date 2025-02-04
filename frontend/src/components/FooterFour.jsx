@@ -15,7 +15,7 @@ const FooterFour = () => {
                                 <div className="widget footer-widget widget-about">
                                     <div className="about-logo">
                                         <Link to="/">
-                                            <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
+                                            <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
                                         </Link>
                                     </div>
                                     <p className="footer-text mb-30 mt-30">

@@ -116,22 +116,22 @@ const HeaderFour = () => {
           <ul className="side-instagram list-wrap">
             <li>
               <Link to="#">
-                <img src="assets/img/gallery/1.jpg" alt="X4Pay Assessoria" />
+                <img src="assets/img/gallery/1.jpg" alt="X4PAY Assessoria" />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="assets/img/gallery/2.jpg" alt="X4Pay Assessoria" />
+                <img src="assets/img/gallery/2.jpg" alt="X4PAY Assessoria" />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="assets/img/gallery/3.jpg" alt="X4Pay Assessoria" />
+                <img src="assets/img/gallery/3.jpg" alt="X4PAY Assessoria" />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="assets/img/gallery/4.jpg" alt="X4Pay Assessoria" />
+                <img src="assets/img/gallery/4.jpg" alt="X4PAY Assessoria" />
               </Link>
             </li>
           </ul>
@@ -155,7 +155,7 @@ const HeaderFour = () => {
         <div className="mobile-menu-area">
           <div className="mobile-logo">
             <Link to="/">
-              <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
+              <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
             </Link>
             <button className="menu-toggle" onClick={mobileMenu}>
               <i className="fa fa-times" />
@@ -401,7 +401,7 @@ const HeaderFour = () => {
                       onClick={() => sidebarControl(true)}
                       className="simple-icon sideMenuToggler d-none d-lg-block"
                     >
-                      <img src="assets/img/icon/bars.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/bars.svg" alt="X4PAY Assessoria" />
                     </button>
                   </div>
                 </div>

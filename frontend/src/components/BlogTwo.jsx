@@ -57,12 +57,12 @@ const BlogTwo = () => {
             <div className="p-3">
               <div className="blog-box">
                 <div className="blog-img">
-                  <img src="assets/img/blog/blog_s3_1.png" alt="X4Pay Assessoria" />
+                  <img src="assets/img/blog/blog_s3_1.png" alt="X4PAY Assessoria" />
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">
                     <Link to="/blog">
-                      <img src="assets/img/icon/calender.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/calender.svg" alt="X4PAY Assessoria" />
                       april 10, 2024
                     </Link>
                     <Link to="/blog">
@@ -84,7 +84,7 @@ const BlogTwo = () => {
                     to="/blog-details"
                   >
                     Read More{" "}
-                    <img src="assets/img/icon/right-icon2.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/right-icon2.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
               </div>
@@ -92,12 +92,12 @@ const BlogTwo = () => {
             <div className="p-3">
               <div className="blog-box">
                 <div className="blog-img">
-                  <img src="assets/img/blog/blog_s3_2.png" alt="X4Pay Assessoria" />
+                  <img src="assets/img/blog/blog_s3_2.png" alt="X4PAY Assessoria" />
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">
                     <Link to="/blog">
-                      <img src="assets/img/icon/calender.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/calender.svg" alt="X4PAY Assessoria" />
                       april 10, 2024
                     </Link>
                     <Link to="/blog">
@@ -119,7 +119,7 @@ const BlogTwo = () => {
                     to="/blog-details"
                   >
                     Read More{" "}
-                    <img src="assets/img/icon/right-icon2.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/right-icon2.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
               </div>
@@ -127,12 +127,12 @@ const BlogTwo = () => {
             <div className="p-3">
               <div className="blog-box">
                 <div className="blog-img">
-                  <img src="assets/img/blog/blog_s3_3.png" alt="X4Pay Assessoria" />
+                  <img src="assets/img/blog/blog_s3_3.png" alt="X4PAY Assessoria" />
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">
                     <Link to="/blog">
-                      <img src="assets/img/icon/calender.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/calender.svg" alt="X4PAY Assessoria" />
                       april 10, 2024
                     </Link>
                     <Link to="/blog">
@@ -154,7 +154,7 @@ const BlogTwo = () => {
                     to="/blog-details"
                   >
                     Read More{" "}
-                    <img src="assets/img/icon/right-icon2.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/right-icon2.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
               </div>
@@ -162,12 +162,12 @@ const BlogTwo = () => {
             <div className="p-3">
               <div className="blog-box">
                 <div className="blog-img">
-                  <img src="assets/img/blog/blog_s3_1.png" alt="X4Pay Assessoria" />
+                  <img src="assets/img/blog/blog_s3_1.png" alt="X4PAY Assessoria" />
                 </div>
                 <div className="blog-content">
                   <div className="blog-meta">
                     <Link to="/blog">
-                      <img src="assets/img/icon/calender.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/calender.svg" alt="X4PAY Assessoria" />
                       april 10, 2024
                     </Link>
                     <Link to="/blog">
@@ -189,7 +189,7 @@ const BlogTwo = () => {
                     to="/blog-details"
                   >
                     Read More{" "}
-                    <img src="assets/img/icon/right-icon2.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/right-icon2.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
               </div>

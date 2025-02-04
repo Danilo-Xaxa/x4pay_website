@@ -55,7 +55,7 @@ const HeaderTwo = () => {
         <div className="mobile-menu-area">
           <div className="mobile-logo">
             <Link to="/">
-              <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
+              <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
             </Link>
             <button className="menu-toggle" onClick={mobileMenu}>
               <i className="fa fa-times" />
@@ -253,7 +253,7 @@ const HeaderTwo = () => {
                   <div className="header-button">
                     <Link to="/contact" className="global-btn">
                       Get A Quote
-                      <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>

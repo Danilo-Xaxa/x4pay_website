@@ -78,7 +78,7 @@ const HeaderOne = () => {
               </div>
               <br />
               <p className="about-text">
-                Com a X4Pay Assessoria, sua empresa tem o suporte especializado para crescer e operar com segurança no setor de pagamentos.
+                Com a X4PAY Assessoria, sua empresa tem o suporte especializado para crescer e operar com segurança no setor de pagamentos.
                 Nós oferecemos soluções completas para empresas que desejam atuar como subadquirentes.
               </p>
             </div>
@@ -115,7 +115,7 @@ const HeaderOne = () => {
         <div className="mobile-menu-area">
           <div className="mobile-logo">
             <Link to="/">
-              <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
+              <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
             </Link>
             <button className="menu-toggle" onClick={mobileMenu}>
               <i className="fa fa-times" />
@@ -237,7 +237,7 @@ const HeaderOne = () => {
 
                       className="simple-icon sideMenuToggler d-none d-lg-block"
                     >
-                      <img src="assets/img/icon/bars.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/bars.svg" alt="X4PAY Assessoria" />
                     </button>
                   </div>
                   <div className="social-links">

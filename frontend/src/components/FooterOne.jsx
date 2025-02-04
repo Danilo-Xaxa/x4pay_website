@@ -14,11 +14,11 @@ const FooterOne = () => {
               <div className="widget footer-widget widget-about">
                 <div className="about-logo">
                   <Link to="/">
-                    <img src="assets/img/logo.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
                 <p className="footer-text mb-30">
-                  X4Pay Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, eficiente e seguro.
+                  X4PAY Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, eficiente e seguro.
                 </p>
                 <div className="social-btn style3">
                   <Link to="#" tabIndex={-1}>

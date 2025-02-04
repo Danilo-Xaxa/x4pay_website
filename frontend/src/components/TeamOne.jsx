@@ -89,14 +89,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -118,14 +118,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -147,14 +147,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -176,14 +176,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -205,14 +205,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -234,14 +234,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -263,14 +263,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -292,14 +292,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -321,14 +321,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -350,14 +350,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -379,14 +379,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -408,14 +408,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/share.svg" alt="X4Pay Assessoria" />
+                    <img src="assets/img/icon/share.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" tabIndex={0}>
                       <i className="fab fa-linkedin-in" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/share2.svg" alt="X4Pay Assessoria" />
+                      <img src="assets/img/icon/share2.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>

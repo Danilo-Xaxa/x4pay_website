@@ -26,7 +26,7 @@ const FaqOne = () => {
                     aria-expanded="true"
                     aria-controls="collapse-1"
                   >
-                    Quais serviços a X4Pay oferece?
+                    Quais serviços a X4PAY oferece?
                   </button>
                 </div>
                 <div

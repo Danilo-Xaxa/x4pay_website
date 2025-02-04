@@ -24,7 +24,7 @@ const HeroOne = () => {
               </p>
               <div className="btn-group">
                 <Link to="/contato" className="global-btn">
-                  Entre em contato <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
+                  Entre em contato <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
                 </Link>
                 <Link to="/servicos" className="global-btn style-border">
                   Nossos Serviços

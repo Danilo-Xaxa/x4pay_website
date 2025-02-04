@@ -4,11 +4,11 @@ const HelmetReact = ({ title }) => {
   return (
     <Helmet>
       <title>
-        {title} | X4Pay Assessoria
+        {title} | X4PAY Assessoria
       </title>
       <meta
         name="description"
-        content="X4Pay Assessoria"
+        content="X4PAY Assessoria"
       />
     </Helmet>
   );

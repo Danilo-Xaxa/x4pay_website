@@ -60,7 +60,7 @@ const EventOne = () => {
                 <img src="assets/img/normal/event-thumb-1-1.png" alt="img" />
               </div>
               <div className="event-shape">
-                <img src="assets/img/normal/event-shape.png" alt="X4Pay Assessoria" />
+                <img src="assets/img/normal/event-shape.png" alt="X4PAY Assessoria" />
               </div>
             </div>
           </div>

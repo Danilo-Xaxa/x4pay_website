@@ -32,7 +32,7 @@ const HeroTwo = () => {
             <div className="btn-group">
               <Link to="/about" className="global-btn">
                 Explore More
-                <img src="assets/img/icon/right-icon.svg" alt="X4Pay Assessoria" />
+                <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
               </Link>
               <div className="media-wrap">
                 <div className="icon">

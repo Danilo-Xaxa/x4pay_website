@@ -82,7 +82,7 @@ const TestimonialTwo = () => {
             <div className="feature-wrapper">
               <div className="feature-icon">
                 <Link to="#">
-                  <img src="assets/img/icon/call.svg" alt="X4Pay Assessoria" />
+                  <img src="assets/img/icon/call.svg" alt="X4PAY Assessoria" />
                 </Link>
               </div>
               <div className="media-body">
