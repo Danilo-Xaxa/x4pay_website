@@ -22,13 +22,13 @@ const Contact = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Contact"} />
+      <HelmetReact title={"Contato"} />
 
       {/* HeaderFive */}
       <HeaderOne />
 
       {/* Breadcrumb */}
-      <Breadcrumb title="Contact" />
+      <Breadcrumb title="Contato" />
 
       {/* ContactInner */}
       <ContactInner />

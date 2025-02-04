@@ -37,7 +37,7 @@ const GoalArea = () => {
                                 data-bs-target="#nav-step1"
                                 type="button"
                             >
-                                Biography
+                                Adquirentes
                             </button>
                             <button
                                 className="nav-link"
@@ -46,7 +46,7 @@ const GoalArea = () => {
                                 data-bs-target="#nav-step2"
                                 type="button"
                             >
-                                Education
+                                Bandeiras
                             </button>
                             <button
                                 className="nav-link active"
@@ -55,7 +55,7 @@ const GoalArea = () => {
                                 data-bs-target="#nav-step3"
                                 type="button"
                             >
-                                Experience
+                                Registradoras
                             </button>
                             <button
                                 className="nav-link"
@@ -64,7 +64,7 @@ const GoalArea = () => {
                                 data-bs-target="#nav-step1"
                                 type="button"
                             >
-                                Biography
+                                Softwares
                             </button>
                         </div>
                         <div className="tab-content" id="nav-tabContent">

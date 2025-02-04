@@ -37,7 +37,16 @@ const FaqOne = () => {
                 >
                   <div className="accordion-body">
                     <p className="faq-text">
-                      Resposta 1... (falar sobre a metodologia da X4Pay)
+                      Dentre várias de nossas tratativas, destacamos algumas: <br />
+                      •	Solicitamos e conferimos toda a documentação requerida pelos adquirentes, bandeiras e registradoras; <br />
+                      •	Formulamos o Forecast estimando os três primeiros anos da operação; <br />
+                      •	Auxiliamos na negociação das condições comerciais que os adquirentes ofertam; <br />
+                      •	Providenciamos o Arranjo de Pagamentos com as bandeiras, Visa, MasterCard, American Express (AMEX), Elo e HiperCard; <br />
+                      •	Agilizamos o contrato com as Registradoras (B3, CERC ou CIP); <br />
+                      •	Auxiliamos na certificação PCI-DDS; <br />
+                      •	Elaboramos todas as políticas de Compliance exigidas pelos adquirentes e bandeiras; <br />
+                      •	Definimos todos os fluxos da operação; <br />
+                      •	Prestamos assessoria na negociação com os softwares de captura e processamento e liquidação. <br />
                     </p>
                   </div>
                 </div>
@@ -99,9 +108,7 @@ const FaqOne = () => {
           <div className="col-xl-6">
             <div className="ms-xl-5">
               <p className="counter-text">
-                Dictum ultrices porttitor amet nec sollicitudin mi molestie
-                adipiscing netus. Lorem at ac ut morbi ullamcorper molestie
-                lacus loren ipsum dummy text provide happy
+                A X4PAY é especializada na construção de ecossistema de subadquirência. Nós construímos sua subadquirente e sem te dar trabalho. Nós que fazemos tudo - desde à adequação dos CNAEs do seu CNPJ, até a entrega da operação já pronta para transacionar. Faça contato conosco e se surpreenda com nossa metodologia!
               </p>
               <div className="counter-box_wrapper">
                 <div className="counter-box">

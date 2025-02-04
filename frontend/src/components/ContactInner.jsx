@@ -4,63 +4,11 @@ import { Link } from 'react-router-dom'
 const ContactInner = () => {
     return (
         <>
-            <div className="map-sec">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2s!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd"
-                    allowFullScreen=""
-                    loading="lazy"
-                    title='Bizmaster'
-                />
-            </div>
-            <div className="contact-area space">
-                <div className="container">
-                    <div className="contact-page-wrap bg-theme">
-                        <div className="row gy-40 align-items-center">
-                            <div className="col-lg-4 col-md-6">
-                                <div className="contact-info">
-                                    <div className="contact-info_icon">
-                                        <i className="fas fa-phone-alt" />
-                                    </div>
-                                    <div className="contact-info_details">
-                                        <h6 className="contact-info_title">Phone</h6>
-                                        <p className="contact-info_text">
-                                            <span >(629) 555-0129</span> <br />
-                                            <span >01254693326</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="contact-info">
-                                    <div className="contact-info_icon">
-                                        <i className="fas fa-map-marker-alt" />
-                                    </div>
-                                    <div className="contact-info_details">
-                                        <h6 className="contact-info_title">Location</h6>
-                                        <p className="contact-info_text">
-                                            4517 Washington Av Kentucky <br /> 39495
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="contact-info">
-                                    <div className="contact-info_icon">
-                                        <i className="fas fa-envelope" />
-                                    </div>
-                                    <div className="contact-info_details">
-                                        <h6 className="contact-info_title">Email</h6>
-                                        <p className="contact-info_text">
-                                            <span>demo@gmail.com</span> <br />
-                                            <span>admin@yahoo.com</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
             <div className="space-bottom">
                 <div className="container">
                     <div className="row gy-40 justify-content-between">
@@ -77,16 +25,7 @@ const ContactInner = () => {
                                 </p>
                                 <div className="social-btn style4">
                                     <Link to="#" tabIndex={-1}>
-                                        <i className="fab fa-facebook-f" />
-                                    </Link>
-                                    <Link to="#" tabIndex={-1}>
                                         <i className="fab fa-linkedin-in" />
-                                    </Link>
-                                    <Link to="#" tabIndex={-1}>
-                                        <i className="fab fa-twitter" />
-                                    </Link>
-                                    <Link to="#" tabIndex={-1}>
-                                        <i className="fab fa-instagram" />
                                     </Link>
                                 </div>
                             </div>

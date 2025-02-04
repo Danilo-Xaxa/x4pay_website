@@ -22,13 +22,13 @@ const Project = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Project"} />
+      <HelmetReact title={"Clientes"} />
 
       {/* HeaderFive */}
       <HeaderOne />
 
       {/* Breadcrumb */}
-      <Breadcrumb title="Project" />
+      <Breadcrumb title="Clientes" />
 
       {/* PortfolioAll */}
       <PortfolioAll />

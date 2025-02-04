@@ -83,7 +83,7 @@ const FooterOne = () => {
           <div className="row gy-3 justify-content-lg-between justify-content-center">
             <div className="col-auto align-self-center">
               <p className="copyright-text text-center">
-               © 2025 X4Pay Assessoria | Todos os direitos reservados - X4PAY Assessoria LTDA - CNPJ: 59.088.251/0001-12
+               © 2025 X4PAY Assessoria LTDA | CNPJ: 59.088.251/0001-12 | Todos os direitos reservados
               </p>
             </div>
           </div>
