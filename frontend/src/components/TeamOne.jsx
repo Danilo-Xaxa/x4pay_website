@@ -89,14 +89,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://xulis.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">Xulis</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Vitória (ES)</span>
               </div>
             </div>
           </div>
@@ -118,14 +118,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">AMI</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Goiânia (GO)</span>
               </div>
             </div>
           </div>
@@ -147,14 +147,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.parcelecart.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -176,14 +176,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.superfin.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">SuperFin</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Marília (SP)</span>
               </div>
             </div>
           </div>
@@ -205,14 +205,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.spotpass.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">SpotPass</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Belo Horizonte (MG)</span>
               </div>
             </div>
           </div>
@@ -234,14 +234,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://dnapagamentos.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -250,7 +250,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">DNA Pagamentos</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Americana (SP)</span>
               </div>
             </div>
           </div>
@@ -263,14 +263,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="#" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">HolyCash</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Recife (PE)</span>
               </div>
             </div>
           </div>
@@ -292,14 +292,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://nasabank.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">NasaBank</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Cuiabá (MT)</span>
               </div>
             </div>
           </div>
@@ -321,14 +321,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.owempay.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -337,7 +337,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">OwenPay</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Barueri (SP)</span>
               </div>
             </div>
           </div>
@@ -350,14 +350,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.payt.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -379,14 +379,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.cashtimepay.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -395,7 +395,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">CashTime Pay</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Cuiabá (MT)</span>
               </div>
             </div>
           </div>
@@ -408,14 +408,14 @@ const TeamOne = () => {
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
-                    <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
                     <Link to="https://www.checkoutcartwave.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -424,7 +424,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">CartWave</Link>
                 </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
+                <span className="team-card_desig">Cuiabá (MT)</span>
               </div>
             </div>
           </div>
