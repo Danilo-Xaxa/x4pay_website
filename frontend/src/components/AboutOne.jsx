@@ -65,11 +65,6 @@ const AboutOne = () => {
                   </div>
                 </div>
               </div>
-              <div className="btn-wrap mt-20">
-                <Link to="/sobre" className="global-btn mt-xl-0 mt-20">
-                  Read More <i className="fas fa-arrow-right ms-2" />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
