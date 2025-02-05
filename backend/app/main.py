@@ -3,6 +3,7 @@ import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, StringConstraints, Field
 from email.message import EmailMessage
 from aiosmtplib import send
@@ -19,7 +20,7 @@ SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
 if not SMTP_USER or not SMTP_PASSWORD:
-    raise RuntimeError("As variáveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
+    raise RuntimeError("As variaveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
 
 # Configuração de logs
 logging.basicConfig(
@@ -47,7 +48,7 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulário de contato
 class ContactForm(BaseModel):
-    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuário")
+    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuario")
     email: EmailStr
     phone: Optional[PhoneStr] = None
     message: Optional[str] = Field(None, max_length=1000, description="Mensagem opcional")
@@ -62,9 +63,9 @@ async def log_requests(request: Request, call_next):
 
 @app.get("/")
 def read_root():
-    """Verifica se a API está funcionando."""
+    """Verifica se a API esta funcionando."""
     logger.info("GET / - API acessada com sucesso")
-    return {"message": "Bem-vindo à API do website da X4Pay"}
+    return JSONResponse(content={"message": "Bem-vindo à API do website da X4Pay"}, media_type="application/json; charset=utf-8")
 
 @app.post("/contact")
 async def contact(form: ContactForm):
