@@ -16,12 +16,11 @@ const ContactInner = () => {
                             <div className="title-area mb-0">
                                 <span className="sub-title">
                                     <img src="assets/img/icon/title_left.svg" alt="shape" />
-                                    Contact Us
+                                    Entre em contato
                                 </span>
-                                <h2 className="sec-title style2">Get In Touch</h2>
+                                <h2 className="sec-title style2">Receba nossa proposta!</h2>
                                 <p className="mb-40">
-                                    Design is this a broad category encompasses various technological
-                                    solutions{" "}
+                                    Marcaremos uma entrevista preliminar para você conhecer melhor os nossos serviços e nós conhecermos melhor o seu negócio. Após isso, a nossa Proposta Comercial será enviada imediatamente para o seu e-mail!{" "}
                                 </p>
                                 <div className="social-btn style4">
                                     <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
@@ -36,21 +35,21 @@ const ContactInner = () => {
                                     <div className="col-md-6 form-group">
                                         <input
                                             type="text"
-                                            placeholder="Your Name"
+                                            placeholder="Nome"
                                             className="form-control style-border"
                                         />
                                     </div>
                                     <div className="col-md-6 form-group">
                                         <input
                                             type="text"
-                                            placeholder="Your Email"
+                                            placeholder="E-mail"
                                             className="form-control style-border"
                                         />
                                     </div>
                                     <div className="col-md-6 form-group">
                                         <input
                                             type="text"
-                                            placeholder="Phone Number"
+                                            placeholder="Telefone (opcional)"
                                             className="form-control style-border"
                                         />
                                     </div>
@@ -61,7 +60,7 @@ const ContactInner = () => {
                                             className="form-select style-border"
                                         >
                                             <option defaultValue={1}>
-                                                Subject
+                                                Assunto (opcional)
                                             </option>
                                             <option value={1}>Subject 01</option>
                                             <option value={2}>Subject 02</option>
@@ -71,14 +70,14 @@ const ContactInner = () => {
                                     </div>
                                     <div className="col-12 form-group">
                                         <textarea
-                                            placeholder="Message here.."
+                                            placeholder="Mensagem (opcional)"
                                             className="form-control style-border"
                                             defaultValue={""}
                                         />
                                     </div>
                                     <div className="col-12 form-group mb-0">
                                         <button className="global-btn w-100">
-                                            Send Now
+                                            Enviar
                                             <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
                                         </button>
                                     </div>
