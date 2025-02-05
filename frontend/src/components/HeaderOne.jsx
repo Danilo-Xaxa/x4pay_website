@@ -209,9 +209,6 @@ const HeaderOne = () => {
                       <Link to="/sobre">Sobre Nós</Link>
                     </li>
                     <li>
-                      <Link to="/servicos">Nossos Serviços</Link>
-                    </li>
-                    <li>
                       <Link to="/contato">Contato</Link>
                     </li>
                   </ul>
