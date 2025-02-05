@@ -235,7 +235,7 @@ const HeaderOne = () => {
                     </button>
                   </div>
                   <div className="social-links">
-                    <Link to="#">
+                    <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-linkedin" />
                     </Link>
                   </div>

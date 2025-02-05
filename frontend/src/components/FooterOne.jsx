@@ -21,7 +21,7 @@ const FooterOne = () => {
                   X4PAY Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, rápido e seguro.
                 </p>
                 <div className="social-btn style3">
-                  <Link to="#" tabIndex={-1}>
+                  <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
                     <i className="fab fa-linkedin-in" />
                   </Link>
                 </div>
@@ -59,9 +59,8 @@ const FooterOne = () => {
                     <i className="fas fa-envelope" />
                     <div className="contact-grid-details">
                       <h6>
-                        <Link to="#">
-                          contato@x4payassessoria.com
-                        </Link>
+                        <Link to="#">contato@x4payassessoria.com</Link> <br />
+                        <Link to="#">xaxa@x4payassessoria.com</Link>
                         <p />
                       </h6>
                     </div>

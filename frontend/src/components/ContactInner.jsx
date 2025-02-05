@@ -24,7 +24,7 @@ const ContactInner = () => {
                                     solutions{" "}
                                 </p>
                                 <div className="social-btn style4">
-                                    <Link to="#" tabIndex={-1}>
+                                    <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
                                         <i className="fab fa-linkedin-in" />
                                     </Link>
                                 </div>
