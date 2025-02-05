@@ -96,7 +96,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -183,7 +183,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -241,7 +241,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -328,7 +328,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -357,7 +357,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -386,7 +386,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
@@ -415,7 +415,7 @@ const TeamOne = () => {
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
-                      <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </Link>
                   </div>
                 </div>
