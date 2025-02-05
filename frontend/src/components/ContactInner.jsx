@@ -23,11 +23,6 @@ const ContactInner = () => {
                                 <p className="mb-40">
                                     Marcaremos uma entrevista preliminar para você conhecer melhor os nossos serviços e nós conhecermos melhor o seu negócio. Após isso, a nossa Proposta Comercial será enviada imediatamente para o seu e-mail!{" "}
                                 </p>
-                                <div className="social-btn style4">
-                                    <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
-                                        <i className="fab fa-linkedin-in" />
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-8">
@@ -64,9 +59,9 @@ const ContactInner = () => {
                                             <option defaultValue={1}>
                                                 Assunto (opcional)
                                             </option>
-                                            <option value={1}>Subject 01</option>
-                                            <option value={2}>Subject 02</option>
-                                            <option value={3}>Subject 03</option>
+                                            <option value={1}>Subadquirência</option>
+                                            <option value={2}>Compliance</option>
+                                            <option value={3}>Outros</option>
                                         </select>
                                         <i className="fas fa-angle-down" />
                                     </div>
