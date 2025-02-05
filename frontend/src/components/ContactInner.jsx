@@ -1,8 +1,53 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 import InputMask from "react-input-mask";
 
 const ContactInner = () => {
+    // Estados para armazenar os valores do formulário
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: ""
+    });
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [feedback, setFeedback] = useState(null);
+
+    // Manipular mudanças nos inputs
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    // Enviar os dados do formulário para o backend
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setFeedback(null);
+
+        try {
+            const response = await fetch("https://x4payassessoria.com/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setFeedback("Mensagem enviada com sucesso!");
+                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+            } else {
+                setFeedback("Erro ao enviar mensagem. Tente novamente.");
+            }
+        } catch (error) {
+            setFeedback("Erro de conexão. Verifique sua internet.");
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <>
         <br />
@@ -27,66 +72,85 @@ const ContactInner = () => {
                         </div>
                         <div className="col-xl-6 col-lg-8">
                             <div className="contact-form">
-                                <div className="row">
-                                    <div className="col-md-6 form-group">
-                                        <input
-                                            type="text"
-                                            placeholder="Nome"
-                                            className="form-control style-border"
-                                        />
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row">
+                                        <div className="col-md-6 form-group">
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                placeholder="Nome"
+                                                className="form-control style-border"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-md-6 form-group">
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="E-mail"
+                                                className="form-control style-border"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-md-6 form-group">
+                                            <InputMask
+                                                mask="(99) 99999-9999"
+                                                name="phone"
+                                                placeholder="Telefone (opcional)"
+                                                className="form-control style-border"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                        <div className="col-md-6 form-group">
+                                            <select
+                                                name="subject"
+                                                id="subject"
+                                                className="form-select style-border"
+                                                value={formData.subject}
+                                                onChange={handleChange}
+                                            >
+                                                <option value="">Assunto (opcional)</option>
+                                                <option value="Subadquirência">Subadquirência</option>
+                                                <option value="Compliance">Compliance</option>
+                                                <option value="Outros">Outros</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-12 form-group">
+                                            <textarea
+                                                name="message"
+                                                placeholder="Mensagem (opcional)"
+                                                className="form-control style-border"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                        <div className="col-12 form-group mb-0">
+                                            <button type="submit" className="global-btn w-100" disabled={isLoading}>
+                                                {isLoading ? "Enviando..." : "Enviar"}
+                                                <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                                            </button>
+                                        </div>
+                                        {feedback && (
+                                            <div className="col-12 mt-3">
+                                                <p className="text-center" style={{ color: feedback.includes("Erro") ? "red" : "green" }}>
+                                                    {feedback}
+                                                </p>
+                                            </div>
+                                        )}
                                     </div>
-                                    <div className="col-md-6 form-group">
-                                        <input
-                                            type="text"
-                                            placeholder="E-mail"
-                                            className="form-control style-border"
-                                        />
-                                    </div>
-                                    <div className="col-md-6 form-group">
-                                        <InputMask
-                                            mask="(99) 99999-9999"
-                                            placeholder="Telefone (opcional)"
-                                            className="form-control style-border"
-                                            alwaysShowMask={false}
-                                        />
-                                    </div>
-                                    <div className="col-md-6 form-group">
-                                        <select
-                                            name="subject"
-                                            id="subject"
-                                            className="form-select style-border"
-                                        >
-                                            <option defaultValue={1}>
-                                                Assunto (opcional)
-                                            </option>
-                                            <option value={1}>Subadquirência</option>
-                                            <option value={2}>Compliance</option>
-                                            <option value={3}>Outros</option>
-                                        </select>
-                                        <i className="fas fa-angle-down" />
-                                    </div>
-                                    <div className="col-12 form-group">
-                                        <textarea
-                                            placeholder="Mensagem (opcional)"
-                                            className="form-control style-border"
-                                            defaultValue={""}
-                                        />
-                                    </div>
-                                    <div className="col-12 form-group mb-0">
-                                        <button className="global-btn w-100">
-                                            Enviar
-                                            <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
-                                        </button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </>
+    );
+};
 
-    )
-}
-
-export default ContactInner
+export default ContactInner;
