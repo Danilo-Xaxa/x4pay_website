@@ -3,10 +3,11 @@ import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, EmailStr, StringConstraints
+from pydantic import BaseModel, EmailStr, StringConstraints, Field
 from email.message import EmailMessage
 from aiosmtplib import send
 from typing import Optional, Annotated
+import asyncio
 
 # Carrega variáveis de ambiente do .env
 load_dotenv()
@@ -35,9 +36,9 @@ app = FastAPI()
 # Configuração de CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ajuste para ["https://x4payassessoria.com"] em produção
+    allow_origins=["https://x4payassessoria.com"],  # Apenas produção
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
 
@@ -46,10 +47,10 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulário de contato
 class ContactForm(BaseModel):
-    name: str
+    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[PhoneStr] = None
-    message: Optional[str] = None
+    message: Optional[str] = Field(None, max_length=1000, description="Mensagem opcional")
 
 # Middleware para log de requisições
 @app.middleware("http")
@@ -68,7 +69,7 @@ def read_root():
 @app.post("/contact")
 async def contact(form: ContactForm):
     """Processa o formulário de contato e envia um e-mail."""
-    logger.info(f"Nova solicitação de contato recebida de {form.name} ({form.email})")
+    logger.info(f"📩 Nova solicitação de contato de {form.name} ({form.email})")
 
     # Estrutura do e-mail em HTML
     email_content = f"""
@@ -87,31 +88,36 @@ async def contact(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = SMTP_USER
     msg["To"] = "xaxa@x4payassessoria.com"
-    msg["Cc"] = "contato@x4payassessoria.com"  # Opcional: adicionar um e-mail em cópia
+    msg["Cc"] = "contato@x4payassessoria.com"
     msg["Subject"] = f"Contato de {form.name}"
     msg.set_content(email_content, subtype="html")
 
     try:
-        await send(
-            msg,
-            hostname=SMTP_HOST,
-            port=SMTP_PORT,
-            username=SMTP_USER,
-            password=SMTP_PASSWORD,
-            start_tls=True,
+        # Define um tempo limite para o envio do e-mail
+        await asyncio.wait_for(
+            send(
+                msg,
+                hostname=SMTP_HOST,
+                port=SMTP_PORT,
+                username=SMTP_USER,
+                password=SMTP_PASSWORD,
+                start_tls=True,
+            ),
+            timeout=15  # Timeout de 15 segundos
         )
         logger.info(f"✅ E-mail enviado com sucesso para {form.email}")
-        return {
-            "status": "success",
-            "message": "E-mail enviado com sucesso!"
-        }
+        return {"status": "success", "message": "E-mail enviado com sucesso!"}
+
+    except asyncio.TimeoutError:
+        logger.error("⏳ Tempo limite excedido ao tentar enviar o e-mail.")
+        raise HTTPException(
+            status_code=500,
+            detail={"status": "error", "message": "Tempo limite excedido ao enviar o e-mail."}
+        )
 
     except Exception as e:
         logger.error(f"❌ Erro ao enviar e-mail para {form.email}: {e}")
         raise HTTPException(
             status_code=500,
-            detail={
-                "status": "error",
-                "message": "Erro ao enviar e-mail. Tente novamente mais tarde."
-            }
+            detail={"status": "error", "message": "Erro ao enviar e-mail. Tente novamente mais tarde."}
         )
