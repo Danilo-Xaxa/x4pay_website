@@ -2,54 +2,58 @@ import os
 import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, StringConstraints
 from email.message import EmailMessage
 from aiosmtplib import send
 from typing import Optional, Annotated
 
-
-# Carrega as variáveis de ambiente do arquivo .env
+# Carrega variáveis de ambiente do .env
 load_dotenv()
 
-# Lê as credenciais SMTP das variáveis de ambiente
+# Configuração do SMTP
 SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
-# Verifica se as credenciais SMTP estão definidas corretamente
-if not SMTP_USER:
-    raise RuntimeError("A variável SMTP_USER precisa estar definida no arquivo .env")
-if not SMTP_PASSWORD:
-    raise RuntimeError("A variável SMTP_PASSWORD precisa estar definida no arquivo .env")
+if not SMTP_USER or not SMTP_PASSWORD:
+    raise RuntimeError("As variáveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
 
-# Configuração do logging
+# Configuração de logs
 logging.basicConfig(
-    level=logging.INFO,  # Define o nível de log (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
-    handlers=[
-        logging.FileHandler("backend.log"),  # Salva logs no arquivo backend.log
-        logging.StreamHandler()  # Exibe logs no terminal
-    ]
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[logging.FileHandler("backend.log"), logging.StreamHandler()]
 )
 
-logger = logging.getLogger(__name__)  # Instância do logger
+logger = logging.getLogger(__name__)
 
-# Inicializa a aplicação FastAPI
+# Inicializa FastAPI
 app = FastAPI()
 
+# Configuração de CORS para permitir chamadas do frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Pode ser ajustado para ["https://x4payassessoria.com"] em produção
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Validação para número de telefone
 PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$")]
 
-# Modelo de validação do formulário de contato
+# Modelo do formulário de contato
 class ContactForm(BaseModel):
     name: str
     email: EmailStr
-    phone: Optional[PhoneStr] = None  # Telefone opcional. Valida (XX) XXXXX-XXXX ou XX XXXX-XXXX
-    message: Optional[str] = None  # Mensagem opcional
+    phone: Optional[PhoneStr] = None
+    message: Optional[str] = None
 
+# Middleware para log de requisições
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
-    """Middleware para registrar logs de cada requisição recebida."""
     logger.info(f"📩 [{request.client.host}] {request.method} {request.url} recebida")
     response = await call_next(request)
     logger.info(f"Resposta enviada: {response.status_code}")
@@ -57,40 +61,36 @@ async def log_requests(request: Request, call_next):
 
 @app.get("/")
 def read_root():
-    """
-    Endpoint root para verificar se a API está funcionando corretamente.
-    Retorna uma mensagem simples de boas-vindas.
-    """
+    """Verifica se a API está funcionando."""
     logger.info("GET / - API acessada com sucesso")
     return {"message": "Bem-vindo à API do website da X4Pay"}
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    """
-    Endpoint para processar o formulário de contato.
-    Envia um e-mail com os dados preenchidos pelo usuário.
+    """Processa o formulário de contato e envia um e-mail."""
+    logger.info(f"Nova solicitação de contato recebida de {form.name} ({form.email})")
+
+    # Estrutura do e-mail em HTML
+    email_content = f"""
+    <html>
+    <body>
+        <h2>Nova mensagem de contato</h2>
+        <p><strong>Nome:</strong> {form.name}</p>
+        <p><strong>E-mail:</strong> {form.email}</p>
+        <p><strong>Telefone:</strong> {form.phone if form.phone else 'Nenhum telefone informado'}</p>
+        <p><strong>Mensagem:</strong> {form.message if form.message else 'Nenhuma mensagem enviada'}</p>
+    </body>
+    </html>
     """
 
-    logger.info(f"Nova solicitação de contato de {form.name} ({form.email})")
-
-    # Monta a estrutura do e-mail
+    # Configuração do e-mail
     msg = EmailMessage()
     msg["From"] = SMTP_USER
     msg["To"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Contato de {form.name}"
-
-    email_content = f"""\
-Nome: {form.name}
-E-mail: {form.email}
-Telefone: {form.phone if form.phone else 'Nenhum telefone informado'}
-
-Mensagem:
-{form.message if form.message else 'Nenhuma mensagem enviada'}
-""".strip()
-    msg.set_content(email_content)
+    msg.set_content(email_content, subtype="html")
 
     try:
-        # Tenta enviar o e-mail via SMTP
         await send(
             msg,
             hostname=SMTP_HOST,
@@ -100,11 +100,8 @@ Mensagem:
             start_tls=True,
         )
         logger.info(f"E-mail enviado com sucesso para {form.email}")
-        return {"detail": "Email enviado com sucesso!"}
+        return {"detail": "E-mail enviado com sucesso!"}
 
     except Exception as e:
         logger.error(f"Erro ao enviar e-mail para {form.email}: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Erro ao enviar e-mail: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail="Erro ao enviar e-mail. Tente novamente mais tarde.")
