@@ -33,9 +33,6 @@ const FooterOne = () => {
                 <div className="menu-all-pages-container">
                   <ul className="menu">
                     <li>
-                      <Link to="/sobre">Nossa Empresa</Link>
-                    </li>
-                    <li>
                       <Link to="/contato">Entre em contato</Link>
                     </li>
                   </ul>

@@ -206,9 +206,6 @@ const HeaderOne = () => {
                       <Link to="/">Início</Link>
                     </li>
                     <li>
-                      <Link to="/sobre">Sobre Nós</Link>
-                    </li>
-                    <li>
                       <Link to="/contato">Contato</Link>
                     </li>
                   </ul>
