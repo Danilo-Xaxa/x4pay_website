@@ -35,7 +35,7 @@ app = FastAPI()
 # Configuração de CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Pode ser ajustado para ["https://x4payassessoria.com"] em produção
+    allow_origins=["*"],  # Ajuste para ["https://x4payassessoria.com"] em produção
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -87,6 +87,7 @@ async def contact(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = SMTP_USER
     msg["To"] = "xaxa@x4payassessoria.com"
+    msg["Cc"] = "contato@x4payassessoria.com"  # Opcional: adicionar um e-mail em cópia
     msg["Subject"] = f"Contato de {form.name}"
     msg.set_content(email_content, subtype="html")
 
@@ -99,9 +100,18 @@ async def contact(form: ContactForm):
             password=SMTP_PASSWORD,
             start_tls=True,
         )
-        logger.info(f"E-mail enviado com sucesso para {form.email}")
-        return {"detail": "E-mail enviado com sucesso!"}
+        logger.info(f"✅ E-mail enviado com sucesso para {form.email}")
+        return {
+            "status": "success",
+            "message": "E-mail enviado com sucesso!"
+        }
 
     except Exception as e:
-        logger.error(f"Erro ao enviar e-mail para {form.email}: {e}")
-        raise HTTPException(status_code=500, detail="Erro ao enviar e-mail. Tente novamente mais tarde.")
+        logger.error(f"❌ Erro ao enviar e-mail para {form.email}: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "status": "error",
+                "message": "Erro ao enviar e-mail. Tente novamente mais tarde."
+            }
+        )
