@@ -85,7 +85,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/xulis.webp" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -105,7 +105,7 @@ const TeamOne = () => {
                 <h4 className="team-card_title">
                   <Link to="#">Xulis</Link>
                 </h4>
-                <span className="team-card_desig">Espírito Santo</span>
+                <span className="team-card_desig">São Paulo (SP)</span>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-2.png" alt="img" />
+                  <img src="assets/img/team/ami.jpg" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -143,7 +143,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-3.png" alt="img" />
+                  <img src="assets/img/team/parcelecart.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -172,7 +172,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-4.png" alt="img" />
+                  <img src="assets/img/team/superfin2.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -201,7 +201,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/spotpass.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -230,7 +230,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/dnapagamentos.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -259,7 +259,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/holycash.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -288,7 +288,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/nasabank.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -317,7 +317,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/owenpay2.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -346,7 +346,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/payt2.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -375,7 +375,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/cashtime.png" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
@@ -404,7 +404,7 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
-                  <img src="assets/img/team/team-1-1.png" alt="img" />
+                  <img src="assets/img/team/cartwave2.jpeg" alt="img" />
                 </div>
                 <div className="team-social">
                   <div className="plus-btn">
