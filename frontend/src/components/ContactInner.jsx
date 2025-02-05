@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import InputMask from "react-input-mask";
 
 const ContactInner = () => {
     return (
@@ -47,10 +48,11 @@ const ContactInner = () => {
                                         />
                                     </div>
                                     <div className="col-md-6 form-group">
-                                        <input
-                                            type="text"
+                                        <InputMask
+                                            mask="(99) 99999-9999"
                                             placeholder="Telefone (opcional)"
                                             className="form-control style-border"
+                                            alwaysShowMask={false}
                                         />
                                     </div>
                                     <div className="col-md-6 form-group">
