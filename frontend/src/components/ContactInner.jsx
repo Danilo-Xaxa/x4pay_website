@@ -6,7 +6,7 @@ const ContactInner = () => {
         name: "",
         email: "",
         phone: "",
-        subject: "Outros Assuntos", // Define um valor padrão
+        subject: "",
         message: ""
     });
 
@@ -45,7 +45,7 @@ const ContactInner = () => {
 
             if (response.ok) {
                 setFeedback("Mensagem enviada com sucesso!");
-                setFormData({ name: "", email: "", phone: "", subject: "Outros Assuntos", message: "" });
+                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
             } else {
                 setFeedback("Erro ao enviar mensagem. Tente novamente.");
             }
