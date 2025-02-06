@@ -27,7 +27,7 @@ const ContactInner = () => {
         setFeedback(null);
 
         try {
-            const response = await fetch("https://x4payassessoria.com/api/contact", {
+            const response = await fetch("https://x4paywebsite-production.up.railway.app/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
