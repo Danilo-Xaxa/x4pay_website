@@ -127,7 +127,7 @@ const HeaderOne = () => {
                 <Link to="/">Início</Link> 
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contato">Contato</Link>
               </li>
             </ul>
           </div>
