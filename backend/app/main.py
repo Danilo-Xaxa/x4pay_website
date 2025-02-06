@@ -75,7 +75,7 @@ async def log_requests(request: Request, call_next):
 def read_root():
     """Verifica se a API esta funcionando."""
     logger.info("GET / - API acessada com sucesso")
-    return JSONResponse(content={"message": "Bem-vindo a API do website da X4Pay"}, media_type="application/json; charset=utf-8")
+    return JSONResponse(content={"message": "Bem-vindo a API do website da X4PAY"}, media_type="application/json; charset=utf-8")
 
 @app.post("/contact")
 async def contact(form: ContactForm):
@@ -98,7 +98,7 @@ async def contact(form: ContactForm):
 
     # Configuracao do e-mail
     msg = EmailMessage()
-    msg["From"] = f"X4Pay Assessoria <contato@x4payassessoria.com>"  # O dominio autenticado no SendGrid
+    msg["From"] = f"X4PAY Assessoria <contato@x4payassessoria.com>"  # O dominio autenticado no SendGrid
     msg["To"] = "contato@x4payassessoria.com"
     msg["Cc"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Novo contato!"
