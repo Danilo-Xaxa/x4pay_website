@@ -15,45 +15,48 @@ const ContactInner = () => {
 
     // Manipular mudanças nos inputs
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value.trim() // Remove espaços extras
-        }));
+      const { name, value } = e.target;
+      setFormData(prev => ({
+          ...prev,
+          [name]: value // Agora permite espaços corretamente
+      }));
     };
 
     // Enviar os dados do formulário para o backend
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
-        setFeedback(null);
+      e.preventDefault();
+      setIsLoading(true);
+      setFeedback(null);
 
-        // Ajusta o telefone: se estiver vazio, define como null
-        const processedData = {
-            ...formData,
-            phone: formData.phone.trim() === "" ? null : formData.phone
-        };
+      // Ajusta os valores antes do envio (trim apenas aqui)
+      const processedData = {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() === "" ? null : formData.phone.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim()
+      };
 
-        try {
-            const response = await fetch("https://x4paywebsite-production.up.railway.app/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(processedData)
-            });
+      try {
+          const response = await fetch("https://x4paywebsite-production.up.railway.app/contact", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(processedData)
+          });
 
-            if (response.ok) {
-                setFeedback("Mensagem enviada com sucesso!");
-                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-            } else {
-                setFeedback("Erro ao enviar mensagem. Tente novamente.");
-            }
-        } catch (error) {
-            setFeedback("Erro de conexão. Verifique sua internet.");
-        } finally {
-            setIsLoading(false);
-        }
+          if (response.ok) {
+              setFeedback("Mensagem enviada com sucesso!");
+              setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+          } else {
+              setFeedback("Erro ao enviar mensagem. Tente novamente.");
+          }
+      } catch (error) {
+          setFeedback("Erro de conexão. Verifique sua internet.");
+      } finally {
+          setIsLoading(false);
+      }
     };
 
     return (
