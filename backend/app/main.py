@@ -36,7 +36,7 @@ app = FastAPI()
 # Configuracao de CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ajuste para ["https://x4payassessoria.com"] em producao
+    allow_origins=["https://x4paywebsite-production.up.railway.app"],
     allow_credentials=True,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
