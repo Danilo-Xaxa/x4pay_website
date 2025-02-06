@@ -47,10 +47,10 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuario")
+    name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
-    phone: Optional[PhoneStr] = None
-    message: Optional[str] = Field(None, max_length=1000, description="Mensagem opcional")
+    phone: Optional[str] = None  # Agora não exigimos o formato exato do telefone
+    message: Optional[str] = Field("Contato via formulário simplificado.", max_length=1000, description="Mensagem opcional")
 
 # Middleware para log de requisicoes
 @app.middleware("http")
