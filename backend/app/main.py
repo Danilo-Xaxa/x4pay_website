@@ -49,11 +49,11 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: Optional[str] = Field("-", max_length=100, description="Nome do usuário")
+    name: Optional[str] = Field(max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[str] = None  # O telefone continua opcional
     subject: Optional[Literal["Subadquirência", "Compliance", "Outros Assuntos"]] = None  # Assunto opcional com valores limitados
-    message: Optional[str] = Field("Contato via formulario simplificado.", max_length=1000, description="Mensagem opcional")
+    message: Optional[str] = Field(max_length=1000, description="Mensagem opcional")
 
     # Validação condicional do telefone (apenas se for preenchido)
     @field_validator("phone")
@@ -89,7 +89,7 @@ async def contact(form: ContactForm):
     <html>
     <body>
         <h2>Novo contato via site da X4PAY</h2>
-        <p><strong>Nome:</strong> {form.name}</p>
+        <p><strong>Nome:</strong> {form.name if form.name else '-'}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
         <p><strong>Telefone:</strong> {form.phone if form.phone else '-'}</p>
         <p><strong>Assunto:</strong> {form.subject if form.subject else '-'}</p>

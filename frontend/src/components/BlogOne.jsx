@@ -18,11 +18,11 @@ const BlogOne = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: "-",  // Nome genérico
+          name: null,
           email: email,
-          phone: null,  // Sem telefone
-          subject: null,  // Sem assunto
-          message: "Contato via formulário simplificado.",
+          phone: null,
+          subject: null,
+          message: null
         }),
       });
 
