@@ -21,6 +21,7 @@ const Newsletter = () => {
             name: "-",  // Nome genérico
             email: email,
             phone: null,  // Sem telefone
+            subject: null,  // Sem assunto
             message: "Contato via formulário simplificado.",
         }),
         });
