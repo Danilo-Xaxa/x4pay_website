@@ -7,9 +7,10 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, EmailStr, StringConstraints, Field, field_validator
+from pydantic import BaseModel, EmailStr, StringConstraints, Field
 from email.message import EmailMessage
 from typing import Optional, Annotated
+from pydantic import field_validator
 
 # Carrega variaveis de ambiente do .env
 load_dotenv()
@@ -48,7 +49,7 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
+    name: Optional[str] = Field("-", min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[str] = None  # O telefone pode ser None, ou seja, opcional
     message: Optional[str] = Field("Contato via formulario simplificado.", max_length=1000, description="Mensagem opcional")

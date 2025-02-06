@@ -18,7 +18,7 @@ const Newsletter = () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            name: "Interessado",  // Nome genérico
+            name: "-",  // Nome genérico
             email: email,
             phone: null,  // Sem telefone
             message: "Contato via formulário simplificado.",
