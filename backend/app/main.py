@@ -76,7 +76,7 @@ async def contact(form: ContactForm):
     email_content = f"""
     <html>
     <body>
-        <h2>Novo contato vindo diretamente do website da X4PAY!</h2>
+        <h2>Novo contato via site da X4PAY</h2>
         <p><strong>Nome:</strong> {form.name}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
         <p><strong>Telefone:</strong> {form.phone if form.phone else '-'}</p>
@@ -89,7 +89,7 @@ async def contact(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = f"X4Pay Assessoria <contato@x4payassessoria.com>"  # O domínio autenticado no SendGrid
     msg["To"] = "contato@x4payassessoria.com"
-    msg["Reply-To"] = form.email  # Permite que o destinatário responda diretamente ao usuário do site
+    msg["Cc"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Novo contato!"
     msg.set_content(email_content, subtype="html")
 
