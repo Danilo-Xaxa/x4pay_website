@@ -126,57 +126,6 @@ const HeaderOne = () => {
               <li className="menu-item-has-children submenu-item-has-children">
                 <Link to="/">Início</Link> 
               </li>
-
-              <li>
-                <Link to="/sobre">About</Link>
-              </li>
-              <li className="menu-item-has-children">
-                <Link to="#">Pages</Link>
-                <ul className="sub-menu">
-                  <li>
-                    <Link to="/pricing">Pricing Page</Link>
-                  </li>
-                  <li>
-                    <Link to="/team">Team</Link>
-                  </li>
-                  <li>
-                    <Link to="/team-details">Team Details</Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                <Link to="#">Project</Link>
-                <ul className="sub-menu">
-                  <li>
-                    <Link to="/project">Projects</Link>
-                  </li>
-                  <li>
-                    <Link to="/project-details">Project Details</Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                <Link to="#">Service</Link>
-                <ul className="sub-menu">
-                  <li>
-                    <Link to="/service">Service</Link>
-                  </li>
-                  <li>
-                    <Link to="/service-details">Service Details</Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                <Link to="#">Blog</Link>
-                <ul className="sub-menu">
-                  <li>
-                    <Link to="/blog">Blog</Link>
-                  </li>
-                  <li>
-                    <Link to="/blog-details">Blog Details</Link>
-                  </li>
-                </ul>
-              </li>
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
