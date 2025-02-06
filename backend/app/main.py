@@ -1,4 +1,5 @@
 import os
+import re
 import logging
 import asyncio
 from aiosmtplib import SMTP
@@ -6,7 +7,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, EmailStr, StringConstraints, Field
+from pydantic import BaseModel, EmailStr, StringConstraints, Field, field_validator
 from email.message import EmailMessage
 from typing import Optional, Annotated
 
@@ -49,8 +50,17 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 class ContactForm(BaseModel):
     name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
-    phone: Optional[str] = None  # Agora não exigimos o formato exato do telefone
-    message: Optional[str] = Field("Contato via formulário simplificado.", max_length=1000, description="Mensagem opcional")
+    phone: Optional[str] = None  # O telefone pode ser None, ou seja, opcional
+    message: Optional[str] = Field("Contato via formulario simplificado.", max_length=1000, description="Mensagem opcional")
+
+    # Validação condicional do telefone (apenas se for preenchido)
+    @field_validator("phone")
+    def validate_phone(cls, value):
+        if value:
+            pattern = r"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"  # Ex: (41) 98765-4321 ou 41 98765-4321
+            if not re.match(pattern, value):
+                raise ValueError("Número de telefone inválido. Use o formato (XX) XXXXX-XXXX")
+        return value
 
 # Middleware para log de requisicoes
 @app.middleware("http")
