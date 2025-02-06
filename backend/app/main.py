@@ -1,7 +1,7 @@
 import os
 import logging
 import asyncio
-import aiosmtplib
+from aiosmtplib import SMTP
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,7 +13,7 @@ from typing import Optional, Annotated
 # Carrega variáveis de ambiente do .env
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST", "mail.x4payassessoria.com")
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.titan.email")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 465))  # 465 para SSL ou 587 para STARTTLS
 SMTP_USER = os.getenv("SMTP_USER", "danilo@x4payassessoria.com")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
@@ -95,11 +95,9 @@ async def contact(form: ContactForm):
 
     try:
         # Conectar ao servidor Titan (HostGator) via SSL
-        smtp = aiosmtplib.SMTP(hostname=SMTP_HOST, port=SMTP_PORT, use_tls=True)
-        await smtp.connect()  # Conecta ao servidor
-        await smtp.login(SMTP_USER, SMTP_PASSWORD)  # Faz login
-        await smtp.send_message(msg)  # Envia o e-mail
-        await smtp.quit()  # Fecha a conexão
+        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT, use_tls=True) as smtp:
+            await smtp.login(SMTP_USER, SMTP_PASSWORD)
+            await smtp.send_message(msg)
 
         logger.info(f"✅ E-mail enviado com sucesso para {form.email}")
         return {"status": "success", "message": "E-mail enviado com sucesso!"}
