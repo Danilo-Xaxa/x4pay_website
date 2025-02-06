@@ -122,9 +122,10 @@ const ContactInner = () => {
                                                 value={formData.subject}
                                                 onChange={handleChange}
                                             >
-                                                <option value="Outros Assuntos">Assunto (opcional)</option>
+                                                <option value="">Assunto (opcional)</option>
                                                 <option value="Subadquirência">Subadquirência</option>
                                                 <option value="Compliance">Compliance</option>
+                                                <option value="Outros Assuntos">Outros Assuntos</option>
                                             </select>
                                         </div>
                                         <div className="col-12 form-group">
