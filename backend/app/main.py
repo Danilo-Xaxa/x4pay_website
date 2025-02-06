@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, StringConstraints, Field
 from email.message import EmailMessage
-from typing import Optional, Annotated
+from typing import Optional, Annotated, Literal
 from pydantic import field_validator
 
 # Carrega variaveis de ambiente do .env
@@ -49,9 +49,10 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: Optional[str] = Field("-", min_length=2, max_length=100, description="Nome do usuário")
+    name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
-    phone: Optional[str] = None  # O telefone pode ser None, ou seja, opcional
+    phone: Optional[str] = None  # O telefone continua opcional
+    subject: Optional[Literal["Subadquirência", "Compliance", "Outros"]] = None  # Assunto opcional com valores limitados
     message: Optional[str] = Field("Contato via formulario simplificado.", max_length=1000, description="Mensagem opcional")
 
     # Validação condicional do telefone (apenas se for preenchido)
@@ -91,6 +92,7 @@ async def contact(form: ContactForm):
         <p><strong>Nome:</strong> {form.name}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
         <p><strong>Telefone:</strong> {form.phone if form.phone else '-'}</p>
+        <p><strong>Assunto:</strong> {form.subject if form.subject else '-'}</p>
         <p><strong>Mensagem:</strong> {form.message if form.message else '-'}</p>
     </body>
     </html>
