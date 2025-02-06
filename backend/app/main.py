@@ -13,13 +13,13 @@ from typing import Optional, Annotated
 # Carrega variáveis de ambiente do .env
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))  # Gmail usa 587 para STARTTLS
-SMTP_USER = os.getenv("SMTP_USER", "x4payassessoria@gmail.com")
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.sendgrid.net")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 587))  # 465 para SSL ou 587 para STARTTLS
+SMTP_USER = os.getenv("SMTP_USER", "apikey")  # O usuário sempre é "apikey" no SendGrid
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")  # A API Key gerada no SendGrid
 
-if not SMTP_USER or not SMTP_PASSWORD:
-    raise RuntimeError("As variáveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
+if not SMTP_PASSWORD:
+    raise RuntimeError("A variável SMTP_PASSWORD precisa estar definida no arquivo .env")
 
 # Configuração de logs
 logging.basicConfig(
@@ -68,7 +68,7 @@ def read_root():
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    """Processa o formulário e envia um e-mail via Gmail"""
+    """Processa o formulário e envia um e-mail via SendGrid"""
 
     logger.info(f"📩 Nova solicitação de contato de {form.name} ({form.email})")
 
@@ -76,27 +76,26 @@ async def contact(form: ContactForm):
     email_content = f"""
     <html>
     <body>
-        <h2>Nova mensagem de contato</h2>
+        <h2>Novo contato vindo diretamente do website da X4PAY!</h2>
         <p><strong>Nome:</strong> {form.name}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
-        <p><strong>Telefone:</strong> {form.phone if form.phone else 'Nenhum telefone informado'}</p>
-        <p><strong>Mensagem:</strong> {form.message if form.message else 'Nenhuma mensagem enviada'}</p>
+        <p><strong>Telefone:</strong> {form.phone if form.phone else '-'}</p>
+        <p><strong>Mensagem:</strong> {form.message if form.message else '-'}</p>
     </body>
     </html>
     """
 
     # Configuração do e-mail
     msg = EmailMessage()
-    msg["From"] = SMTP_USER
+    msg["From"] = f"X4Pay Assessoria <contato@x4payassessoria.com>"  # O domínio autenticado no SendGrid
     msg["To"] = "contato@x4payassessoria.com"
-    msg["Subject"] = f"Contato de {form.name}"
+    msg["Reply-To"] = form.email  # Permite que o destinatário responda diretamente ao usuário do site
+    msg["Subject"] = f"Novo contato!"
     msg.set_content(email_content, subtype="html")
 
     try:
-        # Conectar ao servidor Gmail via STARTTLS
-        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT) as smtp:
-            await smtp.connect(timeout=10)
-            await smtp.starttls()  # Necessário para Gmail
+        # Conectar ao servidor SendGrid
+        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT, start_tls=True) as smtp:
             await smtp.login(SMTP_USER, SMTP_PASSWORD)
             await smtp.send_message(msg)
 
