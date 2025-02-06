@@ -1,22 +1,21 @@
 import os
 import logging
+import asyncio
+import aiosmtplib
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, StringConstraints, Field
 from email.message import EmailMessage
-from aiosmtplib import send
 from typing import Optional, Annotated
-import asyncio
 
 # Carrega variáveis de ambiente do .env
 load_dotenv()
 
-# Configuração do SMTP
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
-SMTP_USER = os.getenv("SMTP_USER")
+SMTP_HOST = os.getenv("SMTP_HOST", "mail.x4payassessoria.com")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 465))  # 465 para SSL ou 587 para STARTTLS
+SMTP_USER = os.getenv("SMTP_USER", "danilo@x4payassessoria.com")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
 if not SMTP_USER or not SMTP_PASSWORD:
@@ -37,7 +36,7 @@ app = FastAPI()
 # Configuração de CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://x4payassessoria.com"],  # Apenas produção
+    allow_origins=["*"],  # Ajuste para ["https://x4payassessoria.com"] em produção
     allow_credentials=True,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
@@ -69,7 +68,8 @@ def read_root():
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    """Processa o formulário de contato e envia um e-mail."""
+    """Processa o formulario e envia um e-mail via Titan (HostGator)"""
+
     logger.info(f"📩 Nova solicitação de contato de {form.name} ({form.email})")
 
     # Estrutura do e-mail em HTML
@@ -88,24 +88,19 @@ async def contact(form: ContactForm):
     # Configuração do e-mail
     msg = EmailMessage()
     msg["From"] = SMTP_USER
-    msg["To"] = "xaxa@x4payassessoria.com"
-    msg["Cc"] = "contato@x4payassessoria.com"
+    msg["To"] = "contato@x4payassessoria.com"
+    # msg["Cc"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Contato de {form.name}"
     msg.set_content(email_content, subtype="html")
 
     try:
-        # Define um tempo limite para o envio do e-mail
-        await asyncio.wait_for(
-            send(
-                msg,
-                hostname=SMTP_HOST,
-                port=SMTP_PORT,
-                username=SMTP_USER,
-                password=SMTP_PASSWORD,
-                start_tls=True,
-            ),
-            timeout=15  # Timeout de 15 segundos
-        )
+        # Conectar ao servidor Titan (HostGator) via SSL
+        smtp = aiosmtplib.SMTP(hostname=SMTP_HOST, port=SMTP_PORT, use_tls=True)
+        await smtp.connect()  # Conecta ao servidor
+        await smtp.login(SMTP_USER, SMTP_PASSWORD)  # Faz login
+        await smtp.send_message(msg)  # Envia o e-mail
+        await smtp.quit()  # Fecha a conexão
+
         logger.info(f"✅ E-mail enviado com sucesso para {form.email}")
         return {"status": "success", "message": "E-mail enviado com sucesso!"}
 
@@ -120,5 +115,5 @@ async def contact(form: ContactForm):
         logger.error(f"❌ Erro ao enviar e-mail para {form.email}: {e}")
         raise HTTPException(
             status_code=500,
-            detail={"status": "error", "message": "Erro ao enviar e-mail. Tente novamente mais tarde."}
+            detail={"status": "error", "message": f"Erro ao enviar e-mail: {str(e)}"}
         )
