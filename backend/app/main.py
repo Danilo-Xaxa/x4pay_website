@@ -49,7 +49,7 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
+    name: Optional[str] = Field("-", max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[str] = None  # O telefone continua opcional
     subject: Optional[Literal["Subadquirência", "Compliance", "Outros Assuntos"]] = None  # Assunto opcional com valores limitados
