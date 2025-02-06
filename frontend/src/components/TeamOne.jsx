@@ -111,64 +111,6 @@ const TeamOne = () => {
             </div>
           </div>
 
-        <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/payt2.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.payt.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">Payt</Link>
-                </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/parcelecart.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.parcelecart.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">ParceleCart</Link>
-                </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
-              </div>
-            </div>
-          </div>
-
           <div className="p-2">
             <div className="team-card">
               <div className="team-card_wrapp">
@@ -339,35 +281,6 @@ const TeamOne = () => {
                   <Link to="#">DNA Pagamentos</Link>
                 </h4>
                 <span className="team-card_desig">Americana (SP)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/holycash.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.holycash.com.br" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">HolyCash</Link>
-                </h4>
-                <span className="team-card_desig">Recife (PE)</span>
               </div>
             </div>
           </div>
