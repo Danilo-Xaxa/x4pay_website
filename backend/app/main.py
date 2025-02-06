@@ -13,13 +13,13 @@ from typing import Optional, Annotated
 # Carrega variáveis de ambiente do .env
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.titan.email")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 465))  # 465 para SSL ou 587 para STARTTLS
-SMTP_USER = os.getenv("SMTP_USER", "danilo@x4payassessoria.com")
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 587))  # Gmail usa 587 para STARTTLS
+SMTP_USER = os.getenv("SMTP_USER", "x4payassessoria@gmail.com")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
 if not SMTP_USER or not SMTP_PASSWORD:
-    raise RuntimeError("As variaveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
+    raise RuntimeError("As variáveis SMTP_USER e SMTP_PASSWORD precisam estar definidas no arquivo .env")
 
 # Configuração de logs
 logging.basicConfig(
@@ -47,7 +47,7 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 
 # Modelo do formulário de contato
 class ContactForm(BaseModel):
-    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuario")
+    name: str = Field(..., min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[PhoneStr] = None
     message: Optional[str] = Field(None, max_length=1000, description="Mensagem opcional")
@@ -62,13 +62,13 @@ async def log_requests(request: Request, call_next):
 
 @app.get("/")
 def read_root():
-    """Verifica se a API esta funcionando."""
+    """Verifica se a API está funcionando."""
     logger.info("GET / - API acessada com sucesso")
     return JSONResponse(content={"message": "Bem-vindo à API do website da X4Pay"}, media_type="application/json; charset=utf-8")
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    """Processa o formulario e envia um e-mail via Titan (HostGator)"""
+    """Processa o formulário e envia um e-mail via Gmail"""
 
     logger.info(f"📩 Nova solicitação de contato de {form.name} ({form.email})")
 
@@ -89,13 +89,14 @@ async def contact(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = SMTP_USER
     msg["To"] = "contato@x4payassessoria.com"
-    # msg["Cc"] = "xaxa@x4payassessoria.com"
     msg["Subject"] = f"Contato de {form.name}"
     msg.set_content(email_content, subtype="html")
 
     try:
-        # Conectar ao servidor Titan (HostGator) via SSL
-        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT, use_tls=True) as smtp:
+        # Conectar ao servidor Gmail via STARTTLS
+        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT) as smtp:
+            await smtp.connect(timeout=10)
+            await smtp.starttls()  # Necessário para Gmail
             await smtp.login(SMTP_USER, SMTP_PASSWORD)
             await smtp.send_message(msg)
 
