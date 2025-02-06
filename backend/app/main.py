@@ -52,7 +52,7 @@ class ContactForm(BaseModel):
     name: Optional[str] = Field("Interessado", min_length=2, max_length=100, description="Nome do usuário")
     email: EmailStr
     phone: Optional[str] = None  # O telefone continua opcional
-    subject: Optional[Literal["Subadquirência", "Compliance", "Outros"]] = None  # Assunto opcional com valores limitados
+    subject: Optional[Literal["Subadquirência", "Compliance", "Outros Assuntos"]] = None  # Assunto opcional com valores limitados
     message: Optional[str] = Field("Contato via formulario simplificado.", max_length=1000, description="Mensagem opcional")
 
     # Validação condicional do telefone (apenas se for preenchido)

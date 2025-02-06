@@ -29,7 +29,7 @@ const BlogOne = () => {
         alert("Mensagem enviada com sucesso!");
         setEmail(""); // Limpa o campo após envio
       } else {
-        alert("Erro ao enviar a mensagem. Tente novamente.");
+        alert("Erro ao enviar. Tente novamente.");
       }
     } catch (error) {
       console.error("Erro ao enviar contato:", error);

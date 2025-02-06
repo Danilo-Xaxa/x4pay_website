@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import InputMask from "react-input-mask";
 
 const ContactInner = () => {
-    // Estados para armazenar os valores do formulário
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
-        subject: "",
+        subject: "Outros Assuntos", // Define um valor padrão
         message: ""
     });
 
@@ -17,7 +16,10 @@ const ContactInner = () => {
     // Manipular mudanças nos inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormData(prev => ({
+            ...prev,
+            [name]: value.trim() // Remove espaços extras
+        }));
     };
 
     // Enviar os dados do formulário para o backend
@@ -26,18 +28,24 @@ const ContactInner = () => {
         setIsLoading(true);
         setFeedback(null);
 
+        // Ajusta o telefone: se estiver vazio, define como null
+        const processedData = {
+            ...formData,
+            phone: formData.phone.trim() === "" ? null : formData.phone
+        };
+
         try {
             const response = await fetch("https://x4paywebsite-production.up.railway.app/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(processedData)
             });
 
             if (response.ok) {
                 setFeedback("Mensagem enviada com sucesso!");
-                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+                setFormData({ name: "", email: "", phone: "", subject: "Outros Assuntos", message: "" });
             } else {
                 setFeedback("Erro ao enviar mensagem. Tente novamente.");
             }
@@ -50,11 +58,11 @@ const ContactInner = () => {
 
     return (
         <>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="space-bottom">
                 <div className="container">
                     <div className="row gy-40 justify-content-between">
@@ -66,7 +74,7 @@ const ContactInner = () => {
                                 </span>
                                 <h2 className="sec-title style2">Receba nossa proposta!</h2>
                                 <p className="mb-40">
-                                    Marcaremos uma entrevista preliminar para você conhecer melhor os nossos serviços e nós conhecermos melhor o seu negócio. Após isso, a nossa Proposta Comercial será enviada imediatamente para o seu e-mail!{" "}
+                                    Marcaremos uma entrevista preliminar para você conhecer melhor os nossos serviços e nós conhecermos melhor o seu negócio. Após isso, a nossa Proposta Comercial será enviada imediatamente para o seu e-mail!
                                 </p>
                             </div>
                         </div>
@@ -114,10 +122,9 @@ const ContactInner = () => {
                                                 value={formData.subject}
                                                 onChange={handleChange}
                                             >
-                                                <option value="">Assunto (opcional)</option>
+                                                <option value="Outros Assuntos">Assunto (opcional)</option>
                                                 <option value="Subadquirência">Subadquirência</option>
                                                 <option value="Compliance">Compliance</option>
-                                                <option value="Outros">Outros</option>
                                             </select>
                                         </div>
                                         <div className="col-12 form-group">
