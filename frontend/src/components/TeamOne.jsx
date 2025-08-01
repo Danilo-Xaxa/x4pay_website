@@ -347,6 +347,64 @@ const TeamOne = () => {
             <div className="team-card">
               <div className="team-card_wrapp">
                 <div className="team-card_img">
+                  <img src="assets/img/team/reflowpay.jpg" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="https://reflowpayments.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                      <i className="far fa-eye" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">Reflow Bank</Link>
+                </h4>
+                <span className="team-card_desig">Goiânia (GO)</span>
+              </div>
+            </div>
+          </div>  
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
+                  <img src="assets/img/team/payzu2.jpg" alt="img" />
+                </div>
+                <div className="team-social">
+                  <div className="plus-btn">
+                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+                  </div>
+                  <div className="global-social">
+                    <Link to="https://payzu.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                      <i className="far fa-eye" />
+                    </Link>
+                    <Link to="#">
+                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="team-card_content">
+                <h4 className="team-card_title">
+                  <Link to="#">PayZu</Link>
+                </h4>
+                <span className="team-card_desig">Teixeira de Freitas (BA)</span>
+              </div>
+            </div>
+          </div> 
+
+          <div className="p-2">
+            <div className="team-card">
+              <div className="team-card_wrapp">
+                <div className="team-card_img">
                   <img src="assets/img/team/cashtime.png" alt="img" />
                 </div>
                 <div className="team-social">
