@@ -1,209 +1,305 @@
-X4Pay Assessoria Website
+# X4Pay Assessoria --- Website
 
-Website institucional da X4Pay Assessoria. O projecto foi concebido para apresentar a empresa, os serviços prestados e fornecer um formulário de contacto para potenciais clientes. A aplicação é full‑stack: a camada de front‑end foi construída com React (Create React App) e a API back‑end foi construída com FastAPI. O front‑end é publicado na Vercel e o back‑end é publicado na Railway.
+Website institucional da **X4Pay Assessoria**, desenvolvido para
+apresentar a empresa, seus serviços e permitir o contato direto com
+potenciais clientes por meio de um formulário.
 
-Nota: Este repositório contém duas pastas na raiz – frontend/ e backend/. O código do front‑end (React) vive em frontend, e o código do back‑end (FastAPI) vive em backend/app/ (o ficheiro de entrada chama‑se main.py). Não existe um servidor de base de dados; o back‑end usa o serviço de e‑mail (SendGrid) para enviar as mensagens recebidas através do formulário de contacto.
+O projeto é **full stack**, composto por:
 
-✨ Funcionalidades
+-   **Front-end:** React (Create React App)\
+-   **Back-end:** FastAPI (Python)\
+-   **Envio de e-mails:** SMTP via Zoho Mail\
+-   **Deploy:**
+    -   Front-end → Vercel\
+    -   Back-end → Railway
 
-Páginas institucionais – apresenta a história da empresa, visão e missão, serviços oferecidos, portfólio de clientes e parceiros.
+------------------------------------------------------------------------
 
-Formulário de contacto – duas versões:
+## 📌 Visão geral
 
-Um formulário completo (/contact) que permite ao visitante informar nome, e‑mail, telefone, assunto e mensagem.
+O site apresenta:
 
-Um formulário simplificado no rodapé da página inicial que solicita apenas o e‑mail.
+-   Informações institucionais da empresa\
+-   Serviços oferecidos\
+-   Parceiros e clientes\
+-   Formulário de contato funcional\
+-   Integração entre front-end e API\
+-   Envio automático de e-mails
 
-Envio de e‑mail – os dados do formulário são enviados ao back‑end, que valida os campos e reencaminha por e‑mail usando SendGrid.
+O projeto foi estruturado de forma modular, permitindo manutenção e
+evolução simples no futuro.
 
-Deploy – o front‑end é publicado na Vercel, com domínio customizado https://x4payassessoria.com, e o back‑end é publicado na Railway. O domínio customizado mapeia para a API de produção (https://x4payassessoria.com/contact).
+------------------------------------------------------------------------
 
-Estrutura modular – separação clara entre front‑end (React) e back‑end (FastAPI), permitindo escalar ou trocar tecnologias sem grandes impactos.
+## ✨ Funcionalidades
 
-📁 Estrutura de pastas
+### 📄 Páginas institucionais
+
+-   Apresentação da empresa\
+-   Missão, visão e valores\
+-   Serviços prestados\
+-   Parceiros e clientes
+
+### 📬 Formulário de contato
+
+Existem dois formatos:
+
+-   **Formulário completo (`/contact`)**
+    -   Nome
+    -   E-mail
+    -   Telefone
+    -   Assunto
+    -   Mensagem
+-   **Formulário simplificado (rodapé)**
+    -   Apenas e-mail
+
+### ✉️ Envio de e-mails
+
+-   Os dados do formulário são enviados para a API\
+-   A API valida os dados\
+-   O envio ocorre via **SMTP do Zoho Mail**\
+-   O e-mail é entregue no endereço configurado\
+-   O campo **Reply-To** aponta para o e-mail informado pelo visitante
+
+### 🚀 Deploy
+
+-   Front-end hospedado na **Vercel**
+-   Back-end hospedado na **Railway**
+-   Comunicação via HTTPS
+-   CORS configurado corretamente
+
+------------------------------------------------------------------------
+
+## 📁 Estrutura do projeto
+
+``` text
 x4pay_website/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py        # ponto de entrada do FastAPI
-│   │   ├── _init_.py    # indica que "app" é um pacote Python
-│   │   ├── ...            # outros módulos (rotas, models etc.)
-│   ├── requirements.txt   # dependências Python
-│   └── Procfile (opcional)  # comando de arranque para Railway
+│   │   ├── main.py
+│   │   ├── __init__.py
+│   │   └── ...
+│   ├── requirements.txt
+│   └── Procfile
+│
 └── frontend/
-    ├── public/            # assets estáticos (imagens, favicon etc.)
+    ├── public/
     ├── src/
-    │   ├── App.js / App.jsx   # componente principal React
-    │   ├── components/        # componentes reutilizáveis
-    │   ├── pages/             # páginas (home, sobre, serviços etc.)
-    │   └── ...
-    ├── package.json        # dependências e scripts npm
-    └── README.md (opcional)
+    │   ├── App.js / App.jsx
+    │   ├── components/
+    │   ├── pages/
+    │   └── assets/
+    ├── package.json
+    └── README.md
+```
 
-🚀 Execução local
-Requisitos
+------------------------------------------------------------------------
 
-Node.js 16+ e npm (para o front‑end).
+## 🚀 Execução local
 
-Python 3.8+ e pip (para o back‑end).
+### Requisitos
 
-1. Clonar o repositório
-git clone https://github.com/Danilo-Xaxa/x4pay_website.git
-cd x4pay_website
+-   Node.js 16+\
+-   Python 3.8+\
+-   npm\
+-   pip
 
-2. Backend (FastAPI)
+------------------------------------------------------------------------
 
-Entre na pasta backend e crie um ambiente virtual:
+## 🔧 Backend (FastAPI)
 
+### 1️⃣ Acessar a pasta
+
+``` bash
 cd backend
+```
+
+### 2️⃣ Criar ambiente virtual
+
+``` bash
 python -m venv venv
-source venv/bin/activate    # Linux/Mac
-# .\venv\Scripts\activate  # Windows PowerShell
+```
 
+Ativar:
 
-Instale as dependências:
+**Linux / macOS**
 
+``` bash
+source venv/bin/activate
+```
+
+**Windows (PowerShell)**
+
+``` powershell
+.\venv\Scripts\activate
+```
+
+------------------------------------------------------------------------
+
+### 3️⃣ Instalar dependências
+
+``` bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
 
+------------------------------------------------------------------------
 
-Crie um ficheiro .env na pasta backend com as configurações de e‑mail (exemplo):
+### 4️⃣ Criar arquivo `.env`
 
-SMTP_HOST=smtp.sendgrid.net
+``` env
+SMTP_HOST=smtp.zoho.com
 SMTP_PORT=587
-SMTP_USER=apikey
-SMTP_PASSWORD=SEU_SENDGRID_API_KEY
-# opcional: destinatários padrão
-EMAIL_TO=contato@x4payassessoria.com
+SMTP_USER=x4payassessoria.com@zohomail.com
+SMTP_PASSWORD=SUA_APP_PASSWORD
+```
 
+> ⚠️ A senha deve ser uma **App Password gerada no Zoho**, não a senha
+> principal.
 
-Rode o servidor de desenvolvimento com Uvicorn:
+------------------------------------------------------------------------
 
+### 5️⃣ Executar o servidor
+
+``` bash
 uvicorn app.main:app --reload --port 8000
+```
 
+A API ficará disponível em:
 
-O serviço estará disponível em http://localhost:8000. O endpoint raiz (/) retorna uma mensagem JSON, e o endpoint /contact aceita requisições POST com o corpo JSON contendo name, email, phone, subject e message.
+    http://localhost:8000
 
-3. Frontend (React)
+Endpoints principais:
 
-Abra um novo terminal e navegue até a pasta frontend:
+-   `GET /` → status da API\
+-   `POST /contact` → envio do formulário
 
+------------------------------------------------------------------------
+
+## 🌐 Frontend (React)
+
+### 1️⃣ Acessar a pasta
+
+``` bash
 cd frontend
+```
 
+### 2️⃣ Instalar dependências
 
-Instale as dependências do projeto React:
-
+``` bash
 npm install
+```
 
+### 3️⃣ Rodar em modo desenvolvimento
 
-Para rodar em modo de desenvolvimento:
-
+``` bash
 npm start
+```
 
+Aplicação disponível em:
 
-A aplicação abrirá em http://localhost:3000 (ou outra porta livre). A API será chamada via http://localhost:8000/contact (certifique‑se de que o back‑end está rodando). Caso adicione imagens novas à pasta public/ durante o desenvolvimento, reinicie o servidor (Ctrl+C e npm start) ou gere uma nova build (npm run build) para que os assets sejam incorporados.
+    http://localhost:3000
 
-Para gerar a versão de produção:
+------------------------------------------------------------------------
 
-npm run build
+### Variável de ambiente do front-end
 
+No arquivo `.env`:
 
-Esse comando cria a pasta build com os arquivos otimizados. Essa build é utilizada no deploy para a Vercel.
+``` env
+REACT_APP_API_BASE_URL=http://localhost:8000
+```
 
-🌐 Deploy
-Backend na Railway
+Em produção:
 
-Crie uma conta em Railway e conecte seu repositório GitHub.
-
-Ao importar o projeto, defina o Root Directory como backend. A Railway procurará o requirements.txt e criará um ambiente Python.
-
-Defina as variáveis de ambiente no painel Environment com base no seu .env (SMTP, email receptor, etc.).
-
-Informe o comando de start em Deploy Settings ou crie um Procfile em backend com o conteúdo:
-
-web: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-
-
-A Railway atribuirá uma URL do tipo https://<projeto>.railway.app. Se desejar usar o domínio personalizado https://x4payassessoria.com para a API, configure um registro CNAME apontando para a URL da Railway e atualize o allow_origins no CORS para incluir o domínio.
-
-Frontend na Vercel
-
-Crie uma conta em Vercel e importe o repositório.
-
-Configure o Project Settings com:
-
-Framework Preset: Create React App (Vercel detecta automaticamente).
-
-Root Directory: frontend.
-
-Build Command: npm run build.
-
-Output Directory: build.
-
-Nas Environment Variables, adicione REACT_APP_API_BASE_URL ou a variável que seu front‑end usa para chamar a API. Por exemplo:
-
+``` env
 REACT_APP_API_BASE_URL=https://x4payassessoria.com
+```
 
+------------------------------------------------------------------------
 
-Após o deploy, a Vercel fornece uma URL (ex.: https://x4payassessoria.vercel.app). Para usar seu domínio x4payassessoria.com (ou www.x4payassessoria.com), adicione o domínio no painel de domínios da Vercel e configure os registros DNS (A ou CNAME) no seu provedor de domínio.
+## 🌍 Deploy
 
-🔧 Ambiente de produção
+### Backend --- Railway
 
-Para assegurar que o front e o back se comuniquem em produção:
+1.  Criar projeto no Railway\
+2.  Conectar o repositório GitHub\
+3.  Definir **Root Directory** como `backend`\
+4.  Criar variáveis de ambiente (`SMTP_*`)\
+5.  Usar como comando de start:
 
-O front deve referenciar a API via variável de ambiente (REACT_APP_API_BASE_URL) apontando para o domínio ou subdomínio onde o back‑end está publicado.
+``` bash
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
 
-No back‑end, configure o allow_origins do CORS para incluir o domínio do front (https://x4payassessoria.com e https://www.x4payassessoria.com). Dessa forma, o navegador não bloqueia requisições cross‑origin.
+------------------------------------------------------------------------
 
-🛠 Dependências principais
+### Frontend --- Vercel
 
-Backend:
+1.  Criar projeto na Vercel\
+2.  Conectar o repositório\
+3.  Configurar:
+    -   Framework: Create React App\
+    -   Root Directory: `frontend`\
+    -   Build command: `npm run build`\
+    -   Output directory: `build`
+4.  Definir variável:
 
-fastapi – framework para criação de APIs rápidas em Python.
+``` env
+REACT_APP_API_BASE_URL=https://x4payassessoria.com
+```
 
-uvicorn – servidor ASGI utilizado para rodar a aplicação.
+------------------------------------------------------------------------
 
-pydantic – modelos de validação de dados.
+## 🔐 CORS
 
-python-dotenv – carregamento de variáveis de ambiente de um arquivo .env.
+O backend permite chamadas apenas dos domínios configurados, incluindo:
 
-aiosmtplib – envio assíncrono de e‑mails (SMTP) via SendGrid.
+-   https://x4payassessoria.com\
+-   https://www.x4payassessoria.com\
+-   URLs da Vercel
 
-Frontend:
+Isso evita bloqueios de requisições no navegador.
 
-react – biblioteca JavaScript para construção de UI.
+------------------------------------------------------------------------
 
-react-router-dom – roteamento no lado do cliente.
+## 🧰 Dependências principais
 
-react-input-mask – máscara para o campo de telefone.
+### Backend
 
-Outras dependências do Create React App (Webpack, Babel, etc.).
+-   fastapi\
+-   uvicorn\
+-   pydantic\
+-   python-dotenv\
+-   smtplib / ssl
 
-📨 Variáveis de ambiente (backend)
+### Frontend
 
-Os seguintes parâmetros são usados para envio de e‑mail e configuração do servidor:
+-   react\
+-   react-router-dom\
+-   react-input-mask
 
-Variável	Descrição
-SMTP_HOST	Host do servidor SMTP (ex.: smtp.sendgrid.net).
-SMTP_PORT	Porta do SMTP (587 para STARTTLS ou 465 para SSL).
-SMTP_USER	Nome de usuário (SendGrid usa sempre apikey).
-SMTP_PASSWORD	Chave de API do SendGrid ou senha do serviço.
-EMAIL_TO	(Opcional) Endereço que receberá as mensagens.
-CORS_ORIGINS	(Opcional) Lista de domínios permitidos pelo CORS.
+------------------------------------------------------------------------
 
-Estas variáveis podem ser definidas no painel do Railway (Production) e num .env local para desenvolvimento.
+## 📝 Observações
 
-📝 Observações
+-   Sempre reinicie o servidor após alterar o `.env`
+-   Nunca versione arquivos `.env`
+-   Para novos assets no React, reinicie o servidor
+-   O envio de e-mails é feito via SMTP autenticado (Zoho)
+-   O projeto não utiliza banco de dados
 
-Sempre que adicionar novas imagens à pasta public/ do front‑end, reinicie o servidor (npm start) ou crie uma nova build (npm run build) para que o React inclua os assets.
+------------------------------------------------------------------------
 
-As telas foram estilizadas usando classes CSS personalizadas (global-btn, form-control, etc.) e seguem a identidade visual da X4Pay Assessoria.
+## 📄 Licença
 
-Para personalizar os textos e imagens, edite os componentes em frontend/src/pages e frontend/src/assets.
+Projeto desenvolvido para uso institucional da **X4Pay Assessoria**.\
+Para reutilização ou redistribuição, consulte os responsáveis pelo
+projeto.
 
-📌 Licença
+------------------------------------------------------------------------
 
-Este projecto foi desenvolvido para fins institucionais da X4Pay Assessoria. Caso deseje reutilizar o código, consulte os autores ou contribuintes para mais informações.
+## 🤝 Contribuição
 
-🤝 Contribuição
-
-Sinta‑se livre para abrir issues ou enviar pull requests. Sugestões e correções são muito bem‑vindas.
+Sugestões, melhorias e correções são bem-vindas via *issues* ou *pull
+requests*.
