@@ -1,29 +1,32 @@
 import os
-import re
+import ssl
 import logging
-import asyncio
-from aiosmtplib import SMTP
-from dotenv import load_dotenv
+from email.message import EmailMessage
+from typing import Optional, Annotated, Literal
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, EmailStr, StringConstraints, Field
-from email.message import EmailMessage
-from typing import Optional, Annotated, Literal
-from pydantic import field_validator
+from fastapi.concurrency import run_in_threadpool
+from pydantic import BaseModel, EmailStr, Field, StringConstraints
+from dotenv import load_dotenv
+import smtplib
 
-# Carrega variaveis de ambiente do .env
+# =========================================================
+# ENV
+# =========================================================
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.sendgrid.net")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))  # 465 para SSL ou 587 para STARTTLS
-SMTP_USER = os.getenv("SMTP_USER", "apikey")  # O usuario sempre eh "apikey" no SendGrid
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")  # A API Key gerada no SendGrid
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.zoho.com")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
+SMTP_USER = os.getenv("SMTP_USER")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
-if not SMTP_PASSWORD:
-    raise RuntimeError("A variavel SMTP_PASSWORD precisa estar definida no arquivo .env")
+if not SMTP_USER or not SMTP_PASSWORD:
+    raise RuntimeError("SMTP_USER e SMTP_PASSWORD precisam estar definidos no .env")
 
-# Configuracao de logs
+# =========================================================
+# LOGGING
+# =========================================================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -32,90 +35,110 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Inicializa FastAPI
+# =========================================================
+# FASTAPI
+# =========================================================
 app = FastAPI()
 
-# Configuracao de CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://x4paywebsite-production.up.railway.app", "https://x4paywebsite-production.up.railway.app", "http://x4payassessoria.com", "https://x4payassessoria.com", "http://www.x4payassessoria.com", "https://www.x4payassessoria.com"],
+    allow_origins=[
+        "http://x4paywebsite-production.up.railway.app",
+        "https://x4paywebsite-production.up.railway.app",
+        "http://x4payassessoria.com",
+        "https://x4payassessoria.com",
+        "http://www.x4payassessoria.com",
+        "https://www.x4payassessoria.com",
+    ],
     allow_credentials=True,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
 
-# Validacao para numero de telefone
+# =========================================================
+# MODELS
+# =========================================================
 PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$")]
 
-# Modelo do formulario de contato
 class ContactForm(BaseModel):
-    name: Optional[str] = Field(max_length=100, description="Nome do usuário")
+    name: Optional[str] = Field(max_length=100)
     email: EmailStr
-    phone: Optional[str] = None  # O telefone continua opcional
-    subject: Optional[Literal["", "Subadquirência", "Compliance", "Outros Assuntos"]] = None  # Assunto opcional com valores limitados
-    message: Optional[str] = Field(max_length=1000, description="Mensagem opcional")
+    phone: Optional[str] = None
+    subject: Optional[Literal["", "Subadquirência", "Compliance", "Outros Assuntos"]] = None
+    message: Optional[str] = Field(max_length=1000)
 
-# Middleware para log de requisicoes
+# =========================================================
+# UTIL: envio SMTP (sincrono, seguro)
+# =========================================================
+def send_email(msg: EmailMessage):
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
+        server.ehlo()
+        server.starttls(context=context)
+        server.ehlo()
+        server.login(SMTP_USER, SMTP_PASSWORD)
+        server.send_message(msg)
+
+# =========================================================
+# MIDDLEWARE LOG
+# =========================================================
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
-    logger.info(f"[{request.client.host}] {request.method} {request.url} recebida com sucesso!")
+    logger.info(f"[{request.client.host}] {request.method} {request.url}")
     response = await call_next(request)
     logger.info(f"Resposta enviada: {response.status_code}")
     return response
 
+# =========================================================
+# ROTAS
+# =========================================================
 @app.get("/")
 def read_root():
-    """Verifica se a API esta funcionando."""
-    logger.info("GET / - API acessada com sucesso")
-    return JSONResponse(content={"message": "Bem-vindo a API do website da X4PAY"}, media_type="application/json; charset=utf-8")
+    return JSONResponse(
+        content={"message": "Bem-vindo à API do site da X4PAY"},
+        media_type="application/json; charset=utf-8"
+    )
+
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    """Processa o formulario e envia um e-mail via SendGrid"""
+    logger.info(f"Nova solicitação de contato: {form.name} ({form.email})")
 
-    logger.info(f"Nova solicitacao de contato de {form.name} ({form.email})")
-
-    # Estrutura do e-mail em HTML
-    email_content = f"""
+    html_body = f"""
     <html>
-    <body>
-        <h2>Novo contato via site da X4PAY</h2>
-        <p><strong>Nome:</strong> {form.name if form.name else '-'}</p>
+      <body>
+        <h2>*TEMOS UM NOVO CONTATO*</h2>
+        <p><strong>Nome:</strong> {form.name or '-'}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
-        <p><strong>Telefone:</strong> {form.phone if form.phone else '-'}</p>
-        <p><strong>Assunto:</strong> {form.subject if form.subject else '-'}</p>
-        <p><strong>Mensagem:</strong> {form.message if form.message else '-'}</p>
-    </body>
+        <p><strong>Telefone:</strong> {form.phone or '-'}</p>
+        <p><strong>Assunto:</strong> {form.subject or '-'}</p>
+        <p><strong>Mensagem:</strong></p>
+        <p>{form.message or '-'}</p>
+      </body>
     </html>
     """
 
-    # Configuracao do e-mail
     msg = EmailMessage()
-    msg["From"] = f"X4PAY Assessoria <contato@x4payassessoria.com>"  # O dominio autenticado no SendGrid
+    msg["From"] = f"X4PAY Assessoria <{SMTP_USER}>"
     msg["To"] = "contato@x4payassessoria.com"
     msg["Cc"] = "xaxa@x4payassessoria.com"
-    msg["Subject"] = f"Novo contato!"
-    msg.set_content(email_content, subtype="html")
+    msg["Reply-To"] = form.email
+    msg["Subject"] = "Novo contato via website"
+    msg.set_content(html_body, subtype="html")
 
     try:
-        # Conectar ao servidor SendGrid
-        async with SMTP(hostname=SMTP_HOST, port=SMTP_PORT, start_tls=True) as smtp:
-            await smtp.login(SMTP_USER, SMTP_PASSWORD)
-            await smtp.send_message(msg)
+        await run_in_threadpool(send_email, msg)
 
-        logger.info(f"E-mail enviado com sucesso para contato@x4payassessoria.com")
-        return {"status": "success", "message": "E-mail enviado com sucesso!"}
-
-    except asyncio.TimeoutError:
-        logger.error("Tempo limite excedido ao tentar enviar o e-mail.")
-        raise HTTPException(
-            status_code=500,
-            detail={"status": "error", "message": "Tempo limite excedido ao enviar o e-mail."}
-        )
+        logger.info("E-mail enviado com sucesso via Zoho.")
+        return {"status": "success", "message": "Mensagem enviada com sucesso!"}
 
     except Exception as e:
-        logger.error(f"Erro ao enviar e-mail para contato@x4payassessoria.com: {e}")
+        logger.exception("Erro ao enviar e-mail")
         raise HTTPException(
             status_code=500,
-            detail={"status": "error", "message": f"Erro ao enviar e-mail: {str(e)}"}
+            detail={
+                "status": "error",
+                "message": "Erro ao enviar o e-mail."
+            }
         )
