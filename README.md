@@ -1,78 +1,77 @@
-# X4Pay Assessoria --- Website
+# X4Pay Assessoria — Website
 
-Website institucional da **X4Pay Assessoria**, desenvolvido para
-apresentar a empresa, seus serviços e permitir o contato direto com
-potenciais clientes por meio de um formulário.
+Website institucional da **X4Pay Assessoria**, desenvolvido para apresentar a empresa, seus serviços e permitir o contato direto com potenciais clientes por meio de um formulário.
 
 O projeto é **full stack**, composto por:
 
--   **Front-end:** React (Create React App)\
--   **Back-end:** FastAPI (Python)\
--   **Envio de e-mails:** SMTP via Zoho Mail\
--   **Deploy:**
-    -   Front-end → Vercel\
-    -   Back-end → Railway
+- **Front-end:** React (Create React App)
+- **Back-end:** FastAPI (Python)
+- **Envio de e-mails:** Resend (API)
+- **Deploy:**
+  - Front-end → Vercel
+  - Back-end → Railway
 
-------------------------------------------------------------------------
+---
 
 ## 📌 Visão geral
 
 O site apresenta:
 
--   Informações institucionais da empresa\
--   Serviços oferecidos\
--   Parceiros e clientes\
--   Formulário de contato funcional\
--   Integração entre front-end e API\
--   Envio automático de e-mails
+- Informações institucionais da empresa
+- Serviços oferecidos
+- Parceiros e clientes
+- Formulário de contato funcional
+- Integração entre front-end e API
+- Envio automático de e-mails
 
-O projeto foi estruturado de forma modular, permitindo manutenção e
-evolução simples no futuro.
+O projeto foi estruturado de forma modular, facilitando manutenção, evolução e futuras integrações.
 
-------------------------------------------------------------------------
+---
 
 ## ✨ Funcionalidades
 
 ### 📄 Páginas institucionais
-
--   Apresentação da empresa\
--   Missão, visão e valores\
--   Serviços prestados\
--   Parceiros e clientes
+- Apresentação da empresa
+- Missão, visão e valores
+- Serviços prestados
+- Parceiros e clientes
 
 ### 📬 Formulário de contato
 
 Existem dois formatos:
 
--   **Formulário completo (`/contact`)**
-    -   Nome
-    -   E-mail
-    -   Telefone
-    -   Assunto
-    -   Mensagem
--   **Formulário simplificado (rodapé)**
-    -   Apenas e-mail
+- **Formulário completo (`/contact`)**
+  - Nome
+  - E-mail
+  - Telefone
+  - Assunto
+  - Mensagem
+
+- **Formulário simplificado (rodapé)**
+  - Apenas e-mail
 
 ### ✉️ Envio de e-mails
 
--   Os dados do formulário são enviados para a API\
--   A API valida os dados\
--   O envio ocorre via **SMTP do Zoho Mail**\
--   O e-mail é entregue no endereço configurado\
--   O campo **Reply-To** aponta para o e-mail informado pelo visitante
+- Os dados do formulário são enviados para a API
+- A API valida os campos
+- O envio é feito via **Resend (API)**
+- O e-mail é entregue ao endereço configurado
+- O campo **Reply-To** recebe automaticamente o e-mail informado pelo visitante
+
+> ⚠️ Observação: em ambiente de teste, a Resend pode restringir envios para destinatários não verificados. Para envios para terceiros em produção, é necessário **verificar um domínio** na Resend e usar um remetente (`From`) desse domínio.
 
 ### 🚀 Deploy
 
--   Front-end hospedado na **Vercel**
--   Back-end hospedado na **Railway**
--   Comunicação via HTTPS
--   CORS configurado corretamente
+- Front-end hospedado na **Vercel**
+- Back-end hospedado na **Railway**
+- Comunicação via HTTPS
+- CORS configurado corretamente
 
-------------------------------------------------------------------------
+---
 
 ## 📁 Estrutura do projeto
 
-``` text
+```
 x4pay_website/
 ├── backend/
 │   ├── app/
@@ -93,213 +92,212 @@ x4pay_website/
     └── README.md
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🚀 Execução local
 
 ### Requisitos
 
--   Node.js 16+\
--   Python 3.8+\
--   npm\
--   pip
+- Node.js 16+
+- Python 3.8+
+- npm
+- pip
 
-------------------------------------------------------------------------
+---
 
 ## 🔧 Backend (FastAPI)
 
 ### 1️⃣ Acessar a pasta
 
-``` bash
+```bash
 cd backend
 ```
 
 ### 2️⃣ Criar ambiente virtual
 
-``` bash
+```bash
 python -m venv venv
 ```
 
 Ativar:
 
 **Linux / macOS**
-
-``` bash
+```bash
 source venv/bin/activate
 ```
 
 **Windows (PowerShell)**
-
-``` powershell
+```powershell
 .\venv\Scripts\activate
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 3️⃣ Instalar dependências
 
-``` bash
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 4️⃣ Criar arquivo `.env`
 
-``` env
-SMTP_HOST=smtp.zoho.com
-SMTP_PORT=587
-SMTP_USER=x4payassessoria.com@zohomail.com
-SMTP_PASSWORD=SUA_APP_PASSWORD
+Exemplo:
+
+```env
+# Resend
+RESEND_API_KEY=SEU_TOKEN_DA_RESEND
+RESEND_USER=remetente@seudominio.com
+
+# (Opcional) e-mails padrão do sistema
+EMAIL_TO=contato@x4payassessoria.com
+EMAIL_CC=xaxa@x4payassessoria.com
 ```
 
-> ⚠️ A senha deve ser uma **App Password gerada no Zoho**, não a senha
-> principal.
-
-------------------------------------------------------------------------
+---
 
 ### 5️⃣ Executar o servidor
 
-``` bash
+```bash
 uvicorn app.main:app --reload --port 8000
 ```
 
 A API ficará disponível em:
 
-    http://localhost:8000
+```
+http://localhost:8000
+```
 
 Endpoints principais:
 
--   `GET /` → status da API\
--   `POST /contact` → envio do formulário
+- `GET /` → status da API
+- `POST /contact` → envio do formulário
 
-------------------------------------------------------------------------
+---
 
 ## 🌐 Frontend (React)
 
 ### 1️⃣ Acessar a pasta
 
-``` bash
+```bash
 cd frontend
 ```
 
 ### 2️⃣ Instalar dependências
 
-``` bash
+```bash
 npm install
 ```
 
 ### 3️⃣ Rodar em modo desenvolvimento
 
-``` bash
+```bash
 npm start
 ```
 
 Aplicação disponível em:
 
-    http://localhost:3000
+```
+http://localhost:3000
+```
 
-------------------------------------------------------------------------
+---
 
 ### Variável de ambiente do front-end
 
-No arquivo `.env`:
+Arquivo `.env`:
 
-``` env
+```env
 REACT_APP_API_BASE_URL=http://localhost:8000
 ```
 
 Em produção:
 
-``` env
+```env
 REACT_APP_API_BASE_URL=https://x4payassessoria.com
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🌍 Deploy
 
-### Backend --- Railway
+### Backend — Railway
 
-1.  Criar projeto no Railway\
-2.  Conectar o repositório GitHub\
-3.  Definir **Root Directory** como `backend`\
-4.  Criar variáveis de ambiente (`SMTP_*`)\
-5.  Usar como comando de start:
+1. Criar projeto no Railway
+2. Conectar o repositório
+3. Definir **Root Directory** como `backend`
+4. Criar variáveis de ambiente (`RESEND_*`, `EMAIL_*`)
+5. Usar como comando de start:
 
-``` bash
+```bash
 uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```
 
-------------------------------------------------------------------------
+---
 
-### Frontend --- Vercel
+### Frontend — Vercel
 
-1.  Criar projeto na Vercel\
-2.  Conectar o repositório\
-3.  Configurar:
-    -   Framework: Create React App\
-    -   Root Directory: `frontend`\
-    -   Build command: `npm run build`\
-    -   Output directory: `build`
-4.  Definir variável:
+1. Criar projeto na Vercel
+2. Conectar o repositório
+3. Configurar:
+   - Framework: Create React App
+   - Root Directory: `frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `build`
+4. Definir variável de ambiente:
 
-``` env
+```env
 REACT_APP_API_BASE_URL=https://x4payassessoria.com
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🔐 CORS
 
-O backend permite chamadas apenas dos domínios configurados, incluindo:
+O backend aceita requisições apenas dos domínios configurados, incluindo:
 
--   https://x4payassessoria.com\
--   https://www.x4payassessoria.com\
--   URLs da Vercel
+- https://x4payassessoria.com
+- https://www.x4payassessoria.com
+- domínios gerados pela Vercel
 
 Isso evita bloqueios de requisições no navegador.
 
-------------------------------------------------------------------------
+---
 
 ## 🧰 Dependências principais
 
 ### Backend
-
--   fastapi\
--   uvicorn\
--   pydantic\
--   python-dotenv\
--   smtplib / ssl
+- fastapi
+- uvicorn
+- pydantic
+- python-dotenv
+- requests (para chamar a API da Resend)
 
 ### Frontend
+- react
+- react-router-dom
+- react-input-mask
 
--   react\
--   react-router-dom\
--   react-input-mask
-
-------------------------------------------------------------------------
+---
 
 ## 📝 Observações
 
--   Sempre reinicie o servidor após alterar o `.env`
--   Nunca versione arquivos `.env`
--   Para novos assets no React, reinicie o servidor
--   O envio de e-mails é feito via SMTP autenticado (Zoho)
--   O projeto não utiliza banco de dados
+- Sempre reinicie o servidor após alterar o `.env`
+- Nunca versione arquivos `.env`
+- Para novos assets no React, reinicie o servidor
+- O projeto não utiliza banco de dados
 
-------------------------------------------------------------------------
+---
 
 ## 📄 Licença
 
-Projeto desenvolvido para uso institucional da **X4Pay Assessoria**.\
-Para reutilização ou redistribuição, consulte os responsáveis pelo
-projeto.
+Projeto desenvolvido para uso institucional da **X4Pay Assessoria**.  
+Para reutilização ou redistribuição, consulte os responsáveis pelo projeto.
 
-------------------------------------------------------------------------
+---
 
 ## 🤝 Contribuição
 
-Sugestões, melhorias e correções são bem-vindas via *issues* ou *pull
-requests*.
+Sugestões, melhorias e correções são bem-vindas via *issues* ou *pull requests*.
