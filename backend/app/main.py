@@ -1,28 +1,25 @@
 import os
-import ssl
 import logging
-from email.message import EmailMessage
+import requests
 from typing import Optional, Annotated, Literal
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel, EmailStr, Field, StringConstraints
 from dotenv import load_dotenv
-import smtplib
 
 # =========================================================
 # ENV
 # =========================================================
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.zoho.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
-SMTP_USER = os.getenv("SMTP_USER")
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+RESEND_FROM = os.getenv("RESEND_FROM", "X4PAY Assessoria <contato@x4payassessoria>")
+EMAIL_TO = os.getenv("EMAIL_TO", "contato@x4payassessoria.com")
 
-if not SMTP_USER or not SMTP_PASSWORD:
-    raise RuntimeError("SMTP_USER e SMTP_PASSWORD precisam estar definidos no .env")
+if not RESEND_API_KEY:
+    raise RuntimeError("RESEND_API_KEY não definido no .env")
 
 # =========================================================
 # LOGGING
@@ -30,7 +27,7 @@ if not SMTP_USER or not SMTP_PASSWORD:
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("backend.log"), logging.StreamHandler()]
+    handlers=[logging.FileHandler("backend.log"), logging.StreamHandler()],
 )
 
 logger = logging.getLogger(__name__)
@@ -68,17 +65,28 @@ class ContactForm(BaseModel):
     message: Optional[str] = Field(max_length=1000)
 
 # =========================================================
-# UTIL: envio SMTP (sincrono, seguro)
+# UTIL — ENVIO VIA RESEND (HTTP)
 # =========================================================
-def send_email(msg: EmailMessage):
-    context = ssl.create_default_context()
+def send_email_resend(subject: str, html: str, reply_to: str):
+    response = requests.post(
+        "https://api.resend.com/emails",
+        headers={
+            "Authorization": f"Bearer {RESEND_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "from": RESEND_FROM,
+            "to": [EMAIL_TO],
+            "subject": subject,
+            "html": html,
+            "reply_to": reply_to,
+        },
+        timeout=15,
+    )
 
-    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
-        server.ehlo()
-        server.starttls(context=context)
-        server.ehlo()
-        server.login(SMTP_USER, SMTP_PASSWORD)
-        server.send_message(msg)
+    if response.status_code >= 400:
+        logger.error("Erro Resend: %s", response.text)
+        raise RuntimeError("Falha ao enviar e-mail")
 
 # =========================================================
 # MIDDLEWARE LOG
@@ -96,49 +104,48 @@ async def log_requests(request: Request, call_next):
 @app.get("/")
 def read_root():
     return JSONResponse(
-        content={"message": "Bem-vindo à API do site da X4PAY"},
-        media_type="application/json; charset=utf-8"
+        content={"message": "API da X4PAY online"},
+        media_type="application/json; charset=utf-8",
     )
 
 
 @app.post("/contact")
 async def contact(form: ContactForm):
-    logger.info(f"Nova solicitação de contato: {form.name} ({form.email})")
+    logger.info(f"Novo contato: {form.name} ({form.email})")
 
     html_body = f"""
     <html>
       <body>
-        <h2>*TEMOS UM NOVO CONTATO*</h2>
+        <h2>TEMOS UM NOVO CONTATO</h2>
         <p><strong>Nome:</strong> {form.name or '-'}</p>
         <p><strong>E-mail:</strong> {form.email}</p>
         <p><strong>Telefone:</strong> {form.phone or '-'}</p>
         <p><strong>Assunto:</strong> {form.subject or '-'}</p>
-        <p><strong>Mensagem:</strong></p>
-        <p>{form.message or '-'}</p>
+        <p><strong>Mensagem:</strong> {form.message or '-'}</p>
       </body>
     </html>
     """
 
-    msg = EmailMessage()
-    msg["From"] = f"X4PAY Assessoria <{SMTP_USER}>"
-    msg["To"] = "contato@x4payassessoria.com"
-    msg["Cc"] = "xaxa@x4payassessoria.com"
-    msg["Reply-To"] = form.email
-    msg["Subject"] = "Novo contato via website"
-    msg.set_content(html_body, subtype="html")
-
     try:
-        await run_in_threadpool(send_email, msg)
+        send_email_resend(
+            subject="Novo contato via site da X4PAY",
+            html=html_body,
+            reply_to=form.email,
+        )
 
-        logger.info("E-mail enviado com sucesso via Zoho.")
-        return {"status": "success", "message": "Mensagem enviada com sucesso!"}
+        logger.info("E-mail enviado com sucesso (Resend).")
 
-    except Exception as e:
+        return {
+            "status": "success",
+            "message": "E-mail enviado com sucesso!"
+        }
+
+    except Exception:
         logger.exception("Erro ao enviar e-mail")
         raise HTTPException(
             status_code=500,
             detail={
                 "status": "error",
                 "message": "Erro ao enviar o e-mail."
-            }
+            },
         )
