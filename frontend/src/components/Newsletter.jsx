@@ -54,7 +54,7 @@ const Newsletter = () => {
       <div className="container">
         <div className="footer-top-1 bg-theme">
           <div className="footer-top-content">
-            <h3 className="footer-top-title text-white">Contate-nos</h3>
+            <h3 className="footer-top-title text-white">Entre em contato</h3>
             <p className="footer-top-text">
               Sua empresa está apenas a um clique de distância dessa evolução
             </p>

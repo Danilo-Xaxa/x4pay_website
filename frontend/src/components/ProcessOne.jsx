@@ -52,7 +52,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">02</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Visa, Mastercard, Amex, etc</span>
+                  <span className="process-card-text">Visa, Mastercard, Elo e American Express</span>
                   <h4 className="process-card-title"> Contratos com as bandeiras</h4>
                 </div>
               </div>
@@ -66,7 +66,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">03</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">B3, CERC, CIP, etc</span>
+                  <span className="process-card-text">B3, CERC e Núclea</span>
                   <h4 className="process-card-title"> Contratos com as registradoras</h4>
                 </div>
               </div>
@@ -80,7 +80,7 @@ const ProcessOne = () => {
                   <h3 className="process-card_number">04</h3>
                 </div>
                 <div className="process-card_content">
-                  <span className="process-card-text">Captura, liquidação, etc</span>
+                  <span className="process-card-text">Liquidação, captura e processamento</span>
                   <h4 className="process-card-title"> Contratação dos softwares</h4>
                 </div>
               </div>

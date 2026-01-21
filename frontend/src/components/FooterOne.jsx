@@ -18,24 +18,15 @@ const FooterOne = () => {
                   </Link>
                 </div>
                 <p className="footer-text mb-30">
-                  X4PAY Assessoria | Conectando sua empresa ao futuro dos pagamentos. Simples, rápido e seguro.
+                  A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos.
                 </p>
                 <div className="social-btn style3">
+                  <Link to="https://www.instagram.com/x4pay_assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                    <i className="fab fa-instagram" />
+                  </Link>
                   <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
                     <i className="fab fa-linkedin-in" />
                   </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-xl-auto">
-              <div className="widget widget_nav_menu footer-widget">
-                <h3 className="widget_title">Links Úteis</h3>
-                <div className="menu-all-pages-container">
-                  <ul className="menu">
-                    <li>
-                      <Link to="/contato">Entre em contato</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -56,8 +47,8 @@ const FooterOne = () => {
                     <i className="fas fa-envelope" />
                     <div className="contact-grid-details">
                       <h6>
-                        <Link to="#">contato@x4payassessoria.com</Link> <br />
-                        <Link to="#">xaxa@x4payassessoria.com</Link>
+                        <Link to="mailto:contato@x4payassessoria.com">contato@x4payassessoria.com</Link> <br />
+                        <Link to="mailto:xaxa@x4payassessoria.com">xaxa@x4payassessoria.com</Link>
                         <p />
                       </h6>
                     </div>
@@ -73,7 +64,7 @@ const FooterOne = () => {
           <div className="row gy-3 justify-content-lg-between justify-content-center">
             <div className="col-auto align-self-center">
               <p className="copyright-text text-center">
-               © 2025 X4PAY Assessoria LTDA | CNPJ: 59.088.251/0001-12 | Todos os direitos reservados
+               © 2026 X4PAY Assessoria LTDA | CNPJ: 59.088.251/0001-12 | Todos os direitos reservados
               </p>
             </div>
           </div>

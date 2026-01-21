@@ -40,9 +40,9 @@ const FaqOne = () => {
                       Dentre várias de nossas tratativas, destacamos algumas: <br />
                       •	Solicitamos e conferimos toda a documentação requerida pelos adquirentes, bandeiras e registradoras; <br />
                       •	Formulamos o Forecast estimando os três primeiros anos da operação; <br />
-                      •	Auxiliamos na negociação das condições comerciais que os adquirentes ofertam (entre eles, Adiq, Entrepay, GetNet, MercadoPago, Rede, Cielo, SafraPay, PagBank/PagSeguro, Pinbank, etc); <br />
-                      •	Providenciamos o Arranjo de Pagamentos com as bandeiras Visa, MasterCard, American Express (AMEX), Elo e HiperCard; <br />
-                      •	Agilizamos o contrato com as Registradoras (B3, CERC ou CIP); <br />
+                      •	Auxiliamos na negociação das condições comerciais que os adquirentes ofertam (entre eles, Adiq, Entrepay, GetNet, MercadoPago, Rede, Cielo, SafraPay, PagBank/PagSeguro, Pinbank, WorldPay, etc); <br />
+                      •	Providenciamos o Arranjo de Pagamentos com as bandeiras Visa, MasterCard, American Express (AMEX) e Elo; <br />
+                      •	Agilizamos o contrato com as Registradoras (B3, CERC e Núclea); <br />
                       •	Auxiliamos na certificação PCI-DDS; <br />
                       •	Elaboramos todas as políticas de Compliance exigidas pelos adquirentes e bandeiras; <br />
                       •	Definimos todos os fluxos da operação; <br />

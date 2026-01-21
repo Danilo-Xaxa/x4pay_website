@@ -157,6 +157,16 @@ const HeaderOne = () => {
                     <li>
                       <Link to="/contato">Contato</Link>
                     </li>
+                    <li>
+                      <Link to="https://www.instagram.com/x4pay_assessoria/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-instagram" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-linkedin-in" />
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
                 <div className="navbar-right d-inline-flex d-lg-none">
@@ -179,11 +189,6 @@ const HeaderOne = () => {
                     >
                       <img src="assets/img/icon/bars.svg" alt="X4PAY Assessoria" />
                     </button>
-                  </div>
-                  <div className="social-links">
-                    <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-linkedin" />
-                    </Link>
                   </div>
                 </div>
               </div>

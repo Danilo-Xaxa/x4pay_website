@@ -14,13 +14,13 @@ const HeroOne = () => {
             <div className="hero-style1">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Simples, rápido e seguro
+                Seja subadquirente!
               </span>
               <h1 className="hero-title">
                 Subadquirência sem complicação 
               </h1>
               <p className="hero-text">
-                Facilitamos sua evolução no mercado de pagamentos com um processo eficiente e ágil
+                Estruturamos sua subadquirente, facilitando sua evolução no mercado de pagamentos com um processo eficiente e ágil.
               </p>
               <div className="btn-group">
                 <Link to="/contato" className="global-btn">

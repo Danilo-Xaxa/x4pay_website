@@ -70,10 +70,10 @@ const TeamOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Novas subaquirentes
+                Subaquirentes em operação
               </span>
               <h2 className="sec-title">
-                Nossos clientes{" "}
+                Alguns de nossos clientes{" "}
               </h2>
             </div>
           </div>
