@@ -75,7 +75,7 @@ const ContactInner = () => {
                                     <img src="assets/img/icon/title_left.svg" alt="shape" />
                                     Entre em contato
                                 </span>
-                                <h2 className="sec-title style2">Receba nossa proposta!</h2>
+                                <h2 className="sec-title style2">Solicite um orçamento!</h2>
                                 <p className="mb-40">
                                     Marcaremos uma entrevista preliminar para você conhecer melhor os nossos serviços e nós conhecermos melhor o seu negócio. Após isso, a nossa Proposta Comercial será enviada imediatamente para o seu e-mail.
                                 </p>
