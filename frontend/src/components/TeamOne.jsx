@@ -209,7 +209,7 @@ const TeamOne = () => {
                     <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                   </div>
                   <div className="global-social">
-                    <Link to="https://www.superfin.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                    <Link to="https://superfin.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
                       <i className="far fa-eye" />
                     </Link>
                     <Link to="#">
