@@ -108,8 +108,8 @@ const FaqOne = () => {
           <div className="col-xl-6">
             <div className="ms-xl-5">
               <p className="counter-text">
-                A X4PAY é especializada na construção de ecossistemas de subadquirência. Nós construímos sua subadquirente sem te dar trabalho. Nós que fazemos tudo - desde a adequação dos CNAEs do seu CNPJ, até a entrega da operação pronta para transacionar. <br />
-                Faça contato conosco e se surpreenda com a nossa metodologia!
+                A X4PAY é especializada na estruturação de ecossistemas de subadquirência. Nós construímos sua subadquirente sem te dar trabalho. Desde a adequação dos CNAEs do seu CNPJ até a entrega da operação pronta para transacionar. <br />
+                Entre em contato conosco e se surpreenda com a nossa metodologia!
               </p>
               <div className="counter-box_wrapper">
                 <div className="counter-box">
