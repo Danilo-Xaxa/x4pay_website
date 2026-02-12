@@ -85,7 +85,7 @@ const ContactInner = () => {
               setFeedback({ type: "error", message: errorMessage });
           }
       } catch (error) {
-          setFeedback({ type: "error", message: "Erro de conexão. Verifique sua internet e tente novamente." });
+          setFeedback({ type: "error", message: "Erro de conexão. Tente novamente ou contate o suporte." });
       } finally {
           setIsLoading(false);
       }
