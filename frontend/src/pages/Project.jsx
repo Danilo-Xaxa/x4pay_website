@@ -4,7 +4,7 @@ import HelmetReact from "../elements/HelmetReact";
 import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import FooterOne from "../components/FooterOne";
-import Newsletter from "../components/Newsletter";
+import EmailCapture from "../components/EmailCapture";
 import PortfolioAll from "../components/PortfolioAll";
 
 
@@ -33,8 +33,8 @@ const Project = () => {
       {/* PortfolioAll */}
       <PortfolioAll />
 
-      {/* Newsletter */}
-      <Newsletter />
+      {/* EmailCapture */}
+      <EmailCapture />
 
       {/* FooterOne */}
       <FooterOne />

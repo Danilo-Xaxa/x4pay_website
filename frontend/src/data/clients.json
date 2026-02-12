@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "NasaPay",
+    "location": "Cuiabá (MT)",
+    "image": "assets/img/team/nasabank.png",
+    "website": "https://www.nasapay.com.vc/"
+  },
+  {
+    "id": 2,
+    "name": "Xulis",
+    "location": "Vitória (ES)",
+    "image": "assets/img/team/xulis.png",
+    "website": "https://xulis.com.br/"
+  },
+  {
+    "id": 3,
+    "name": "AMI",
+    "location": "Goiânia (GO)",
+    "image": "assets/img/team/ami.jpg",
+    "website": "https://www.amifinance.com.br/"
+  },
+  {
+    "id": 4,
+    "name": "Payt",
+    "location": "São Paulo (SP)",
+    "image": "assets/img/team/payt2.png",
+    "website": "https://www.payt.com.br/"
+  },
+  {
+    "id": 5,
+    "name": "SuperFin",
+    "location": "Marília (SP)",
+    "image": "assets/img/team/superfin2.png",
+    "website": "https://superfin.com.br/"
+  },
+  {
+    "id": 6,
+    "name": "SpotPass",
+    "location": "Belo Horizonte (MG)",
+    "image": "assets/img/team/spotpass.png",
+    "website": "https://www.spotpass.com.br/"
+  },
+  {
+    "id": 7,
+    "name": "DNA Pagamentos",
+    "location": "Americana (SP)",
+    "image": "assets/img/team/dnapagamentos.png",
+    "website": "https://dnapagamentos.com.br/"
+  },
+  {
+    "id": 8,
+    "name": "Status Pay",
+    "location": "Maceió (AL)",
+    "image": "assets/img/team/statuspay.png",
+    "website": "https://statuspay.com.br/"
+  },
+  {
+    "id": 9,
+    "name": "PayZu",
+    "location": "Teixeira de Freitas (BA)",
+    "image": "assets/img/team/payzu2.jpg",
+    "website": "https://payzu.com.br/"
+  },
+  {
+    "id": 10,
+    "name": "CartWave",
+    "location": "Cuiabá (MT)",
+    "image": "assets/img/team/cartwave2.jpeg",
+    "website": "https://www.checkoutcartwave.com.br/"
+  }
+]

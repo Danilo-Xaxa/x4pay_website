@@ -4,7 +4,7 @@ import HelmetReact from "../elements/HelmetReact";
 import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import FooterOne from "../components/FooterOne";
-import Newsletter from "../components/Newsletter";
+import EmailCapture from "../components/EmailCapture";
 import PricingInner from "../components/PricingInner";
 import FaqOne from "../components/FaqOne";
 
@@ -38,8 +38,8 @@ const Pricing = () => {
         <FaqOne />
       </div>
 
-      {/* Newsletter */}
-      <Newsletter />
+      {/* EmailCapture */}
+      <EmailCapture />
 
       {/* FooterOne */}
       <FooterOne />

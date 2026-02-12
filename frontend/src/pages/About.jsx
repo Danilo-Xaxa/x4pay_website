@@ -5,12 +5,7 @@ import HeaderOne from "../components/HeaderOne";
 import Breadcrumb from "../components/Breadcrumb";
 import GoalArea from "../components/GoalArea";
 import AboutOne from "../components/AboutOne";
-//import ProcessThree from "../components/ProcessThree";
-//import TestimonialOne from "../components/TestimonialOne";
-//import CounterOne from "../components/CounterOne";
-//import WhyChoose from "../components/WhyChoose";
 import FooterOne from "../components/FooterOne";
-//import Newsletter from "../components/Newsletter";
 
 const About = () => {
   let [active, setActive] = useState(true);

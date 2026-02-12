@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import clientsData from "../data/clients.json";
 const TeamOne = () => {
   function SampleNextArrow(props) {
     const { onClick } = props;
@@ -29,7 +30,7 @@ const TeamOne = () => {
       </div>
     );
   }
-  let settings = {
+  const settings = {
     dots: false,
     arrows: true,
     infinite: true,
@@ -81,296 +82,36 @@ const TeamOne = () => {
       </div>
       <div className="row gx-30 global-carousel team-slider2">
         <Slider {...settings}>
-
-        <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/nasabank.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+          {clientsData.map((client) => (
+            <div className="p-2" key={client.id}>
+              <div className="team-card">
+                <div className="team-card_wrapp">
+                  <div className="team-card_img">
+                    <img src={client.image} alt={client.name} />
                   </div>
-                  <div className="global-social">
-                    <Link to="https://www.nasapay.com.vc/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
+                  <div className="team-social">
+                    <div className="plus-btn">
                       <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
+                    </div>
+                    <div className="global-social">
+                      <Link to={client.website} target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                        <i className="far fa-eye" />
+                      </Link>
+                      <Link to="#">
+                        <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">NasaPay</Link>
-                </h4>
-                <span className="team-card_desig">Cuiabá (MT)</span>
+                <div className="team-card_content">
+                  <h4 className="team-card_title">
+                    <Link to="#">{client.name}</Link>
+                  </h4>
+                  <span className="team-card_desig">{client.location}</span>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/xulis.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://xulis.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">Xulis</Link>
-                </h4>
-                <span className="team-card_desig">Vitória (ES)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/ami.jpg" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.amifinance.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">AMI</Link>
-                </h4>
-                <span className="team-card_desig">Goiânia (GO)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/payt2.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.payt.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">Payt</Link>
-                </h4>
-                <span className="team-card_desig">São Paulo (SP)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/superfin2.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://superfin.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">SuperFin</Link>
-                </h4>
-                <span className="team-card_desig">Marília (SP)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/spotpass.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.spotpass.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">SpotPass</Link>
-                </h4>
-                <span className="team-card_desig">Belo Horizonte (MG)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/dnapagamentos.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://dnapagamentos.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">DNA Pagamentos</Link>
-                </h4>
-                <span className="team-card_desig">Americana (SP)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/statuspay.png" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://statuspay.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">Status Pay</Link>
-                </h4>
-                <span className="team-card_desig">Maceió (AL)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/payzu2.jpg" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://payzu.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">PayZu</Link>
-                </h4>
-                <span className="team-card_desig">Teixeira de Freitas (BA)</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2">
-            <div className="team-card">
-              <div className="team-card_wrapp">
-                <div className="team-card_img">
-                  <img src="assets/img/team/cartwave2.jpeg" alt="img" />
-                </div>
-                <div className="team-social">
-                  <div className="plus-btn">
-                    <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                  </div>
-                  <div className="global-social">
-                    <Link to="https://www.checkoutcartwave.com.br/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
-                      <i className="far fa-eye" />
-                    </Link>
-                    <Link to="#">
-                      <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_content">
-                <h4 className="team-card_title">
-                  <Link to="#">CartWave</Link>
-                </h4>
-                <span className="team-card_desig">Cuiabá (MT)</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InputMask from "react-input-mask";
+import { API_ENDPOINTS } from '../config/api';
 
 const ContactInner = () => {
     const [formData, setFormData] = useState({
@@ -12,14 +13,35 @@ const ContactInner = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [feedback, setFeedback] = useState(null);
+    const [errors, setErrors] = useState({});
+
+    // Validar telefone brasileiro
+    const validatePhone = (phone) => {
+        if (!phone || phone.trim() === "") return true; // Opcional
+        const cleanPhone = phone.replace(/\D/g, '');
+        return cleanPhone.length === 11; // (99) 99999-9999 = 11 dígitos
+    };
 
     // Manipular mudanças nos inputs
     const handleChange = (e) => {
       const { name, value } = e.target;
       setFormData(prev => ({
           ...prev,
-          [name]: value // Agora permite espaços corretamente
+          [name]: value
       }));
+
+      // Limpar erro do campo quando usuário começa a digitar
+      if (errors[name]) {
+        setErrors(prev => ({
+            ...prev,
+            [name]: null
+        }));
+      }
+
+      // Limpar feedback geral quando usuário edita
+      if (feedback) {
+        setFeedback(null);
+      }
     };
 
     // Enviar os dados do formulário para o backend
@@ -27,6 +49,14 @@ const ContactInner = () => {
       e.preventDefault();
       setIsLoading(true);
       setFeedback(null);
+      setErrors({});
+
+      // Validação do telefone
+      if (!validatePhone(formData.phone)) {
+        setErrors({ phone: "Telefone inválido. Use o formato (99) 99999-9999" });
+        setIsLoading(false);
+        return;
+      }
 
       // Ajusta os valores antes do envio (trim apenas aqui)
       const processedData = {
@@ -38,7 +68,7 @@ const ContactInner = () => {
       };
 
       try {
-          const response = await fetch("https://x4paywebsite-production.up.railway.app/contact", {
+          const response = await fetch(API_ENDPOINTS.contact, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -47,13 +77,15 @@ const ContactInner = () => {
           });
 
           if (response.ok) {
-              setFeedback("Mensagem enviada com sucesso!");
+              setFeedback({ type: "success", message: "Mensagem enviada com sucesso! Entraremos em contato em breve." });
               setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
           } else {
-              setFeedback("Erro ao enviar mensagem. Tente novamente.");
+              const errorData = await response.json().catch(() => null);
+              const errorMessage = errorData?.detail || "Erro ao enviar mensagem. Verifique os dados e tente novamente.";
+              setFeedback({ type: "error", message: errorMessage });
           }
       } catch (error) {
-          setFeedback("Erro de conexão. Verifique sua internet.");
+          setFeedback({ type: "error", message: "Erro de conexão. Verifique sua internet e tente novamente." });
       } finally {
           setIsLoading(false);
       }
@@ -112,10 +144,13 @@ const ContactInner = () => {
                                                 mask="(99) 99999-9999"
                                                 name="phone"
                                                 placeholder="Telefone (opcional)"
-                                                className="form-control style-border"
+                                                className={`form-control style-border ${errors.phone ? 'is-invalid' : ''}`}
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                             />
+                                            {errors.phone && (
+                                                <small className="text-danger">{errors.phone}</small>
+                                            )}
                                         </div>
                                         <div className="col-md-6 form-group">
                                             <select
@@ -148,9 +183,12 @@ const ContactInner = () => {
                                         </div>
                                         {feedback && (
                                             <div className="col-12 mt-3">
-                                                <p className="text-center" style={{ color: feedback.includes("Erro") ? "red" : "green" }}>
-                                                    {feedback}
-                                                </p>
+                                                <div
+                                                    className={`alert ${feedback.type === "success" ? "alert-success" : "alert-danger"} text-center`}
+                                                    role="alert"
+                                                >
+                                                    {feedback.message}
+                                                </div>
                                             </div>
                                         )}
                                     </div>
