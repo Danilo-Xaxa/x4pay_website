@@ -9,7 +9,9 @@ export const API_ENDPOINTS = {
   contact: `${API_BASE_URL}/contact`,
 };
 
-export default {
+const apiConfig = {
   BASE_URL: API_BASE_URL,
   ENDPOINTS: API_ENDPOINTS,
 };
+
+export default apiConfig;
