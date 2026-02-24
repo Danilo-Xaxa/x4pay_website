@@ -20,7 +20,7 @@ const About = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Sobre Nós"} />
+      <HelmetReact title={"Sobre Nós"} description="Conheça a X4PAY Assessoria: nossa história, missão e equipe dedicada ao mercado de pagamentos e compliance." />
 
       {/* HeaderFive */}
       <HeaderOne />

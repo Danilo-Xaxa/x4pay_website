@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CONTACT } from "../config/contact";
 
 const FooterOne = () => {
   return (
@@ -21,12 +22,12 @@ const FooterOne = () => {
                   A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos.
                 </p>
                 <div className="social-btn style3">
-                  <Link to="https://www.instagram.com/x4pay_assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                  <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
                     <i className="fab fa-instagram" />
-                  </Link>
-                  <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                  </a>
+                  <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
                     <i className="fab fa-linkedin-in" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -38,8 +39,12 @@ const FooterOne = () => {
                     <i className="fas fa-phone-alt" />
                     <div className="contact-grid-details">
                       <h6>
-                        <Link to="#">(81) 98814-3087</Link> <br />
-                        <Link to="#">(81) 98733-7747</Link>
+                        {CONTACT.phones.map((p, i) => (
+                          <React.Fragment key={p.raw}>
+                            <a href={`tel:+${p.raw}`}>{p.label}</a>
+                            {i < CONTACT.phones.length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
                       </h6>
                     </div>
                   </div>
@@ -47,9 +52,12 @@ const FooterOne = () => {
                     <i className="fas fa-envelope" />
                     <div className="contact-grid-details">
                       <h6>
-                        <Link to="mailto:contato@x4payassessoria.com">contato@x4payassessoria.com</Link> <br />
-                        <Link to="mailto:xaxa@x4payassessoria.com">xaxa@x4payassessoria.com</Link>
-                        <p />
+                        {CONTACT.emails.map((email, i) => (
+                          <React.Fragment key={email}>
+                            <a href={`mailto:${email}`}>{email}</a>
+                            {i < CONTACT.emails.length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
                       </h6>
                     </div>
                   </div>

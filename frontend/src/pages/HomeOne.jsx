@@ -22,7 +22,7 @@ const HomeOne = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Início"} />
+      <HelmetReact title={"Início"} description="A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos. Consultoria especializada em subadquirência e compliance." />
 
       {/* HeaderOne */}
       <HeaderOne />

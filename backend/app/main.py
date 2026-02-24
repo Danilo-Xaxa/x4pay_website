@@ -1,6 +1,7 @@
 import os
 import logging
 import requests
+from html import escape
 from typing import Optional, Annotated, Literal
 
 from fastapi import FastAPI, HTTPException, Request
@@ -8,6 +9,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, Field, StringConstraints
 from dotenv import load_dotenv
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 # =========================================================
 # ENV
@@ -33,9 +37,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # =========================================================
-# FASTAPI
+# FASTAPI + RATE LIMITING
 # =========================================================
+limiter = Limiter(key_func=get_remote_address)
 app = FastAPI()
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
@@ -124,18 +131,25 @@ def read_root():
 
 
 @app.post("/contact")
-async def contact(form: ContactForm):
+@limiter.limit("5/minute")
+async def contact(request: Request, form: ContactForm):
     logger.info(f"Novo contato: {form.name} ({form.email})")
+
+    safe_name = escape(form.name) if form.name else "-"
+    safe_email = escape(form.email)
+    safe_phone = escape(form.phone) if form.phone else "-"
+    safe_subject = escape(form.subject) if form.subject else "-"
+    safe_message = escape(form.message) if form.message else "-"
 
     html_body = f"""
     <html>
       <body>
         <h2>TEMOS UM NOVO CONTATO</h2>
-        <p><strong>Nome:</strong> {form.name or '-'}</p>
-        <p><strong>E-mail:</strong> {form.email}</p>
-        <p><strong>Telefone:</strong> {form.phone or '-'}</p>
-        <p><strong>Assunto:</strong> {form.subject or '-'}</p>
-        <p><strong>Mensagem:</strong> {form.message or '-'}</p>
+        <p><strong>Nome:</strong> {safe_name}</p>
+        <p><strong>E-mail:</strong> {safe_email}</p>
+        <p><strong>Telefone:</strong> {safe_phone}</p>
+        <p><strong>Assunto:</strong> {safe_subject}</p>
+        <p><strong>Mensagem:</strong> {safe_message}</p>
       </body>
     </html>
     """
@@ -166,10 +180,9 @@ async def contact(form: ContactForm):
 
 
 @app.post("/contact_x4agro")
-async def contato_x4agro(form: ContatoX4AgroForm):
+@limiter.limit("5/minute")
+async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
     logger.info("Novo contato X4AGRO: %s (%s)", form.name, form.email)
-
-    from html import escape
 
     safe_name = escape(form.name)
     safe_email = escape(form.email)

@@ -15,11 +15,33 @@ const ContactInner = () => {
     const [feedback, setFeedback] = useState(null);
     const [errors, setErrors] = useState({});
 
-    // Validar telefone brasileiro
-    const validatePhone = (phone) => {
-        if (!phone || phone.trim() === "") return true; // Opcional
-        const cleanPhone = phone.replace(/\D/g, '');
-        return cleanPhone.length === 11; // (99) 99999-9999 = 11 dígitos
+    const validate = (data) => {
+        const newErrors = {};
+
+        if (!data.name || data.name.trim().length < 2) {
+            newErrors.name = "Nome deve ter pelo menos 2 caracteres.";
+        } else if (data.name.trim().length > 100) {
+            newErrors.name = "Nome deve ter no máximo 100 caracteres.";
+        }
+
+        if (!data.email || data.email.trim() === "") {
+            newErrors.email = "E-mail é obrigatório.";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+            newErrors.email = "E-mail inválido.";
+        }
+
+        if (data.phone && data.phone.trim() !== "") {
+            const cleanPhone = data.phone.replace(/\D/g, '');
+            if (cleanPhone.length !== 11) {
+                newErrors.phone = "Telefone inválido. Use o formato (99) 99999-9999";
+            }
+        }
+
+        if (data.message && data.message.trim().length > 1000) {
+            newErrors.message = "Mensagem deve ter no máximo 1000 caracteres.";
+        }
+
+        return newErrors;
     };
 
     // Manipular mudanças nos inputs
@@ -51,9 +73,9 @@ const ContactInner = () => {
       setFeedback(null);
       setErrors({});
 
-      // Validação do telefone
-      if (!validatePhone(formData.phone)) {
-        setErrors({ phone: "Telefone inválido. Use o formato (99) 99999-9999" });
+      const validationErrors = validate(formData);
+      if (Object.keys(validationErrors).length > 0) {
+        setErrors(validationErrors);
         setIsLoading(false);
         return;
       }
@@ -122,22 +144,28 @@ const ContactInner = () => {
                                                 type="text"
                                                 name="name"
                                                 placeholder="Nome"
-                                                className="form-control style-border"
+                                                className={`form-control style-border ${errors.name ? 'is-invalid' : ''}`}
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 required
                                             />
+                                            {errors.name && (
+                                                <small className="text-danger">{errors.name}</small>
+                                            )}
                                         </div>
                                         <div className="col-md-6 form-group">
                                             <input
                                                 type="email"
                                                 name="email"
                                                 placeholder="E-mail"
-                                                className="form-control style-border"
+                                                className={`form-control style-border ${errors.email ? 'is-invalid' : ''}`}
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required
                                             />
+                                            {errors.email && (
+                                                <small className="text-danger">{errors.email}</small>
+                                            )}
                                         </div>
                                         <div className="col-md-6 form-group">
                                             <InputMask
@@ -170,10 +198,13 @@ const ContactInner = () => {
                                             <textarea
                                                 name="message"
                                                 placeholder="Mensagem (opcional)"
-                                                className="form-control style-border"
+                                                className={`form-control style-border ${errors.message ? 'is-invalid' : ''}`}
                                                 value={formData.message}
                                                 onChange={handleChange}
                                             />
+                                            {errors.message && (
+                                                <small className="text-danger">{errors.message}</small>
+                                            )}
                                         </div>
                                         <div className="col-12 form-group mb-0">
                                             <button type="submit" className="global-btn w-100" disabled={isLoading}>

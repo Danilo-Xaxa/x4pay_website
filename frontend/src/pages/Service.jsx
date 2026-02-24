@@ -22,7 +22,7 @@ const Service = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Nossos Serviços"} />
+      <HelmetReact title={"Nossos Serviços"} description="Serviços especializados em subadquirência, compliance e consultoria regulatória para o mercado de pagamentos." />
 
       {/* HeaderFive */}
       <HeaderOne />

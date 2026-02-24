@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CONTACT } from "../config/contact";
 
 const HeaderOne = () => {
   const [active, setActive] = useState(false);
@@ -35,14 +36,17 @@ const HeaderOne = () => {
     for (let i = 0; i < numMenuExpand; i++) {
       menuExpand[i].addEventListener("click", sideMenuExpand);
     }
-    window.onscroll = () => {
+
+    const handleScroll = () => {
       if (window.pageYOffset < 250) {
         setScroll(false);
       } else if (window.pageYOffset > 250) {
         setScroll(true);
       }
-      return () => (window.onscroll = null);
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const mobileMenu = () => {
@@ -86,13 +90,15 @@ const HeaderOne = () => {
           <div className="side-info mb-30">
             <div className="contact-list mb-20">
               <h4>Telefone/WhatsApp</h4>
-              <p className="mb-0">(81) 98814-3087</p>
-              <p>(81) 98733-7747</p>
+              {CONTACT.phones.map((p, i) => (
+                <p key={p.raw} className={i === 0 ? "mb-0" : undefined}>{p.label}</p>
+              ))}
             </div>
             <div className="contact-list mb-20">
               <h4>E-mail</h4>
-              <p className="mb-0">contato@x4payassessoria.com</p>
-              <p>xaxa@x4payassessoria.com</p>
+              {CONTACT.emails.map((email, i) => (
+                <p key={email} className={i === 0 ? "mb-0" : undefined}>{email}</p>
+              ))}
             </div>
           </div>
         </div>
@@ -158,14 +164,14 @@ const HeaderOne = () => {
                       <Link to="/contato">Contato</Link>
                     </li>
                     <li>
-                      <Link to="https://www.instagram.com/x4pay_assessoria/" target="_blank" rel="noopener noreferrer">
+                      <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-instagram" />
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://www.linkedin.com/company/x4pay-assessoria/" target="_blank" rel="noopener noreferrer">
+                      <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-linkedin-in" />
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </nav>

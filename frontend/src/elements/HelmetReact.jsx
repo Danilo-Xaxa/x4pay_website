@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-const HelmetReact = ({ title }) => {
+
+const HelmetReact = ({ title, description = "A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos. Soluções completas em subadquirência e compliance." }) => {
   return (
     <Helmet>
       <title>
@@ -8,7 +9,7 @@ const HelmetReact = ({ title }) => {
       </title>
       <meta
         name="description"
-        content="X4PAY Assessoria"
+        content={description}
       />
     </Helmet>
   );

@@ -22,7 +22,7 @@ const Project = () => {
       {active === true && <Preloader />}
 
       {/* Helmet */}
-      <HelmetReact title={"Clientes"} />
+      <HelmetReact title={"Clientes"} description="Conheça os clientes e casos de sucesso da X4PAY Assessoria no mercado de pagamentos." />
 
       {/* HeaderFive */}
       <HeaderOne />

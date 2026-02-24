@@ -16,7 +16,7 @@ const Error = () => {
             {active === true && <Preloader />}
 
             {/* Helmet */}
-            <HelmetReact title={"Team"} />
+            <HelmetReact title={"Página não encontrada"} description="A página que você está procurando não existe ou foi movida." />
 
             {/* ErrorInner */}
             <ErrorInner />

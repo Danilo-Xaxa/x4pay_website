@@ -1,4 +1,5 @@
 import React from "react";
+import { CONTACT } from "../config/contact";
 
 const pulseKeyframes = `
 @keyframes whatsapp-pulse {
@@ -15,9 +16,7 @@ const pulseKeyframes = `
 `;
 
 const WhatsAppFloat = () => {
-  const phoneNumber = "5581988143087";
-  const message = "Olá! Gostaria de saber mais sobre os serviços da X4PAY.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.phone}?text=${encodeURIComponent(CONTACT.whatsapp.message)}`;
 
   return (
     <>
