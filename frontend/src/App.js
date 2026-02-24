@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RouteScrollToTop from "./elements/RouteScrollToTop";
 import ScrollToTop from "react-scroll-to-top";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 import HomeOne from "./pages/HomeOne";
 import About from "./pages/About";
 import Service from "./pages/Service";
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppFloat />
     </>
   );
 };
