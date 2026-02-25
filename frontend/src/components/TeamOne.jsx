@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import clientsData from "../data/clients.json";
+import useScrollAnimation from "../hooks/useScrollAnimation";
+
 const TeamOne = () => {
+  const { ref, isVisible } = useScrollAnimation();
   function SampleNextArrow(props) {
     const { onClick } = props;
     return (
@@ -30,6 +32,7 @@ const TeamOne = () => {
       </div>
     );
   }
+
   const settings = {
     dots: false,
     arrows: true,
@@ -63,10 +66,11 @@ const TeamOne = () => {
       },
     ],
   };
+
   return (
-    <div className="team-area-1 space">
+    <div className="team-area-1 space" ref={ref}>
       <div className="container">
-        <div className="row justify-content-center">
+        <div className={`row justify-content-center fade-in-up${isVisible ? " visible" : ""}`}>
           <div className="col-xl-6">
             <div className="title-area text-center">
               <span className="sub-title">
@@ -94,18 +98,17 @@ const TeamOne = () => {
                       <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
                     </div>
                     <div className="global-social">
-                      <Link to={client.website} target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                      <a href={client.website} target="_blank" rel="noopener noreferrer">
                         <i className="far fa-eye" />
-                      </Link>
-                      <Link to="#">
-                        <img src="assets/img/icon/angles-right.svg" alt="X4PAY Assessoria" />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div className="team-card_content">
                   <h4 className="team-card_title">
-                    <Link to="#">{client.name}</Link>
+                    <a href={client.website} target="_blank" rel="noopener noreferrer">
+                      {client.name}
+                    </a>
                   </h4>
                   <span className="team-card_desig">{client.location}</span>
                 </div>

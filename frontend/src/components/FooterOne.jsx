@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { CONTACT } from "../config/contact";
+import { handleAnchorClick } from "../hooks/useSmoothScroll";
 
 const FooterOne = () => {
   return (
     <footer
       className="footer-wrapper footer-layout1"
-      style={{ backgroundImage: "url(assets/img/bg/footer-bg1-1.png)" }}
+      style={{
+        backgroundColor: "#061326",
+        backgroundImage: "none",
+      }}
     >
       <div className="container">
         <div className="widget-area">
@@ -14,9 +17,9 @@ const FooterOne = () => {
             <div className="col-md-6 col-xl-5">
               <div className="widget footer-widget widget-about">
                 <div className="about-logo">
-                  <Link to="/">
+                  <a href="#inicio" onClick={(e) => handleAnchorClick(e, "inicio")}>
                     <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
-                  </Link>
+                  </a>
                 </div>
                 <p className="footer-text mb-30">
                   A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos.

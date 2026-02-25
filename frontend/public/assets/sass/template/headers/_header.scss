@@ -51,7 +51,23 @@
                 padding: 36px 0;
 
                 &:hover {
-                    color: $title-color;
+                    color: $theme-color2;
+                }
+
+                &.active {
+                    color: $theme-color2;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 28px;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: $theme-color2;
+                        border-radius: 1px;
+                    }
                 }
             }
         }
@@ -558,7 +574,7 @@
             border-radius: 50%;
             font-size: 18px;
             text-align: center;
-            background-color: #EBF3EE;
+            background-color: #F0F3F8;
             transition: all 0.4s ease-in-out;
 
             &:hover {

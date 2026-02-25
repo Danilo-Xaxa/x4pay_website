@@ -1,14 +1,18 @@
 import React from "react";
 import TrackVisibility from "react-on-screen";
 import CountUp from "react-countup";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const FaqOne = () => {
+  const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
+  const { ref: counterRef, isVisible: counterVisible } = useScrollAnimation();
+
   return (
     <section className=" ">
       <div className="container">
         <div className="row align-items-end">
-          <div className="col-xl-6">
-            <div className="title-area me-xl-5 mb-20">
+          <div className="col-xl-6" ref={faqRef}>
+            <div className={`title-area me-xl-5 mb-20 fade-in-up${faqVisible ? " visible" : ""}`}>
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
                 Tirando suas dúvidas
@@ -105,8 +109,8 @@ const FaqOne = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-6">
-            <div className="ms-xl-5">
+          <div className="col-xl-6" ref={counterRef}>
+            <div className={`ms-xl-5 fade-in-up delay-2${counterVisible ? " visible" : ""}`}>
               <p className="counter-text">
                 A X4PAY é especializada na estruturação de ecossistemas de subadquirência. Nós construímos sua subadquirente sem te dar trabalho. Desde a adequação dos CNAEs do seu CNPJ até a entrega da operação pronta para transacionar. <br />
                 Entre em contato conosco e se surpreenda com a nossa metodologia!

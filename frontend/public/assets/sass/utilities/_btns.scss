@@ -5,7 +5,7 @@
     vertical-align: middle;
     display: inline-block;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: center;
     background-color: $theme-color;
     color: $white-color;
@@ -28,7 +28,7 @@
         width: 50%;
         height: 0;
         background: $title-color;
-        border-radius: 10px 0 0 10px;
+        border-radius: 8px 0 0 8px;
         position: absolute;
         top: 0;
         left: 0;
@@ -41,7 +41,7 @@
         left: auto;
         bottom: 0;
         right: 0;
-        border-radius: 0 10px 10px 0;
+        border-radius: 0 8px 8px 0;
     }
 
     i {
@@ -68,10 +68,11 @@
 
     &.style3 {
         background: $theme-color2;
-        color: $title-color;
+        color: $white-color;
         &:after,
         &:before {
             border-radius: 0;
+            background: #c87a0d;
         }
         &:active,
         &:focus,

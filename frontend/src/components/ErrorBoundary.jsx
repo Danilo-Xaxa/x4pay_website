@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component {
             fontFamily: "Arial, sans-serif",
           }}
         >
-          <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#196164" }}>
+          <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#0B1D3A" }}>
             Algo deu errado
           </h1>
           <p style={{ fontSize: "1.1rem", color: "#666", marginBottom: "2rem" }}>
@@ -40,7 +40,7 @@ class ErrorBoundary extends React.Component {
             style={{
               padding: "12px 32px",
               fontSize: "1rem",
-              backgroundColor: "#196164",
+              backgroundColor: "#0B1D3A",
               color: "#fff",
               border: "none",
               borderRadius: "6px",

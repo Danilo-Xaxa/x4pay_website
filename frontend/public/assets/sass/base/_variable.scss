@@ -1,18 +1,20 @@
 :root {
-  --theme-color         : #355834;
-  --theme-color2        : #EA9010;  
+  --theme-color         : #0B1D3A;
+  --theme-color2        : #EA9010;
   --title-color         : #030305;
-  --body-color          : #7E8987;
-  --smoke-color         : #EBF3EE; 
+  --body-color          : #6B7280;
+  --smoke-color         : #F0F3F8;
   --smoke-color2        : #F6F6F7;
   --smoke-color3        : #F5F5F6;
   --smoke-color4        : #F4F4F4;
-  --smoke-color5        : #F0F2F4; 
-  --black-color         : #202420;
-  --gray-color          : #232323;
-  --white-color         : #ffffff; 
-  --light-color         : #7E8987;
+  --smoke-color5        : #F0F2F4;
+  --black-color         : #111827;
+  --gray-color          : #1E293B;
+  --white-color         : #ffffff;
+  --light-color         : #6B7280;
   --yellow-color        : #EA9010;
+  --navy-light          : #1A3A6B;
+  --navy-dark           : #061326;
   --success-color       : #95C623;
   --error-color         : #dc3545;
   --border-color        : #E1E1E1;
@@ -104,7 +106,7 @@ $overlaycolorMap : map-merge((
   "title"        : $title-color,
   "white"        : $white-color,
   "black"        : $black-color,
-  "overlay1"     : #131B23,
+  "overlay1"     : #061326,
 ), $overlaycolorMap);
 
 

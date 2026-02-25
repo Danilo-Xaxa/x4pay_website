@@ -67,7 +67,7 @@
             right: 0;
             width: 579.82px;
             height: 579.82px;
-            background: $white-color;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 50%;
             z-index: -1;
 
@@ -124,7 +124,7 @@
             bottom: 20%;
             width: 390px;
             height: 390px;
-            background: #C4F500;
+            background: rgba(234, 144, 16, 0.15);
             clip-path: path("M236.5 0L472.492 390H0.508072L236.5 0Z");
             z-index: -1;
 
@@ -137,7 +137,7 @@
             left: 15%;
             width: 63.07px;
             height: 63.07px;
-            border: 0.612211px solid #196164;
+            border: 0.612211px solid rgba(234, 144, 16, 0.4);
             transform: rotate(45deg);
 
             @include vxs {
@@ -172,7 +172,7 @@
         display: flex;
         justify-content: space-between;
         gap: 37px;
-        background: #EBF3EE;
+        background: #F0F3F8;
         padding: 28px 28px 24px 28px;
         border-radius: 13px;
         z-index: 2;
@@ -194,7 +194,7 @@
             position: absolute;
             top: 1px;
             left: 1px;
-            background-color: #EBF3EE;
+            background-color: #F0F3F8;
             z-index: -1;
             border-radius: 13px;
             transition: 0.4s ease-in-out;
@@ -203,7 +203,7 @@
         &:after {
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(180deg, rgba(25, 97, 100, 0.47) 0%, rgba(255, 255, 255, 0) 80%);
+            background-image: linear-gradient(180deg, rgba(11, 29, 58, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
             z-index: -2;
             top: 0;
             left: 0;
