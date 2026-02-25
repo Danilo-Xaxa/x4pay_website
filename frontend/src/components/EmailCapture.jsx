@@ -67,7 +67,9 @@ const EmailCapture = () => {
         </div>
         <form className="newsletter-form" onSubmit={handleSubmit}>
           <div className="form-group">
+            <label htmlFor="capture-email" className="visually-hidden">Seu e-mail</label>
             <input
+              id="capture-email"
               className="form-control"
               type="email"
               placeholder="Seu e-mail"
@@ -75,6 +77,7 @@ const EmailCapture = () => {
               value={email}
               onChange={handleChange}
               disabled={isLoading}
+              aria-required="true"
             />
             <button
               type="submit"

@@ -9,42 +9,9 @@ const HeaderOne = () => {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    let offCanvasNav = document.getElementById("offcanvas-navigation");
-    let offCanvasNavSubMenu = offCanvasNav.querySelectorAll(".sub-menu");
-
-    for (let i = 0; i < offCanvasNavSubMenu.length; i++) {
-      offCanvasNavSubMenu[i].insertAdjacentHTML(
-        "beforebegin",
-        "<span class='mean-expand-class'>+</span>"
-      );
-    }
-
-    let menuExpand = offCanvasNav.querySelectorAll(".mean-expand-class");
-    let numMenuExpand = menuExpand.length;
-
-    function sideMenuExpand() {
-      if (this.parentElement.classList.contains("active") === true) {
-        this.parentElement.classList.remove("active");
-      } else {
-        for (let i = 0; i < numMenuExpand; i++) {
-          menuExpand[i].parentElement.classList.remove("active");
-        }
-        this.parentElement.classList.add("active");
-      }
-    }
-
-    for (let i = 0; i < numMenuExpand; i++) {
-      menuExpand[i].addEventListener("click", sideMenuExpand);
-    }
-
     const handleScroll = () => {
-      if (window.pageYOffset < 250) {
-        setScroll(false);
-      } else if (window.pageYOffset > 250) {
-        setScroll(true);
-      }
+      setScroll(window.pageYOffset > 250);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -77,7 +44,7 @@ const HeaderOne = () => {
             <div className="th-widget-about">
               <div className="about-logo">
                 <Link to="/">
-                  <img src="assets/img/logo.svg" alt="Laun" />
+                  <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
                 </Link>
               </div>
               <br />
@@ -150,7 +117,7 @@ const HeaderOne = () => {
               <div className="col-auto">
                 <div className="header-logo">
                   <Link to="/">
-                    <img src="assets/img/logo.svg" alt="logo" />
+                    <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
                   </Link>
                 </div>
               </div>
@@ -164,13 +131,13 @@ const HeaderOne = () => {
                       <Link to="/contato">Contato</Link>
                     </li>
                     <li>
-                      <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-instagram" />
+                      <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Siga a X4PAY Assessoria no Instagram">
+                        <i className="fab fa-instagram" aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin-in" />
+                      <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Siga a X4PAY Assessoria no LinkedIn">
+                        <i className="fab fa-linkedin-in" aria-hidden="true" />
                       </a>
                     </li>
                   </ul>

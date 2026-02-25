@@ -73,7 +73,7 @@ PhoneStr = Annotated[str, StringConstraints(pattern=r"^\(?\d{2}\)?\s?\d{4,5}-?\d
 class ContactForm(BaseModel):
     name: Optional[str] = Field(max_length=100)
     email: EmailStr
-    phone: Optional[str] = None
+    phone: Optional[PhoneStr] = None
     subject: Optional[Literal["", "Subadquirência", "Compliance", "Outros Assuntos"]] = None
     message: Optional[str] = Field(max_length=1000)
 
@@ -81,9 +81,14 @@ class ContactForm(BaseModel):
 class ContatoX4AgroForm(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
-    phone: Optional[str] = Field(None, max_length=20)
+    phone: Optional[PhoneStr] = None
     propriedade: Optional[str] = Field(None, max_length=100)
     message: Optional[str] = Field(None, max_length=1000)
+
+
+class ApiResponse(BaseModel):
+    success: bool
+    message: str
 
 # =========================================================
 # UTIL — ENVIO VIA RESEND (HTTP)
@@ -130,7 +135,7 @@ def read_root():
     )
 
 
-@app.post("/contact")
+@app.post("/contact", response_model=ApiResponse)
 @limiter.limit("5/minute")
 async def contact(request: Request, form: ContactForm):
     logger.info(f"Novo contato: {form.name} ({form.email})")
@@ -163,23 +168,17 @@ async def contact(request: Request, form: ContactForm):
 
         logger.info("E-mail enviado com sucesso (Resend).")
 
-        return {
-            "status": "success",
-            "message": "E-mail enviado com sucesso!"
-        }
+        return ApiResponse(success=True, message="E-mail enviado com sucesso!")
 
     except Exception:
         logger.exception("Erro ao enviar e-mail")
         raise HTTPException(
             status_code=500,
-            detail={
-                "status": "error",
-                "message": "Erro ao enviar o e-mail."
-            },
+            detail={"success": False, "message": "Erro ao enviar o e-mail."},
         )
 
 
-@app.post("/contact_x4agro")
+@app.post("/contact_x4agro", response_model=ApiResponse)
 @limiter.limit("5/minute")
 async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
     logger.info("Novo contato X4AGRO: %s (%s)", form.name, form.email)
@@ -222,14 +221,11 @@ async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
 
         logger.info("E-mail X4AGRO enviado com sucesso (Resend).")
 
-        return {
-            "success": True,
-            "message": "Contato enviado com sucesso!",
-        }
+        return ApiResponse(success=True, message="Contato enviado com sucesso!")
 
     except Exception:
         logger.exception("Erro ao enviar e-mail X4AGRO")
         raise HTTPException(
             status_code=500,
-            detail="Erro ao enviar e-mail. Tente novamente mais tarde.",
+            detail={"success": False, "message": "Erro ao enviar e-mail. Tente novamente mais tarde."},
         )

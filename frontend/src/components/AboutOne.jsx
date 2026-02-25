@@ -7,14 +7,14 @@ const AboutOne = () => {
         <img
           className="about1-shape-img-1"
           src="assets/img/normal/about_shape1-1.jpg"
-          alt="img"
+          alt="Equipe X4PAY Assessoria em consultoria de pagamentos"
         />
       </div>
       <div className="about1-shape-img2">
         <img
           className="about1-shape-img-2"
           src="assets/img/normal/about_shape1-2.png"
-          alt="img"
+          alt="Infraestrutura de pagamentos e subadquirência"
         />
       </div>
       <div className="container">

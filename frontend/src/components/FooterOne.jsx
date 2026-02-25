@@ -22,11 +22,11 @@ const FooterOne = () => {
                   A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos.
                 </p>
                 <div className="social-btn style3">
-                  <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
-                    <i className="fab fa-instagram" />
+                  <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Siga a X4PAY Assessoria no Instagram">
+                    <i className="fab fa-instagram" aria-hidden="true" />
                   </a>
-                  <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
-                    <i className="fab fa-linkedin-in" />
+                  <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Siga a X4PAY Assessoria no LinkedIn">
+                    <i className="fab fa-linkedin-in" aria-hidden="true" />
                   </a>
                 </div>
               </div>

@@ -140,7 +140,9 @@ const ContactInner = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
                                         <div className="col-md-6 form-group">
+                                            <label htmlFor="contact-name" className="visually-hidden">Nome</label>
                                             <input
+                                                id="contact-name"
                                                 type="text"
                                                 name="name"
                                                 placeholder="Nome"
@@ -148,13 +150,17 @@ const ContactInner = () => {
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 required
+                                                aria-required="true"
+                                                aria-describedby={errors.name ? "name-error" : undefined}
                                             />
                                             {errors.name && (
-                                                <small className="text-danger">{errors.name}</small>
+                                                <small id="name-error" className="text-danger">{errors.name}</small>
                                             )}
                                         </div>
                                         <div className="col-md-6 form-group">
+                                            <label htmlFor="contact-email" className="visually-hidden">E-mail</label>
                                             <input
+                                                id="contact-email"
                                                 type="email"
                                                 name="email"
                                                 placeholder="E-mail"
@@ -162,25 +168,31 @@ const ContactInner = () => {
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required
+                                                aria-required="true"
+                                                aria-describedby={errors.email ? "email-error" : undefined}
                                             />
                                             {errors.email && (
-                                                <small className="text-danger">{errors.email}</small>
+                                                <small id="email-error" className="text-danger">{errors.email}</small>
                                             )}
                                         </div>
                                         <div className="col-md-6 form-group">
+                                            <label htmlFor="contact-phone" className="visually-hidden">Telefone</label>
                                             <InputMask
+                                                id="contact-phone"
                                                 mask="(99) 99999-9999"
                                                 name="phone"
                                                 placeholder="Telefone (opcional)"
                                                 className={`form-control style-border ${errors.phone ? 'is-invalid' : ''}`}
                                                 value={formData.phone}
                                                 onChange={handleChange}
+                                                aria-describedby={errors.phone ? "phone-error" : undefined}
                                             />
                                             {errors.phone && (
-                                                <small className="text-danger">{errors.phone}</small>
+                                                <small id="phone-error" className="text-danger">{errors.phone}</small>
                                             )}
                                         </div>
                                         <div className="col-md-6 form-group">
+                                            <label htmlFor="subject" className="visually-hidden">Assunto</label>
                                             <select
                                                 name="subject"
                                                 id="subject"
@@ -195,15 +207,18 @@ const ContactInner = () => {
                                             </select>
                                         </div>
                                         <div className="col-12 form-group">
+                                            <label htmlFor="contact-message" className="visually-hidden">Mensagem</label>
                                             <textarea
+                                                id="contact-message"
                                                 name="message"
                                                 placeholder="Mensagem (opcional)"
                                                 className={`form-control style-border ${errors.message ? 'is-invalid' : ''}`}
                                                 value={formData.message}
                                                 onChange={handleChange}
+                                                aria-describedby={errors.message ? "message-error" : undefined}
                                             />
                                             {errors.message && (
-                                                <small className="text-danger">{errors.message}</small>
+                                                <small id="message-error" className="text-danger">{errors.message}</small>
                                             )}
                                         </div>
                                         <div className="col-12 form-group mb-0">

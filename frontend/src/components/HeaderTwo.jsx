@@ -33,14 +33,11 @@ const HeaderTwo = () => {
     for (let i = 0; i < numMenuExpand; i++) {
       menuExpand[i].addEventListener("click", sideMenuExpand);
     }
-    window.onscroll = () => {
-      if (window.pageYOffset < 250) {
-        setScroll(false);
-      } else if (window.pageYOffset > 250) {
-        setScroll(true);
-      }
-      return () => (window.onscroll = null);
+    const handleScroll = () => {
+      setScroll(window.pageYOffset > 250);
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const mobileMenu = () => {

@@ -33,7 +33,7 @@ const ProcessOne = () => {
               <div className="process-card">
                 <div className="process-card_wrapp">
                   <div className="process-card-icon">
-                    <img src="assets/img/icon/process-icon-1-1.svg" alt="img" />
+                    <img src="assets/img/icon/process-icon-1-1.svg" alt="Ícone de contratos com adquirentes" />
                   </div>
                   <h3 className="process-card_number">01</h3>
                 </div>
@@ -47,7 +47,7 @@ const ProcessOne = () => {
               <div className="process-card">
                 <div className="process-card_wrapp">
                   <div className="process-card-icon">
-                    <img src="assets/img/icon/process-icon-1-2.svg" alt="img" />
+                    <img src="assets/img/icon/process-icon-1-2.svg" alt="Ícone de contratos com bandeiras de cartão" />
                   </div>
                   <h3 className="process-card_number">02</h3>
                 </div>
@@ -61,7 +61,7 @@ const ProcessOne = () => {
               <div className="process-card">
                 <div className="process-card_wrapp">
                   <div className="process-card-icon">
-                    <img src="assets/img/icon/process-icon-1-3.svg" alt="img" />
+                    <img src="assets/img/icon/process-icon-1-3.svg" alt="Ícone de contratos com registradoras" />
                   </div>
                   <h3 className="process-card_number">03</h3>
                 </div>
@@ -75,7 +75,7 @@ const ProcessOne = () => {
               <div className="process-card">
                 <div className="process-card_wrapp">
                   <div className="process-card-icon">
-                    <img src="assets/img/icon/process-icon-1-4.svg" alt="img" />
+                    <img src="assets/img/icon/process-icon-1-4.svg" alt="Ícone de contratação de softwares de pagamento" />
                   </div>
                   <h3 className="process-card_number">04</h3>
                 </div>

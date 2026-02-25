@@ -32,7 +32,7 @@ const HeroOne = () => {
           <div className="col-xl-6">
             <div className="hero-image-wrapp">
               <div className="hero-thumb text-center">
-                <img src="assets/img/hero/hero_thumb_1_1.png" alt="img" />
+                <img src="assets/img/hero/hero_thumb_1_1.png" alt="Consultoria especializada em subadquirência e pagamentos - X4PAY Assessoria" />
               </div>
               <div className="hero-shape1" />
               <div className="hero-shape2" />
@@ -46,7 +46,7 @@ const HeroOne = () => {
           <div className="hero-card_wrapper">
             <div className="hero-card">
               <div className="hero-card_icon">
-                <img src="assets/img/icon/1.svg" alt="img" />
+                <img src="assets/img/icon/1.svg" alt="Ícone de subadquirência" />
               </div>
               <div className="hero-card_content">
                 <h4 className="box-title">Subadquirência</h4>
@@ -55,7 +55,7 @@ const HeroOne = () => {
             </div>
             <div className="hero-card">
               <div className="hero-card_icon">
-                <img src="assets/img/icon/2.svg" alt="img" />
+                <img src="assets/img/icon/2.svg" alt="Ícone de compliance" />
               </div>
               <div className="hero-card_content">
                 <h4 className="box-title">Compliance</h4>

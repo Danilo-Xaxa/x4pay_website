@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Preloader from "../elements/Preloader";
+import React from "react";
 import HelmetReact from "../elements/HelmetReact";
 import HeaderOne from "../components/HeaderOne";
 import HeroOne from "../components/HeroOne";
@@ -10,17 +9,8 @@ import EmailCapture from "../components/EmailCapture";
 import FooterOne from "../components/FooterOne";
 
 const HomeOne = () => {
-  let [active, setActive] = useState(true);
-  useEffect(() => {
-    setTimeout(function () {
-      setActive(false);
-    }, 500);
-  }, []);
   return (
     <>
-      {/* Preloader */}
-      {active === true && <Preloader />}
-
       {/* Helmet */}
       <HelmetReact title={"Início"} description="A X4PAY Assessoria conecta sua empresa ao futuro do mercado de pagamentos. Consultoria especializada em subadquirência e compliance." />
 
