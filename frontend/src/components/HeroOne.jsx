@@ -1,90 +1,116 @@
 import React from "react";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const HeroOne = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <div
       className="hero-wrapper hero-1"
       id="hero"
       style={{
-        background: "linear-gradient(135deg, #0B1D3A 0%, #1A3A6B 50%, #0B1D3A 100%)",
+        background: "linear-gradient(135deg, #0B1D3A 0%, #122B54 40%, #1A3A6B 60%, #0B1D3A 100%)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div className="container">
-        <div className="row align-items-end">
+      {/* Decorative background elements */}
+      <div className="hero-bg-decoration">
+        <div className="hero-glow hero-glow--1" />
+        <div className="hero-glow hero-glow--2" />
+        <div className="hero-grid-pattern" />
+      </div>
+
+      <div className="container" ref={ref}>
+        <div className="row align-items-center">
           <div className="col-xl-6">
-            <div className="hero-style1">
-              <span className="sub-title" style={{ color: "#EA9010" }}>
-                <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Seja subadquirente!
+            <div className={`hero-style1 fade-in-up${isVisible ? " visible" : ""}`}>
+              <span className="hero-badge">
+                <span className="hero-badge__dot" />
+                Assessoria em Subadquirência
               </span>
               <h1 className="hero-title" style={{ color: "#ffffff" }}>
-                Subadquirência sem complicação
+                Subadquirência
+                <span className="hero-title__accent"> sem complicação</span>
               </h1>
-              <p className="hero-text" style={{ color: "rgba(255,255,255,0.8)" }}>
-                Estruturamos sua subadquirente, facilitando sua evolução no mercado de pagamentos com um processo eficiente e ágil.
+              <p className="hero-text" style={{ color: "rgba(255,255,255,0.75)" }}>
+                Estruturamos sua subadquirente de ponta a ponta, facilitando sua evolução no mercado de pagamentos com um processo eficiente e ágil.
               </p>
-              <div className="btn-group">
+              <div className="btn-group hero-btn-group">
                 <a
                   href="#contato"
                   onClick={(e) => handleAnchorClick(e, "contato")}
                   className="global-btn style3"
                 >
-                  Entre em contato <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                  Entre em contato
+                  <img src="assets/img/icon/right-icon.svg" alt="X4PAY Assessoria" />
+                </a>
+                <a
+                  href="#servicos"
+                  onClick={(e) => handleAnchorClick(e, "servicos")}
+                  className="global-btn style-border3"
+                >
+                  Nossos serviços
                 </a>
               </div>
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="hero-image-wrapp">
+            <div className={`hero-image-wrapp fade-in-up delay-2${isVisible ? " visible" : ""}`}>
               <div className="hero-thumb text-center">
                 <img src="assets/img/hero/hero_thumb_1_1.png" alt="Consultoria especializada em subadquirência e pagamentos - X4PAY Assessoria" />
               </div>
               <div className="hero-shape1" />
-              <div className="hero-shape2" />
-              <div className="hero-shape3" />
-              <div className="hero-shape4" />
-              <div className="hero-shape5 spin" />
             </div>
           </div>
         </div>
-        <div className="hero-item-content">
-          <div className="hero-card_wrapper">
-            <div
-              className="hero-card"
-              style={{
-                background: "rgba(255,255,255,0.1)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: "12px",
-              }}
-            >
-              <div className="hero-card_icon">
-                <img src="assets/img/icon/1.svg" alt="Ícone de subadquirência" />
-              </div>
-              <div className="hero-card_content">
-                <h4 className="box-title" style={{ color: "#ffffff" }}>Subadquirência</h4>
-                <p className="hero-card_text" style={{ color: "rgba(255,255,255,0.7)" }}>Com nossos especialistas</p>
+
+        {/* Feature cards */}
+        <div className={`hero-features fade-in-up delay-3${isVisible ? " visible" : ""}`}>
+          <div className="row g-3 g-lg-4">
+            <div className="col-sm-6 col-lg-3">
+              <div className="hero-feature-card">
+                <div className="hero-feature-card__icon">
+                  <i className="fas fa-handshake" />
+                </div>
+                <div className="hero-feature-card__content">
+                  <h4>Adquirentes</h4>
+                  <p>Negociação e contratos</p>
+                </div>
               </div>
             </div>
-            <div
-              className="hero-card"
-              style={{
-                background: "rgba(255,255,255,0.1)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: "12px",
-              }}
-            >
-              <div className="hero-card_icon">
-                <img src="assets/img/icon/2.svg" alt="Ícone de compliance" />
+            <div className="col-sm-6 col-lg-3">
+              <div className="hero-feature-card">
+                <div className="hero-feature-card__icon">
+                  <i className="fas fa-credit-card" />
+                </div>
+                <div className="hero-feature-card__content">
+                  <h4>Bandeiras</h4>
+                  <p>Visa, Master, Elo, Amex</p>
+                </div>
               </div>
-              <div className="hero-card_content">
-                <h4 className="box-title" style={{ color: "#ffffff" }}>Compliance</h4>
-                <p className="hero-card_text" style={{ color: "rgba(255,255,255,0.7)" }}>Serviços completos</p>
+            </div>
+            <div className="col-sm-6 col-lg-3">
+              <div className="hero-feature-card">
+                <div className="hero-feature-card__icon">
+                  <i className="fas fa-file-contract" />
+                </div>
+                <div className="hero-feature-card__content">
+                  <h4>Registradoras</h4>
+                  <p>B3, CERC e Núclea</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-6 col-lg-3">
+              <div className="hero-feature-card">
+                <div className="hero-feature-card__icon">
+                  <i className="fas fa-cogs" />
+                </div>
+                <div className="hero-feature-card__content">
+                  <h4>Softwares</h4>
+                  <p>Captura e processamento</p>
+                </div>
               </div>
             </div>
           </div>

@@ -62,12 +62,111 @@
     border-radius: 20px;
     position: relative;
     z-index: 1;
-    padding: 60px;
-    border: 2px solid $border-color;
+    padding: 48px;
+    background: $white-color;
+    border: 1px solid rgba(11, 29, 58, 0.08);
+    box-shadow: 0 8px 32px rgba(11, 29, 58, 0.06);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(11, 29, 58, 0.1);
+    }
+
     @include sm {
-        padding: 40px;
+        padding: 32px;
     }
     @include vxs {
-        padding: 30px;
+        padding: 24px;
+    }
+
+    .form-control,
+    .form-select {
+        &.style-border {
+            background: #F8F9FB;
+            border: 1.5px solid rgba(11, 29, 58, 0.08);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 15px;
+            color: var(--title-color);
+            transition: all 0.25s ease;
+
+            &::placeholder {
+                color: #9CA3AF;
+                font-weight: 400;
+            }
+
+            &:focus {
+                background: $white-color;
+                border-color: var(--theme-color2);
+                box-shadow: 0 0 0 3px rgba(234, 144, 16, 0.1);
+                outline: none;
+            }
+
+            &.is-invalid {
+                border-color: #dc3545;
+                box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.08);
+            }
+        }
+    }
+
+    .form-select.style-border {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 14px;
+        padding-right: 44px;
+    }
+
+    textarea.form-control.style-border {
+        min-height: 130px;
+        resize: vertical;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .global-btn {
+        border-radius: 12px;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(234, 144, 16, 0.3);
+        }
+
+        &:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+    }
+
+    .text-danger {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .alert {
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 20px;
+        border: none;
+
+        &.alert-success {
+            background: rgba(149, 198, 35, 0.1);
+            color: #5a7a0e;
+        }
+
+        &.alert-danger {
+            background: rgba(220, 53, 69, 0.08);
+            color: #9b2335;
+        }
     }
 }

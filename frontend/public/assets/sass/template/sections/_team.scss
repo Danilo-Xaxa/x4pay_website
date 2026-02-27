@@ -75,11 +75,17 @@
 .team-card {
   position: relative;
   background: $white-color;
-  border-radius: 20px;
-  transition: 0.4s;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  box-shadow: 0 2px 12px rgba(11, 29, 58, 0.06);
+  border: 1px solid rgba(11, 29, 58, 0.04);
   margin-bottom: 40px;
+
+  &:hover {
+    box-shadow: 0 12px 32px rgba(11, 29, 58, 0.1);
+    border-color: rgba(234, 144, 16, 0.12);
+    transform: translateY(-4px);
+  }
 
   &_wrapp {
     position: relative;
@@ -91,25 +97,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 20px 20px 0 0;
+      border-radius: 16px 16px 0 0;
       transition: 0.4s;
     }
   }
 
   &_img {
     position: relative;
-    border-radius: 20px 20px 0 0;
+    border-radius: 16px 16px 0 0;
     overflow: hidden;
-
-    img {
-    }
   }
 
   &_content {
-    padding: 30px;
+    padding: 24px;
 
     @include lg {
-      padding: 30px 20px;
+      padding: 24px 20px;
     }
   }
 

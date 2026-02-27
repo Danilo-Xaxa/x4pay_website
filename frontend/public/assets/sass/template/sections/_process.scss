@@ -1,44 +1,88 @@
 /* Process Area 1 ---------------------------------- */
+.process-area-1 {
+  position: relative;
+  overflow: hidden;
+}
+
 .process-card {
   background-color: $white-color;
-  padding: 50px 40px 44px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(11, 29, 58, 0.12);
+  padding: 40px 32px 36px;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
+  position: relative;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #EA9010 0%, #F4C260 100%);
+    border-radius: 16px 0 0 16px;
+    transition: height 0.35s ease;
   }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(11, 29, 58, 0.1);
+    border-color: rgba(234, 144, 16, 0.15);
+
+    &::before {
+      height: 100%;
+    }
+
+    .process-card_number {
+      color: rgba(234, 144, 16, 0.2);
+    }
+
+    .process-card-icon img {
+      transform: scale(1.1);
+    }
+  }
+
   &_wrapp {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
+
   &-icon {
+    img {
+      transition: transform 0.35s ease;
+    }
   }
+
   &_number {
-    font-weight: 700;
-    font-size: 60.75px;
-    line-height: 60.75px;
-    color: rgba(11, 29, 58, 0.08);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    color: rgba(11, 29, 58, 0.06);
     margin-bottom: 0;
+    transition: color 0.35s ease;
   }
 
   .process-card-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    margin-top: 12px;
-    margin-bottom: -0.4rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #030305;
   }
 
   .process-card-text {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
     font-family: $title-font;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    color: #6B7280;
   }
 
-  &:hover {
+  &_content {
+    position: relative;
   }
 }
 
@@ -46,7 +90,6 @@
 .process-card-wrap2 {
   position: relative;
   &:after {
-    // content: url(../img/icon/process-arrow-5-1.svg);
     content: url("~/public/assets/img/icon/process-arrow-5-1.svg");
     position: absolute;
     display: inline-block;

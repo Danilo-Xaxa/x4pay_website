@@ -3,23 +3,25 @@
     position: relative;
     z-index: 2;
     vertical-align: middle;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     background-color: $theme-color;
     color: $white-color;
     font-family: $title-font;
     font-weight: 600;
     font-size: 16px;
-    line-height: 30px;
-    text-transform: capitalize;
     line-height: 1;
-    padding: 20px 30px;
+    padding: 18px 30px;
     overflow: hidden;
-    transition: .3s;
+    transition: all 0.3s ease;
+    cursor: pointer;
     img {
-        margin-left: 10px; 
+        margin-left: 0;
     }
 
     &:after,
@@ -28,7 +30,7 @@
         width: 50%;
         height: 0;
         background: $title-color;
-        border-radius: 8px 0 0 8px;
+        border-radius: 12px 0 0 12px;
         position: absolute;
         top: 0;
         left: 0;
@@ -41,7 +43,7 @@
         left: auto;
         bottom: 0;
         right: 0;
-        border-radius: 0 8px 8px 0;
+        border-radius: 0 12px 12px 0;
     }
 
     i {
@@ -52,6 +54,8 @@
     &:hover,
     &:active {
         color: $white-color;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(11, 29, 58, 0.2);
 
         &:after,
         &:before {
@@ -71,13 +75,17 @@
         color: $white-color;
         &:after,
         &:before {
-            border-radius: 0;
+            border-radius: 12px 0 0 12px;
             background: #c87a0d;
+        }
+        &:after {
+            border-radius: 0 12px 12px 0;
         }
         &:active,
         &:focus,
         &:hover {
             color: $white-color;
+            box-shadow: 0 4px 16px rgba(234, 144, 16, 0.35);
         }
     }
 
