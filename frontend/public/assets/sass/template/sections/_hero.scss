@@ -191,6 +191,175 @@
     opacity: 0.5;
 }
 
+/* Payment Ecosystem SVG Illustration */
+.ecosystem-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Hub central */
+.ecosystem-hub {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: hub-pulse 3s ease-in-out infinite;
+
+    &__circle {
+        transition: all 0.3s ease;
+    }
+
+    &__label {
+        fill: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    &:hover {
+        .ecosystem-hub__circle {
+            filter: drop-shadow(0 0 24px rgba(234, 144, 16, 0.6)) url(#hubGlow);
+        }
+    }
+}
+
+/* Linhas de conexao */
+.ecosystem-connection {
+    stroke-dasharray: 6 4;
+    animation: dash-flow 1.5s linear infinite;
+}
+
+/* Nos satelites */
+.ecosystem-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: node-float 4s ease-in-out infinite;
+
+    &--1 { animation-delay: 0s; }
+    &--2 { animation-delay: 1s; }
+    &--3 { animation-delay: 2s; }
+    &--4 { animation-delay: 3s; }
+
+    &__outer {
+        fill: rgba(255, 255, 255, 0.05);
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-width: 1.5;
+        transition: all 0.3s ease;
+    }
+
+    &__inner {
+        fill: rgba(255, 255, 255, 0.03);
+        stroke: rgba(255, 255, 255, 0.06);
+        stroke-width: 1;
+        transition: all 0.3s ease;
+    }
+
+    &__icon {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.85);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        .ecosystem-node__outer {
+            fill: rgba(234, 144, 16, 0.12);
+            stroke: rgba(234, 144, 16, 0.45);
+        }
+        .ecosystem-node__inner {
+            fill: rgba(234, 144, 16, 0.08);
+            stroke: rgba(234, 144, 16, 0.25);
+        }
+        .ecosystem-node__icon {
+            stroke: #EA9010;
+        }
+        .ecosystem-label {
+            fill: #EA9010 !important;
+        }
+    }
+}
+
+/* Labels */
+.ecosystem-label {
+    fill: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: fill 0.3s ease;
+
+    @include sm {
+        display: none;
+    }
+}
+
+/* Anel orbital */
+.ecosystem-orbit {
+    transform-origin: 260px 260px;
+    animation: orbit-rotate 60s linear infinite;
+}
+
+/* Pontos decorativos */
+.ecosystem-dot {
+    animation: dot-twinkle 3s ease-in-out infinite;
+
+    &--1 { animation-delay: 0s; }
+    &--2 { animation-delay: 0.8s; }
+    &--3 { animation-delay: 1.6s; }
+    &--4 { animation-delay: 2.4s; }
+}
+
+@include xs {
+    .ecosystem-orbit,
+    .ecosystem-dot {
+        display: none;
+    }
+}
+
+/* Keyframes */
+@keyframes hub-pulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgba(234, 144, 16, 0.25));
+    }
+    50% {
+        transform: scale(1.04);
+        filter: drop-shadow(0 0 18px rgba(234, 144, 16, 0.45));
+    }
+}
+
+@keyframes dash-flow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -20; }
+}
+
+@keyframes node-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes orbit-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes dot-twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ecosystem-hub,
+    .ecosystem-connection,
+    .ecosystem-node,
+    .ecosystem-orbit,
+    .ecosystem-dot {
+        animation: none !important;
+    }
+}
+
 /* Hero Feature Cards */
 .hero-features {
     margin-top: 60px;

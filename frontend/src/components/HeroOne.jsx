@@ -1,6 +1,7 @@
 import React from "react";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import PaymentEcosystemSVG from "./PaymentEcosystemSVG";
 
 const HeroOne = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -59,7 +60,7 @@ const HeroOne = () => {
           <div className="col-xl-6">
             <div className={`hero-image-wrapp fade-in-up delay-2${isVisible ? " visible" : ""}`}>
               <div className="hero-thumb text-center">
-                <img src="assets/img/hero/hero_thumb_1_1.png" alt="Consultoria especializada em subadquirência e pagamentos - X4PAY Assessoria" />
+                <PaymentEcosystemSVG />
               </div>
               <div className="hero-shape1" />
             </div>

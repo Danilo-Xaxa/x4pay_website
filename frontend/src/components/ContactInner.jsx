@@ -187,7 +187,7 @@ const ContactInner = () => {
                                         <select
                                             name="subject"
                                             id="subject"
-                                            className="form-select style-border"
+                                            className={`form-select style-border${!formData.subject ? ' placeholder-shown' : ''}`}
                                             value={formData.subject}
                                             onChange={handleChange}
                                         >

@@ -3,13 +3,13 @@ import { CONTACT } from "../config/contact";
 import useActiveSection from "../hooks/useActiveSection";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
 
-const SECTION_IDS = ["inicio", "clientes", "servicos", "numeros", "contato"];
+const SECTION_IDS = ["inicio", "clientes", "servicos", "faq", "contato"];
 
 const NAV_ITEMS = [
   { id: "inicio", label: "Início" },
   { id: "clientes", label: "Clientes" },
   { id: "servicos", label: "Serviços" },
-  { id: "numeros", label: "Números" },
+  { id: "faq", label: "FAQ" },
   { id: "contato", label: "Contato" },
 ];
 

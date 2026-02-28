@@ -7,7 +7,6 @@ import ProcessOne from "../components/ProcessOne";
 import GoalArea from "../components/GoalArea";
 import FaqOne from "../components/FaqOne";
 import ContactInner from "../components/ContactInner";
-import EmailCapture from "../components/EmailCapture";
 import FooterOne from "../components/FooterOne";
 
 const LandingPage = () => {
@@ -33,7 +32,7 @@ const LandingPage = () => {
         <GoalArea />
       </section>
 
-      <section id="numeros">
+      <section id="faq">
         <div className="faq-area-1 bg-smoke space">
           <FaqOne />
         </div>
@@ -42,10 +41,6 @@ const LandingPage = () => {
       <section id="contato">
         <ContactInner />
       </section>
-
-      <div className="bg-smoke">
-        <EmailCapture />
-      </div>
 
       <FooterOne />
     </>

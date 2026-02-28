@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const TABS = [
   {
-    id: "nav-step1",
+    id: "adquirentes",
     label: "Adquirentes",
-    active: false,
     items: [
       {
         title: "Negociação de condições comerciais",
@@ -20,9 +19,8 @@ const TABS = [
     ],
   },
   {
-    id: "nav-step2",
+    id: "bandeiras",
     label: "Bandeiras",
-    active: false,
     items: [
       {
         title: "Arranjo de Pagamentos",
@@ -37,9 +35,8 @@ const TABS = [
     ],
   },
   {
-    id: "nav-step3",
+    id: "registradoras",
     label: "Registradoras",
-    active: true,
     items: [
       {
         title: "Contratos com registradoras",
@@ -54,9 +51,8 @@ const TABS = [
     ],
   },
   {
-    id: "nav-step4",
+    id: "softwares",
     label: "Softwares",
-    active: false,
     items: [
       {
         title: "Captura e processamento",
@@ -74,9 +70,12 @@ const TABS = [
 
 const GoalArea = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const [activeTab, setActiveTab] = useState("registradoras");
+
+  const activeData = TABS.find((t) => t.id === activeTab);
 
   return (
-    <div className="goal-area space" ref={ref}>
+    <div className="goal-area space-bottom" ref={ref}>
       <div className="container">
         <div className="row align-items-end">
           <div className="col-lg-6">
@@ -98,35 +97,25 @@ const GoalArea = () => {
           </div>
         </div>
         <div className="row">
-          <div className="goal-tabs-wrapper">
-            <div
-              className="nav nav-tabs goal-tabs-tabs"
-              id="nav-tab"
-              role="tablist"
-            >
-              {TABS.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`nav-link${tab.active ? " active" : ""}`}
-                  id={`${tab.id}-tab`}
-                  data-bs-toggle="tab"
-                  data-bs-target={`#${tab.id}`}
-                  type="button"
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-            <div className="tab-content" id="nav-tabContent">
-              {TABS.map((tab) => (
-                <div
-                  key={tab.id}
-                  className={`tab-pane fade${tab.active ? " active show" : ""}`}
-                  id={tab.id}
-                  role="tabpanel"
-                >
+          <div className="col-12">
+            <div className="goal-tabs-wrapper">
+              <div className="nav nav-tabs goal-tabs-tabs" role="tablist">
+                {TABS.map((tab) => (
+                  <button
+                    key={tab.id}
+                    className={`nav-link${activeTab === tab.id ? " active" : ""}`}
+                    type="button"
+                    role="tab"
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              <div className="tab-content">
+                {activeData && (
                   <div className="goal-list_wrapper">
-                    {tab.items.map((item, idx) => (
+                    {activeData.items.map((item, idx) => (
                       <div className="goal-content_wrapp" key={idx}>
                         <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
                         <div className="goal-content">
@@ -146,8 +135,8 @@ const GoalArea = () => {
                       </div>
                     ))}
                   </div>
-                </div>
-              ))}
+                )}
+              </div>
             </div>
           </div>
         </div>
