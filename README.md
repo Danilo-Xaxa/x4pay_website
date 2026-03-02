@@ -17,6 +17,7 @@ O projeto é **full stack**, composto por:
 
 O site apresenta:
 
+- Landing page única (SPA) com navegação por âncoras e smooth scroll
 - Informações institucionais da empresa
 - Serviços oferecidos
 - Parceiros e clientes
@@ -26,15 +27,19 @@ O site apresenta:
 
 O projeto foi estruturado de forma modular, facilitando manutenção, evolução e futuras integrações.
 
+> **Branch `frontend_v2`**: Redesign completo do UI/UX com paleta navy (#0B1D3A) + laranja (#EA9010), arquitetura SPA, animações CSS e glass-morphism.
+
 ---
 
 ## ✨ Funcionalidades
 
-### 📄 Páginas institucionais
-- Apresentação da empresa
-- Missão, visão e valores
-- Serviços prestados
-- Parceiros e clientes
+### 📄 Seções da landing page (v2 — SPA)
+
+- `#inicio` — Hero com gradiente navy e cards glass-morphism
+- `#clientes` — Parceiros e clientes
+- `#servicos` — Serviços prestados (cards com animação staggered)
+- `#numeros` — Números e resultados (tabs data-driven)
+- `#contato` — Formulário de contato
 
 ### 📬 Formulário de contato
 
@@ -71,25 +76,24 @@ Existem dois formatos:
 
 ## 📁 Estrutura do projeto
 
-```
-x4pay_website/
+```text
+site-x4pay/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py
-│   │   ├── __init__.py
-│   │   └── ...
-│   ├── requirements.txt
-│   └── Procfile
+│   │   └── main.py          # FastAPI (rotas, CORS, email)
+│   └── requirements.txt
 │
 └── frontend/
-    ├── public/
+    ├── public/assets/sass/   # SASS modular por seção
     ├── src/
-    │   ├── App.js / App.jsx
-    │   ├── components/
-    │   ├── pages/
-    │   └── assets/
+    │   ├── App.js            # Rotas (/ → LandingPage, * → Error)
+    │   ├── index.scss         # Estilos globais + animações
+    │   ├── hooks/             # useSmoothScroll, useActiveSection, useScrollAnimation
+    │   ├── components/        # ~80 componentes reutilizáveis
+    │   └── pages/
+    │       └── LandingPage.jsx  # Página única SPA (v2)
     ├── package.json
-    └── README.md
+    └── .env
 ```
 
 ---
@@ -276,9 +280,11 @@ Isso evita bloqueios de requisições no navegador.
 - requests (para chamar a API da Resend)
 
 ### Frontend
-- react
-- react-router-dom
+- react (18)
+- react-router-dom (6)
 - react-input-mask
+- bootstrap (5.3)
+- sass
 
 ---
 
