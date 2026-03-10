@@ -1,7 +1,34 @@
 import React from "react";
-import TrackVisibility from "react-on-screen";
 import CountUp from "react-countup";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+
+const FAQ_DATA = [
+  {
+    question: "Quais serviços a X4PAY oferece?",
+    answer: "Dentre várias de nossas tratativas, destacamos: solicitação e conferência de documentação, formulação de Forecast, negociação de condições comerciais com adquirentes, providência do Arranjo de Pagamentos com bandeiras, contratos com Registradoras, certificação PCI-DSS, elaboração de políticas de Compliance, definição de fluxos da operação e assessoria na negociação com softwares.",
+  },
+  {
+    question: "Quanto tempo leva um projeto de subadquirência?",
+    answer: "O prazo médio para a construção de uma subadquirente varia de 7 a 9 meses. O tempo pode variar porque também dependemos dos prazos internos dos adquirentes, bandeiras e registradoras.",
+  },
+  {
+    question: "Quanto custa um projeto de subadquirência?",
+    answer: "Nossas propostas são personalizadas, variando de acordo com as necessidades de cada cliente. A Proposta Comercial estará no seu e-mail em menos de 1 hora após o término da entrevista preliminar.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_DATA.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 const FaqOne = () => {
   const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
@@ -9,6 +36,10 @@ const FaqOne = () => {
 
   return (
     <section className=" ">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container">
         <div className="row align-items-end">
           <div className="col-xl-6" ref={faqRef}>
@@ -125,16 +156,12 @@ const FaqOne = () => {
                   </div>
                   <div className="media-body">
                     <h2 className="counter-box_number">
-                      <TrackVisibility once>
-                        {({ isVisible }) =>
-                          isVisible && (
-                            <span className="counter-number">
-                              +
-                              <CountUp delay={0} start={0} end={15} />
-                            </span>
-                          )
-                        }
-                      </TrackVisibility>
+                      {counterVisible && (
+                        <span className="counter-number">
+                          +
+                          <CountUp delay={0} start={0} end={15} />
+                        </span>
+                      )}
                     </h2>
                     <p className="counter-box_text">Projetos de subadquirentes construídos</p>
                   </div>
@@ -148,16 +175,12 @@ const FaqOne = () => {
                   </div>
                   <div className="media-body">
                     <h2 className="counter-box_number">
-                      <TrackVisibility once>
-                        {({ isVisible }) =>
-                          isVisible && (
-                            <span className="counter-number">
-                              +
-                              <CountUp delay={0} start={0} end={500000000} formattingFn={(value) => value.toLocaleString("pt-BR")} />
-                            </span>
-                          )
-                        }
-                      </TrackVisibility>
+                      {counterVisible && (
+                        <span className="counter-number">
+                          +
+                          <CountUp delay={0} start={0} end={500000000} formattingFn={(value) => value.toLocaleString("pt-BR")} />
+                        </span>
+                      )}
                     </h2>
                     <p className="counter-box_text">Volume mensal transacionado por nossos clientes</p>
                   </div>

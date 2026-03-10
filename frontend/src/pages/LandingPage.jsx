@@ -19,7 +19,7 @@ const LandingPage = () => {
 
       <HeaderOne />
 
-      <section id="inicio">
+      <section id="inicio" style={{ position: "relative", overflow: "hidden" }}>
         <HeroOne />
       </section>
 

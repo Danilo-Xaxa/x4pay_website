@@ -1,10 +1,11 @@
 import os
 import logging
+from logging.handlers import RotatingFileHandler
 import requests
 from html import escape
 from typing import Optional, Annotated, Literal
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, Field, StringConstraints
@@ -31,7 +32,10 @@ if not RESEND_API_KEY:
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("backend.log"), logging.StreamHandler()],
+    handlers=[
+        RotatingFileHandler("backend.log", maxBytes=5_000_000, backupCount=5),
+        logging.StreamHandler(),
+    ],
 )
 
 logger = logging.getLogger(__name__)
@@ -59,10 +63,10 @@ app.add_middleware(
         "https://www.x4agrocompliance.com",
         "https://site-x4agro.vercel.app/",
     ],
-    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_origin_regex=r"https://(x4pay|x4agro).*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["POST", "GET"],
-    allow_headers=["*"],
+    allow_headers=["Content-Type"],
 )
 
 # =========================================================
@@ -137,8 +141,8 @@ def read_root():
 
 @app.post("/contact", response_model=ApiResponse)
 @limiter.limit("5/minute")
-async def contact(request: Request, form: ContactForm):
-    logger.info(f"Novo contato: {form.name} ({form.email})")
+async def contact(request: Request, form: ContactForm, background_tasks: BackgroundTasks):
+    logger.info("Novo contato recebido")
 
     safe_name = escape(form.name) if form.name else "-"
     safe_email = escape(form.email)
@@ -159,29 +163,14 @@ async def contact(request: Request, form: ContactForm):
     </html>
     """
 
-    try:
-        send_email_resend(
-            subject="Novo contato via site da X4PAY",
-            html=html_body,
-            reply_to=form.email,
-        )
-
-        logger.info("E-mail enviado com sucesso (Resend).")
-
-        return ApiResponse(success=True, message="E-mail enviado com sucesso!")
-
-    except Exception:
-        logger.exception("Erro ao enviar e-mail")
-        raise HTTPException(
-            status_code=500,
-            detail={"success": False, "message": "Erro ao enviar o e-mail."},
-        )
+    background_tasks.add_task(send_email_resend, "Novo contato via site da X4PAY", html_body, form.email)
+    return ApiResponse(success=True, message="Mensagem recebida com sucesso!")
 
 
 @app.post("/contact_x4agro", response_model=ApiResponse)
 @limiter.limit("5/minute")
-async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
-    logger.info("Novo contato X4AGRO: %s (%s)", form.name, form.email)
+async def contato_x4agro(request: Request, form: ContatoX4AgroForm, background_tasks: BackgroundTasks):
+    logger.info("Novo contato X4AGRO recebido")
 
     safe_name = escape(form.name)
     safe_email = escape(form.email)
@@ -212,20 +201,5 @@ async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
     </html>
     """
 
-    try:
-        send_email_resend(
-            subject=f"Novo contato via site da X4AGRO",
-            html=html_body,
-            reply_to=form.email,
-        )
-
-        logger.info("E-mail X4AGRO enviado com sucesso (Resend).")
-
-        return ApiResponse(success=True, message="Contato enviado com sucesso!")
-
-    except Exception:
-        logger.exception("Erro ao enviar e-mail X4AGRO")
-        raise HTTPException(
-            status_code=500,
-            detail={"success": False, "message": "Erro ao enviar e-mail. Tente novamente mais tarde."},
-        )
+    background_tasks.add_task(send_email_resend, "Novo contato via site da X4AGRO", html_body, form.email)
+    return ApiResponse(success=True, message="Contato recebido com sucesso!")

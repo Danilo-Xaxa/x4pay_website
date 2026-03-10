@@ -17,8 +17,6 @@
     "react-fast-marquee": "^1.6.4",
     "react-helmet": "^6.1.0",
     "react-input-mask": "^2.0.4",
-    "react-modal-video": "^2.0.1",
-    "react-on-screen": "^2.1.1",
     "react-router-dom": "^6.23.0",
     "react-scripts": "^5.0.1",
     "react-scroll-to-top": "^3.0.0",
@@ -27,7 +25,6 @@
     "resolve-url-loader": "^5.0.0",
     "slick-carousel": "^1.8.1",
     "svgo": "^3.3.2",
-    "swiper": "^9.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

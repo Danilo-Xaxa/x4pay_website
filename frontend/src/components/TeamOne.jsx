@@ -3,69 +3,58 @@ import Slider from "react-slick";
 import clientsData from "../data/clients.json";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
+const SampleNextArrow = ({ onClick }) => (
+  <div className="TeamOne-icon-box-next">
+    <button
+      onClick={onClick}
+      className="slick-arrow style2 default team-slider2-next"
+    >
+      <i className="fas fa-arrow-right" />
+    </button>
+  </div>
+);
+
+const SamplePrevArrow = ({ onClick }) => (
+  <div className="TeamOne-icon-box-prev">
+    <button
+      onClick={onClick}
+      className="team-slider2 slick-arrow style2 default team-slider2-prev"
+    >
+      <i className="fas fa-arrow-left" />
+    </button>
+  </div>
+);
+
+const SLIDER_SETTINGS = {
+  dots: false,
+  arrows: true,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 5000,
+  cssEase: "linear",
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: { slidesToShow: 3 },
+    },
+    {
+      breakpoint: 992,
+      settings: { slidesToShow: 3, arrows: false },
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 1, arrows: false },
+    },
+  ],
+};
+
 const TeamOne = () => {
   const { ref, isVisible } = useScrollAnimation();
-  function SampleNextArrow(props) {
-    const { onClick } = props;
-    return (
-      <div className="TeamOne-icon-box-next">
-        <button
-          onClick={onClick}
-          className="slick-arrow style2 default team-slider2-next"
-        >
-          <i className="fas fa-arrow-right" />
-        </button>
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { onClick } = props;
-    return (
-      <div className="TeamOne-icon-box-prev">
-        <button
-          onClick={onClick}
-          className="team-slider2 slick-arrow style2 default team-slider2-prev"
-        >
-          <i className="fas fa-arrow-left" />
-        </button>
-      </div>
-    );
-  }
-
-  const settings = {
-    dots: false,
-    arrows: true,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 500,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
-        },
-      },
-    ],
-  };
 
   return (
     <div className="team-area-1 space" ref={ref}>
@@ -85,13 +74,13 @@ const TeamOne = () => {
         </div>
       </div>
       <div className="row gx-30 global-carousel team-slider2">
-        <Slider {...settings}>
+        <Slider {...SLIDER_SETTINGS}>
           {clientsData.map((client) => (
             <div className="p-2" key={client.id}>
               <div className="team-card">
                 <div className="team-card_wrapp">
                   <div className="team-card_img">
-                    <img src={client.image} alt={client.name} />
+                    <img src={client.image} alt={client.name} loading="lazy" />
                   </div>
                   <div className="team-social">
                     <div className="plus-btn">

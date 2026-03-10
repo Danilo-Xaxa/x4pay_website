@@ -75,7 +75,7 @@ const GoalArea = () => {
   const activeData = TABS.find((t) => t.id === activeTab);
 
   return (
-    <div className="goal-area space-bottom" ref={ref}>
+    <div className="goal-area space" ref={ref}>
       <div className="container">
         <div className="row align-items-end">
           <div className="col-lg-6">
@@ -117,7 +117,7 @@ const GoalArea = () => {
                   <div className="goal-list_wrapper">
                     {activeData.items.map((item, idx) => (
                       <div className="goal-content_wrapp" key={idx}>
-                        <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" />
+                        <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" loading="lazy" />
                         <div className="goal-content">
                           <h4 className="box-title">{item.title}</h4>
                           <p>{item.subtitle}</p>

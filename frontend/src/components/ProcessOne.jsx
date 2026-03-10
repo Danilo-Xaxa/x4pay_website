@@ -60,7 +60,7 @@ const ProcessOne = () => {
               <div className={`process-card fade-in-up delay-${idx + 1}${isVisible ? " visible" : ""}`}>
                 <div className="process-card_wrapp">
                   <div className="process-card-icon">
-                    <img src={step.icon} alt={step.alt} />
+                    <img src={step.icon} alt={step.alt} loading="lazy" />
                   </div>
                   <h3 className="process-card_number">{step.number}</h3>
                 </div>

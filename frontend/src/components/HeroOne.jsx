@@ -29,7 +29,7 @@ const HeroOne = () => {
             <div className={`hero-style1 fade-in-up${isVisible ? " visible" : ""}`}>
               <span className="hero-badge">
                 <span className="hero-badge__dot" />
-                Assessoria em Subadquirência
+                Torne-se subadquirente
               </span>
               <h1 className="hero-title" style={{ color: "#ffffff" }}>
                 Subadquirência
