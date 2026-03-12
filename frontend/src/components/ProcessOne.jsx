@@ -6,7 +6,7 @@ const STEPS = [
     icon: "assets/img/icon/process-icon-1-1.svg",
     alt: "Ícone de contratos com adquirentes",
     number: "01",
-    text: "Adiq, Cielo, GetNet, etc",
+    text: "Adiq, WorldPay, EntrePay, Cielo, GetNet, etc",
     title: "Contratos com os adquirentes",
   },
   {
