@@ -35,10 +35,10 @@ O projeto foi estruturado de forma modular, facilitando manutenção, evolução
 
 ### 📄 Seções da landing page (v2 — SPA)
 
-- `#inicio` — Hero com gradiente navy e cards glass-morphism
-- `#clientes` — Parceiros e clientes
-- `#servicos` — Serviços prestados (cards com animação staggered)
-- `#numeros` — Números e resultados (tabs data-driven)
+- `#inicio` — Hero com gradiente navy, cards glass-morphism e SVG do ecossistema de pagamentos
+- `#clientes` — Parceiros e clientes (carousel)
+- `#servicos` — Serviços prestados (cards com animação staggered) + números e resultados (tabs)
+- `#faq` — Perguntas frequentes com Schema.org JSON-LD (FAQPage)
 - `#contato` — Formulário de contato
 
 ### 📬 Formulário de contato
@@ -80,7 +80,14 @@ Existem dois formatos:
 site-x4pay/
 ├── backend/
 │   ├── app/
-│   │   └── main.py          # FastAPI (rotas, CORS, email)
+│   │   ├── main.py            # App FastAPI, CORS, middleware de log
+│   │   ├── config.py          # Variáveis de ambiente (dotenv)
+│   │   ├── models.py          # Pydantic models
+│   │   ├── routes/
+│   │   │   ├── health.py      # GET / (health check)
+│   │   │   └── contact.py     # POST /contact, POST /contact_x4agro
+│   │   └── services/
+│   │       └── email.py       # Envio via Resend API
 │   └── requirements.txt
 │
 └── frontend/
@@ -177,7 +184,8 @@ http://localhost:8000
 Endpoints principais:
 
 - `GET /` → status da API
-- `POST /contact` → envio do formulário
+- `POST /contact` → envio do formulário X4PAY
+- `POST /contact_x4agro` → envio do formulário X4Agro
 
 ---
 
@@ -278,11 +286,14 @@ Isso evita bloqueios de requisições no navegador.
 - pydantic
 - python-dotenv
 - requests (para chamar a API da Resend)
+- slowapi (rate limiting)
 
 ### Frontend
 - react (18)
 - react-router-dom (6)
 - react-input-mask
+- react-countup
+- slick-carousel / react-slick
 - bootstrap (5.3)
 - sass
 

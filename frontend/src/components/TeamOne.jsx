@@ -64,7 +64,7 @@ const TeamOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Subaquirentes em operação
+                Subadquirentes em operação
               </span>
               <h2 className="sec-title">
                 Alguns de nossos clientes{" "}
