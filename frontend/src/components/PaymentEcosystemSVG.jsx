@@ -162,25 +162,28 @@ const PaymentEcosystemSVG = () => {
           filter="url(#hubGlow)"
         />
 
-        {/* Icone de rede */}
-        <g transform="translate(260, 257)">
+        {/* Icone de rede — 6 pontos ao redor + 1 central */}
+        <g transform="translate(260, 260)">
           <circle cx="0" cy="0" r="5" fill="white" />
-          <circle cx="-15" cy="-11" r="3" fill="white" />
-          <circle cx="15" cy="-11" r="3" fill="white" />
-          <circle cx="-17" cy="8" r="3" fill="white" />
-          <circle cx="17" cy="8" r="3" fill="white" />
+          <circle cx="0" cy="-17" r="3" fill="white" />
+          <circle cx="15" cy="-8" r="3" fill="white" />
+          <circle cx="15" cy="8" r="3" fill="white" />
           <circle cx="0" cy="17" r="3" fill="white" />
-          <line x1="0" y1="0" x2="-15" y2="-11" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
-          <line x1="0" y1="0" x2="15" y2="-11" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
-          <line x1="0" y1="0" x2="-17" y2="8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
-          <line x1="0" y1="0" x2="17" y2="8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
+          <circle cx="-15" cy="8" r="3" fill="white" />
+          <circle cx="-15" cy="-8" r="3" fill="white" />
+          <line x1="0" y1="0" x2="0" y2="-17" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
+          <line x1="0" y1="0" x2="15" y2="-8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
+          <line x1="0" y1="0" x2="15" y2="8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
           <line x1="0" y1="0" x2="0" y2="17" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
+          <line x1="0" y1="0" x2="-15" y2="8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
+          <line x1="0" y1="0" x2="-15" y2="-8" stroke="white" strokeWidth="1.5" strokeOpacity="0.7" />
           {/* Conexoes externas entre nos */}
-          <line x1="-15" y1="-11" x2="15" y2="-11" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
-          <line x1="15" y1="-11" x2="17" y2="8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
-          <line x1="17" y1="8" x2="0" y2="17" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
-          <line x1="0" y1="17" x2="-17" y2="8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
-          <line x1="-17" y1="8" x2="-15" y2="-11" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="0" y1="-17" x2="15" y2="-8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="15" y1="-8" x2="15" y2="8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="15" y1="8" x2="0" y2="17" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="0" y1="17" x2="-15" y2="8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="-15" y1="8" x2="-15" y2="-8" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
+          <line x1="-15" y1="-8" x2="0" y2="-17" stroke="white" strokeWidth="0.8" strokeOpacity="0.3" />
         </g>
 
         {/* Label */}
