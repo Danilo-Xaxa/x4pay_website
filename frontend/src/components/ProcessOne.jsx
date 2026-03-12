@@ -46,7 +46,7 @@ const ProcessOne = () => {
             <div className="title-area text-center">
               <span className="sub-title">
                 <img src="assets/img/icon/title_left.svg" alt="shape" />
-                Nosso processo
+                Nossos serviços
               </span>
               <h2 className="sec-title style2">
                 A modernização dos meios de pagamentos
