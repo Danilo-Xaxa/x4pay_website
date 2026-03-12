@@ -37,8 +37,7 @@ const ProcessOne = () => {
 
   return (
     <section
-      className="process-area-1 bg-smoke space"
-      style={{ backgroundImage: "url(assets/img/bg/shape_1.png)" }}
+      className="process-area-1 space"
     >
       <div className="container">
         <div className="row justify-content-center">

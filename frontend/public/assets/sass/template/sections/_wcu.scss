@@ -3,7 +3,7 @@
 ----------------------------------------------*/
 .goal-area {
     position: relative;
-    background-color: $white-color;
+    background: linear-gradient(180deg, $white-color 0%, #F0F3F8 100%);
 }
 
 .goal-tabs-wrapper {
@@ -48,6 +48,7 @@
             transition: all 0.3s ease;
             position: relative;
             text-align: left;
+            box-shadow: 0 1px 4px rgba(11, 29, 58, 0.04);
 
             @include lg {
                 min-width: auto;
@@ -65,6 +66,7 @@
             &:hover {
                 background-color: rgba(11, 29, 58, 0.04);
                 border-color: rgba(11, 29, 58, 0.2);
+                transform: translateY(-1px);
             }
 
             &:hover,
@@ -76,7 +78,8 @@
             }
 
             &.active {
-                box-shadow: 0 4px 16px rgba(11, 29, 58, 0.2);
+                box-shadow: 0 6px 20px rgba(11, 29, 58, 0.25);
+                transform: translateY(-1px);
             }
         }
     }
@@ -105,20 +108,24 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        padding: 24px;
+        padding: 28px;
         border-radius: 16px;
-        border: 1px solid rgba(11, 29, 58, 0.06);
+        border: 1px solid rgba(11, 29, 58, 0.08);
         background: $white-color;
+        box-shadow: 0 2px 12px rgba(11, 29, 58, 0.04);
         transition: all 0.3s ease;
 
         &:hover {
-            box-shadow: 0 8px 24px rgba(11, 29, 58, 0.06);
-            border-color: rgba(234, 144, 16, 0.15);
+            box-shadow: 0 12px 32px rgba(11, 29, 58, 0.1);
+            border-color: rgba(234, 144, 16, 0.25);
+            transform: translateY(-2px);
         }
 
         img {
             margin-top: 4px;
-            opacity: 0.6;
+            opacity: 0.7;
+            width: 32px;
+            min-width: 32px;
         }
     }
 
@@ -126,6 +133,7 @@
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 4px;
+        color: var(--theme-color);
     }
 
     p {
@@ -144,19 +152,26 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
         }
 
         li {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-size: 14px;
             color: #374151;
+            font-weight: 500;
 
             i {
                 color: #EA9010;
-                font-size: 12px;
+                font-size: 11px;
+                width: 22px;
+                height: 22px;
+                line-height: 22px;
+                text-align: center;
+                background: rgba(234, 144, 16, 0.1);
+                border-radius: 50%;
             }
         }
     }
@@ -167,6 +182,11 @@
     display: block;
     margin-left: auto;
     margin-bottom: 50px;
+    padding: 24px 28px;
+    background: $white-color;
+    border-radius: 12px;
+    border-left: 3px solid #EA9010;
+    box-shadow: 0 2px 12px rgba(11, 29, 58, 0.04);
 
     @include md {
         max-width: 100%;
@@ -179,6 +199,7 @@
         font-size: 17px;
         line-height: 1.7;
         color: $body-color;
+        margin-bottom: 0;
     }
 }
 

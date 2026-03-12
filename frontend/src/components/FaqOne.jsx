@@ -41,7 +41,7 @@ const FaqOne = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <div className="container">
-        <div className="row align-items-end">
+        <div className="row align-items-start">
           <div className="col-xl-6" ref={faqRef}>
             <div className={`title-area me-xl-5 mb-20 fade-in-up${faqVisible ? " visible" : ""}`}>
               <span className="sub-title">

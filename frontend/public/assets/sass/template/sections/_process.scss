@@ -2,14 +2,24 @@
 .process-area-1 {
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0B1D3A 0%, #1A3A6B 100%);
+
+  .sub-title {
+    color: #EA9010;
+  }
+
+  .sec-title {
+    color: $white-color;
+  }
 }
 
 .process-card {
-  background-color: $white-color;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
   padding: 40px 32px 36px;
   border-radius: 16px;
   transition: all 0.35s ease;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   height: 100%;
 
@@ -27,19 +37,21 @@
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(11, 29, 58, 0.1);
-    border-color: rgba(234, 144, 16, 0.15);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border-color: rgba(234, 144, 16, 0.3);
 
     &::before {
       height: 100%;
     }
 
     .process-card_number {
-      color: rgba(234, 144, 16, 0.2);
+      color: rgba(234, 144, 16, 0.25);
     }
 
     .process-card-icon img {
       transform: scale(1.1);
+      filter: brightness(1.3);
     }
   }
 
@@ -52,7 +64,8 @@
 
   &-icon {
     img {
-      transition: transform 0.35s ease;
+      transition: all 0.35s ease;
+      filter: brightness(1.1);
     }
   }
 
@@ -60,7 +73,7 @@
     font-weight: 800;
     font-size: 56px;
     line-height: 1;
-    color: rgba(11, 29, 58, 0.06);
+    color: rgba(255, 255, 255, 0.08);
     margin-bottom: 0;
     transition: color 0.35s ease;
   }
@@ -70,7 +83,7 @@
     font-weight: 700;
     margin-top: 10px;
     margin-bottom: 0;
-    color: #030305;
+    color: $white-color;
   }
 
   .process-card-text {
@@ -78,7 +91,7 @@
     font-weight: 400;
     font-family: $title-font;
     margin-bottom: 0;
-    color: #6B7280;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   &_content {

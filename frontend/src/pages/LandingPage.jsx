@@ -33,7 +33,7 @@ const LandingPage = () => {
       </section>
 
       <section id="faq">
-        <div className="faq-area-1 bg-smoke space">
+        <div className="faq-area-1 space">
           <FaqOne />
         </div>
       </section>
