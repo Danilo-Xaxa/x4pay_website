@@ -6,6 +6,30 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &::before {
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(234, 144, 16, 0.06) 0%, transparent 70%);
+        top: -60px;
+        left: -120px;
+    }
+
+    &::after {
+        width: 550px;
+        height: 550px;
+        background: radial-gradient(circle, rgba(26, 58, 107, 0.12) 0%, transparent 70%);
+        bottom: -150px;
+        right: -140px;
+    }
+
     .sub-title {
         color: #EA9010;
     }
