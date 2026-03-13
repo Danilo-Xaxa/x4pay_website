@@ -17,6 +17,15 @@
 .fade-in-up.delay-3 { transition-delay: 0.35s; }
 .fade-in-up.delay-4 { transition-delay: 0.45s; }
 
+/* Gradient text on titles in light sections */
+.team-area-1 .sec-title,
+.goal-area .sec-title {
+  background: linear-gradient(135deg, #0B1D3A 0%, #1A3A6B 50%, #EA9010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Section divider spacing */
 section + section {
   position: relative;
