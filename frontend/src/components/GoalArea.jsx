@@ -88,7 +88,7 @@ const GoalArea = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="goal-title-area">
+            <div className={`goal-title-area fade-in-up delay-1${isVisible ? " visible" : ""}`}>
               <p>
                 Atuamos em todas as frentes necessárias para estruturar sua
                 subadquirente de ponta a ponta, com agilidade e expertise.
@@ -98,7 +98,7 @@ const GoalArea = () => {
         </div>
         <div className="row">
           <div className="col-12">
-            <div className="goal-tabs-wrapper">
+            <div className={`goal-tabs-wrapper fade-in-up delay-2${isVisible ? " visible" : ""}`}>
               <div className="nav nav-tabs goal-tabs-tabs" role="tablist">
                 {TABS.map((tab) => (
                   <button
@@ -116,7 +116,10 @@ const GoalArea = () => {
                 {activeData && (
                   <div className="goal-list_wrapper">
                     {activeData.items.map((item, idx) => (
-                      <div className="goal-content_wrapp" key={idx}>
+                      <div
+                        className={`goal-content_wrapp fade-in-up delay-${idx + 3}${isVisible ? " visible" : ""}`}
+                        key={`${activeTab}-${idx}`}
+                      >
                         <img src="assets/img/icon/angles-left.svg" alt="X4PAY Assessoria" loading="lazy" />
                         <div className="goal-content">
                           <h4 className="box-title">{item.title}</h4>
