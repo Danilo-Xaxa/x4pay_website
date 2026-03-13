@@ -2,6 +2,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import { CONTACT } from "../config/contact";
 import useActiveSection from "../hooks/useActiveSection";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
+import Sidebar from "./header/Sidebar";
+import MobileMenu from "./header/MobileMenu";
 
 const SECTION_IDS = ["inicio", "clientes", "servicos", "faq", "contato"];
 
@@ -15,7 +17,7 @@ const NAV_ITEMS = [
 
 const HeaderOne = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const activeSection = useActiveSection(SECTION_IDS);
 
@@ -27,97 +29,20 @@ const HeaderOne = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = useCallback(
-    (e, sectionId) => {
-      handleAnchorClick(e, sectionId);
-      setMobileOpen(false);
-    },
-    []
-  );
+  const handleNavClick = useCallback((e, sectionId) => {
+    handleAnchorClick(e, sectionId);
+    setMobileOpen(false);
+  }, []);
 
   return (
     <>
-      {/* Sidebar Info Panel */}
-      <div
-        className={`sidemenu-wrapper sidemenu-info ${sidebar ? "show" : ""}`}
-      >
-        <div className="sidemenu-content">
-          <button
-            className="closeButton sideMenuCls"
-            onClick={() => setSidebar(false)}
-          >
-            <i className="fas fa-times" />
-          </button>
-          <div className="widget">
-            <div className="th-widget-about">
-              <div className="about-logo">
-                <a
-                  href="#inicio"
-                  onClick={(e) => handleNavClick(e, "inicio")}
-                >
-                  <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
-                </a>
-              </div>
-              <br />
-              <p className="about-text">
-                Com a X4PAY Assessoria, sua empresa tem o suporte especializado
-                para crescer e operar com segurança no setor de pagamentos. Nós
-                oferecemos soluções completas para empresas que desejam atuar
-                como subadquirentes.
-              </p>
-            </div>
-          </div>
-          <div className="side-info mb-30">
-            <div className="contact-list mb-20">
-              <h4>Telefone/WhatsApp</h4>
-              {CONTACT.phones.map((p, i) => (
-                <p key={p.raw} className={i === 0 ? "mb-0" : undefined}>
-                  {p.label}
-                </p>
-              ))}
-            </div>
-            <div className="contact-list mb-20">
-              <h4>E-mail</h4>
-              {CONTACT.emails.map((email, i) => (
-                <p key={email} className={i === 0 ? "mb-0" : undefined}>
-                  {email}
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <MobileMenu
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        activeSection={activeSection}
+      />
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu-wrapper ${mobileOpen ? "body-visible" : ""}`}>
-        <div className="mobile-menu-area">
-          <div className="mobile-logo">
-            <a href="#inicio" onClick={(e) => handleNavClick(e, "inicio")}>
-              <img src="assets/img/logo.svg" alt="X4PAY Assessoria" />
-            </a>
-            <button className="menu-toggle" onClick={() => setMobileOpen(false)}>
-              <i className="fa fa-times" />
-            </button>
-          </div>
-          <div className="mobile-menu">
-            <ul id="offcanvas-navigation">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={(e) => handleNavClick(e, item.id)}
-                    className={activeSection === item.id ? "active" : ""}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
       <header className="nav-header header-layout1">
         <div className={`sticky-wrapper ${scrolled ? "sticky" : ""}`}>
           <div className="container">
@@ -173,8 +98,11 @@ const HeaderOne = () => {
                     type="button"
                     className="menu-toggle icon-btn"
                     onClick={() => setMobileOpen(true)}
+                    aria-label="Abrir menu de navegação"
+                    aria-expanded={mobileOpen}
+                    aria-controls="offcanvas-navigation"
                   >
-                    <i className="fas fa-bars" />
+                    <i className="fas fa-bars" aria-hidden="true" />
                   </button>
                 </div>
               </div>
@@ -182,10 +110,11 @@ const HeaderOne = () => {
                 <div className="header-wrapper">
                   <div className="header-button">
                     <button
-                      onClick={() => setSidebar(true)}
+                      onClick={() => setSidebarOpen(true)}
                       className="simple-icon sideMenuToggler d-none d-lg-block"
+                      aria-label="Abrir informações de contato"
                     >
-                      <img src="assets/img/icon/bars.svg" alt="X4PAY Assessoria" />
+                      <img src="assets/img/icon/bars.svg" alt="Menu" />
                     </button>
                   </div>
                 </div>

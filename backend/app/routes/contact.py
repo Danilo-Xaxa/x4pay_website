@@ -1,7 +1,7 @@
 import logging
 from html import escape
 
-from fastapi import APIRouter, BackgroundTasks, Request
+from fastapi import APIRouter, Request
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
@@ -15,7 +15,7 @@ router = APIRouter()
 
 @router.post("/contact", response_model=ApiResponse)
 @limiter.limit("5/minute")
-async def contact(request: Request, form: ContactForm, background_tasks: BackgroundTasks):
+async def contact(request: Request, form: ContactForm):
     logger.info("Novo contato recebido")
 
     safe_name = escape(form.name) if form.name else "-"
@@ -37,13 +37,18 @@ async def contact(request: Request, form: ContactForm, background_tasks: Backgro
     </html>
     """
 
-    background_tasks.add_task(send_email_resend, "Novo contato via site da X4PAY", html_body, form.email)
+    try:
+        send_email_resend("Novo contato via site da X4PAY", html_body, form.email)
+    except RuntimeError:
+        logger.error("Falha ao enviar e-mail de contato de %s", safe_email)
+        return ApiResponse(success=False, message="Erro ao enviar mensagem. Tente novamente em alguns minutos.")
+
     return ApiResponse(success=True, message="Mensagem recebida com sucesso!")
 
 
 @router.post("/contact_x4agro", response_model=ApiResponse)
 @limiter.limit("5/minute")
-async def contato_x4agro(request: Request, form: ContatoX4AgroForm, background_tasks: BackgroundTasks):
+async def contato_x4agro(request: Request, form: ContatoX4AgroForm):
     logger.info("Novo contato X4AGRO recebido")
 
     safe_name = escape(form.name)
@@ -75,5 +80,10 @@ async def contato_x4agro(request: Request, form: ContatoX4AgroForm, background_t
     </html>
     """
 
-    background_tasks.add_task(send_email_resend, "Novo contato via site da X4AGRO", html_body, form.email)
+    try:
+        send_email_resend("Novo contato via site da X4AGRO", html_body, form.email)
+    except RuntimeError:
+        logger.error("Falha ao enviar e-mail X4AGRO de %s", safe_email)
+        return ApiResponse(success=False, message="Erro ao enviar mensagem. Tente novamente em alguns minutos.")
+
     return ApiResponse(success=True, message="Contato recebido com sucesso!")
