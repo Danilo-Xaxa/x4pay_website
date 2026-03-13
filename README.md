@@ -20,14 +20,16 @@ O site apresenta:
 - Landing page única (SPA) com navegação por âncoras e smooth scroll
 - Informações institucionais da empresa
 - Serviços oferecidos
-- Parceiros e clientes
-- Formulário de contato funcional
+- Parceiros e clientes (carousel com imagens WebP)
+- Formulário de contato funcional com envio síncrono e retry
 - Integração entre front-end e API
-- Envio automático de e-mails
+- Envio automático de e-mails via Resend
+- SEO otimizado (robots.txt, sitemap.xml, Schema.org, Open Graph)
+- Acessibilidade (ARIA attributes, touch targets, reduced-motion)
 
 O projeto foi estruturado de forma modular, facilitando manutenção, evolução e futuras integrações.
 
-> **Branch `frontend_v2`**: Redesign completo do UI/UX com paleta navy (#0B1D3A) + laranja (#EA9010), arquitetura SPA, animações CSS e glass-morphism.
+> **Branch `frontend_v2`**: Redesign completo do UI/UX com paleta navy (#0B1D3A) + laranja (#EA9010), arquitetura SPA, animações CSS e glass-morphism. ~87 componentes legados removidos.
 
 ---
 
@@ -43,25 +45,16 @@ O projeto foi estruturado de forma modular, facilitando manutenção, evolução
 
 ### 📬 Formulário de contato
 
-Existem dois formatos:
-
-- **Formulário completo (`/contact`)**
-  - Nome
-  - E-mail
-  - Telefone
-  - Assunto
-  - Mensagem
-
-- **Formulário simplificado (rodapé)**
-  - Apenas e-mail
+- **Formulário completo (`/contact`)** — Nome, E-mail, Telefone, Assunto, Mensagem
 
 ### ✉️ Envio de e-mails
 
 - Os dados do formulário são enviados para a API
-- A API valida os campos
-- O envio é feito via **Resend (API)**
+- A API valida os campos com Pydantic
+- O envio é feito via **Resend (API)** de forma síncrona com **retry exponencial** (3 tentativas)
 - O e-mail é entregue ao endereço configurado
 - O campo **Reply-To** recebe automaticamente o e-mail informado pelo visitante
+- Em caso de falha no envio, o usuário recebe mensagem de erro
 
 > ⚠️ Observação: em ambiente de teste, a Resend pode restringir envios para destinatários não verificados. Para envios para terceiros em produção, é necessário **verificar um domínio** na Resend e usar um remetente (`From`) desse domínio.
 
@@ -91,14 +84,19 @@ site-x4pay/
 │   └── requirements.txt
 │
 └── frontend/
-    ├── public/assets/sass/   # SASS modular por seção
+    ├── public/
+    │   ├── assets/            # Imagens (WebP + originais), CSS, fontes, SASS
+    │   ├── robots.txt         # Crawling rules
+    │   └── sitemap.xml        # Sitemap para SEO
     ├── src/
-    │   ├── App.js            # Rotas (/ → LandingPage, * → Error)
+    │   ├── App.js             # Rotas (/ → LandingPage, * → Error)
     │   ├── index.scss         # Estilos globais + animações
+    │   ├── config/            # api.js (URL base), contact.js (dados de contato)
     │   ├── hooks/             # useSmoothScroll, useActiveSection, useScrollAnimation
-    │   ├── components/        # ~80 componentes reutilizáveis
+    │   ├── components/        # 15 componentes (header/, OptimizedImage, etc.)
     │   └── pages/
-    │       └── LandingPage.jsx  # Página única SPA (v2)
+    │       ├── LandingPage.jsx  # Página única SPA (v2)
+    │       └── Error.jsx        # Página 404
     ├── package.json
     └── .env
 ```
@@ -305,6 +303,8 @@ Isso evita bloqueios de requisições no navegador.
 - Nunca versione arquivos `.env`
 - Para novos assets no React, reinicie o servidor
 - O projeto não utiliza banco de dados
+- Imagens de clientes usam formato WebP (originais PNG/JPG mantidos como fallback)
+- SEO configurado com robots.txt, sitemap.xml, Schema.org (LocalBusiness, FAQPage) e Open Graph
 
 ---
 
