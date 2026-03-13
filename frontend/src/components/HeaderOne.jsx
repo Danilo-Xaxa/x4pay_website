@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { CONTACT } from "../config/contact";
 import useActiveSection from "../hooks/useActiveSection";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
-import Sidebar from "./header/Sidebar";
+
 import MobileMenu from "./header/MobileMenu";
 
 const SECTION_IDS = ["inicio", "clientes", "servicos", "faq", "contato"];
@@ -17,7 +17,7 @@ const NAV_ITEMS = [
 
 const HeaderOne = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const activeSection = useActiveSection(SECTION_IDS);
 
@@ -36,7 +36,7 @@ const HeaderOne = () => {
 
   return (
     <>
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
       <MobileMenu
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
@@ -104,19 +104,6 @@ const HeaderOne = () => {
                   >
                     <i className="fas fa-bars" aria-hidden="true" />
                   </button>
-                </div>
-              </div>
-              <div className="col-auto ms-xxl-4 d-xl-block d-none">
-                <div className="header-wrapper">
-                  <div className="header-button">
-                    <button
-                      onClick={() => setSidebarOpen(true)}
-                      className="simple-icon sideMenuToggler d-none d-lg-block"
-                      aria-label="Abrir informações de contato"
-                    >
-                      <img src="assets/img/icon/bars.svg" alt="Menu" />
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
