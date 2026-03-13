@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Preloader from "./elements/Preloader";
 
@@ -20,6 +21,7 @@ const App = () => {
           </Routes>
         </Suspense>
       </BrowserRouter>
+      <ScrollProgressBar />
       <WhatsAppFloat />
     </ErrorBoundary>
   );
