@@ -70,7 +70,7 @@ const TABS = [
 
 const GoalArea = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const [activeTab, setActiveTab] = useState("registradoras");
+  const [activeTab, setActiveTab] = useState("adquirentes");
 
   const activeData = TABS.find((t) => t.id === activeTab);
 
