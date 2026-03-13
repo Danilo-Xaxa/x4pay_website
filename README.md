@@ -26,6 +26,7 @@ O site apresenta:
 - Envio automático de e-mails via Resend
 - SEO otimizado (robots.txt, sitemap.xml, Schema.org, Open Graph)
 - Acessibilidade (ARIA attributes, touch targets, reduced-motion)
+- Efeitos visuais: parallax, scroll progress bar, scrollbar customizada, gradient text, background shapes decorativos, hover elevado nos CTAs
 
 O projeto foi estruturado de forma modular, facilitando manutenção, evolução e futuras integrações.
 
@@ -37,9 +38,9 @@ O projeto foi estruturado de forma modular, facilitando manutenção, evolução
 
 ### 📄 Seções da landing page (v2 — SPA)
 
-- `#inicio` — Hero com gradiente navy, cards glass-morphism e SVG do ecossistema de pagamentos
+- `#inicio` — Hero com gradiente navy, cards glass-morphism, SVG do ecossistema de pagamentos e parallax nos elementos decorativos
 - `#clientes` — Parceiros e clientes (carousel)
-- `#servicos` — Serviços prestados (cards com animação staggered) + números e resultados (tabs)
+- `#servicos` — Serviços prestados (cards com animação staggered e micro-interações 3D) + números e resultados (tabs)
 - `#faq` — Perguntas frequentes com Schema.org JSON-LD (FAQPage)
 - `#contato` — Formulário de contato
 
@@ -93,7 +94,7 @@ site-x4pay/
     │   ├── index.scss         # Estilos globais + animações
     │   ├── config/            # api.js (URL base), contact.js (dados de contato)
     │   ├── hooks/             # useSmoothScroll, useActiveSection, useScrollAnimation
-    │   ├── components/        # 15 componentes (header/, OptimizedImage, etc.)
+    │   ├── components/        # 15 componentes (header/, ScrollProgressBar, OptimizedImage, etc.)
     │   └── pages/
     │       ├── LandingPage.jsx  # Página única SPA (v2)
     │       └── Error.jsx        # Página 404
