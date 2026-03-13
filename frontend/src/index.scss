@@ -36,6 +36,25 @@ a, button, .global-btn, input, textarea, select {
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #061326;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1A3A6B 0%, #EA9010 100%);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #EA9010 0%, #F4C260 100%);
+}
+html {
+  scrollbar-color: #1A3A6B #061326;
+  scrollbar-width: thin;
+}
+
 /* Accessibility: respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
