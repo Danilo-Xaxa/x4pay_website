@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { handleAnchorClick } from "../hooks/useSmoothScroll";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import PaymentEcosystemSVG from "./PaymentEcosystemSVG";
 
 const HeroOne = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const glow1Ref = useRef(null);
+  const glow2Ref = useRef(null);
+  const gridRef = useRef(null);
+
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    if (glow1Ref.current) {
+      glow1Ref.current.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+    if (glow2Ref.current) {
+      glow2Ref.current.style.transform = `translateY(${scrollY * 0.15}px)`;
+    }
+    if (gridRef.current) {
+      gridRef.current.style.transform = `translateY(${scrollY * 0.08}px)`;
+    }
+  }, []);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   return (
     <div
@@ -16,11 +40,11 @@ const HeroOne = () => {
         overflow: "hidden",
       }}
     >
-      {/* Decorative background elements */}
+      {/* Decorative background elements with parallax */}
       <div className="hero-bg-decoration">
-        <div className="hero-glow hero-glow--1" />
-        <div className="hero-glow hero-glow--2" />
-        <div className="hero-grid-pattern" />
+        <div className="hero-glow hero-glow--1" ref={glow1Ref} />
+        <div className="hero-glow hero-glow--2" ref={glow2Ref} />
+        <div className="hero-grid-pattern" ref={gridRef} />
       </div>
 
       <div className="container" ref={ref}>

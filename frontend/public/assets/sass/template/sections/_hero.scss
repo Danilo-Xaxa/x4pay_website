@@ -162,6 +162,7 @@
     border-radius: 50%;
     filter: blur(120px);
     opacity: 0.4;
+    will-change: transform;
 
     &--1 {
         width: 500px;
@@ -188,6 +189,7 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     opacity: 0.5;
+    will-change: transform;
 }
 
 /* Payment Ecosystem SVG Illustration */
