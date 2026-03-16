@@ -3,7 +3,7 @@ import time
 
 import requests
 
-from app.config import EMAIL_TO, RESEND_API_KEY, RESEND_FROM
+from app.config import RESEND_API_KEY, RESEND_FROM, RESEND_TO
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ def send_email_resend(subject: str, html: str, reply_to: str):
                 },
                 json={
                     "from": RESEND_FROM,
-                    "to": [EMAIL_TO],
+                    "to": [RESEND_TO],
                     "subject": subject,
                     "html": html,
                     "reply_to": reply_to,

@@ -96,8 +96,13 @@ const ContactInner = () => {
           });
 
           if (response.ok) {
-              setFeedback({ type: "success", message: "Mensagem enviada com sucesso! Entraremos em contato em breve." });
-              setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+              const data = await response.json().catch(() => null);
+              if (data && data.success === false) {
+                  setFeedback({ type: "error", message: data.message || "Erro ao enviar mensagem. Tente novamente." });
+              } else {
+                  setFeedback({ type: "success", message: "Mensagem enviada com sucesso! Entraremos em contato em breve." });
+                  setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+              }
           } else {
               const errorData = await response.json().catch(() => null);
               const errorMessage = errorData?.detail || "Erro ao enviar mensagem. Verifique os dados e tente novamente.";

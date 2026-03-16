@@ -162,7 +162,7 @@ RESEND_API_KEY=SEU_TOKEN_DA_RESEND
 RESEND_USER=remetente@seudominio.com
 
 # (Opcional) e-mails padrão do sistema
-EMAIL_TO=contato@x4payassessoria.com
+RESEND_TO=contato@x4payassessoria.com
 EMAIL_CC=xaxa@x4payassessoria.com
 ```
 

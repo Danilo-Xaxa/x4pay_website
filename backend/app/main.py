@@ -3,9 +3,10 @@ from logging.handlers import RotatingFileHandler
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
+from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
+
+from app.limiter import limiter
 
 from app.routes.health import router as health_router
 from app.routes.contact import router as contact_router
@@ -27,7 +28,6 @@ logger = logging.getLogger(__name__)
 # =========================================================
 # FASTAPI + RATE LIMITING
 # =========================================================
-limiter = Limiter(key_func=get_remote_address)
 app = FastAPI()
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
@@ -45,9 +45,9 @@ app.add_middleware(
         "https://www.x4payassessoria.com",
         "https://x4agrocompliance.com",
         "https://www.x4agrocompliance.com",
-        "https://site-x4agro.vercel.app/",
+        "https://site-x4agro.vercel.app",
     ],
-    allow_origin_regex=r"https://(x4pay|x4agro).*\.vercel\.app",
+    allow_origin_regex=r"https://site-x4(pay|agro)(-[a-z0-9]+)?\.vercel\.app",
     allow_credentials=True,
     allow_methods=["POST", "GET"],
     allow_headers=["Content-Type"],
@@ -58,7 +58,8 @@ app.add_middleware(
 # =========================================================
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
-    logger.info("[%s] %s %s", request.client.host, request.method, request.url)
+    client_host = request.client.host if request.client else "unknown"
+    logger.info("[%s] %s %s", client_host, request.method, request.url)
     response = await call_next(request)
     logger.info("Resposta enviada: %s", response.status_code)
     return response

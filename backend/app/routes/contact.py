@@ -2,14 +2,12 @@ import logging
 from html import escape
 
 from fastapi import APIRouter, Request
-from slowapi import Limiter
-from slowapi.util import get_remote_address
 
+from app.limiter import limiter
 from app.models import ApiResponse, ContactForm, ContatoX4AgroForm
 from app.services.email import send_email_resend
 
 logger = logging.getLogger(__name__)
-limiter = Limiter(key_func=get_remote_address)
 router = APIRouter()
 
 
@@ -27,7 +25,6 @@ async def contact(request: Request, form: ContactForm):
     html_body = f"""
     <html>
       <body>
-        <h2>TEMOS UM NOVO CONTATO</h2>
         <p><strong>Nome:</strong> {safe_name}</p>
         <p><strong>E-mail:</strong> {safe_email}</p>
         <p><strong>Telefone:</strong> {safe_phone}</p>
